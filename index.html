@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARK Construction — Управление ремонтом под личным контролем собственника</title>
+    <meta name="description" content="ARK Construction — ремонт квартир в Москве и Московской области. Личный контроль собственника, прозрачные сметы, гарантия 12 месяцев.">
+    <meta name="keywords" content="ремонт квартир, ремонт под ключ, капитальный ремонт, дизайн интерьера, Москва, ARK Construction">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ARK Construction — Управление ремонтом под личным контролем собственника">
+    <meta property="og:description" content="Системно. Прозрачно. Без сюрпризов. Ремонт квартир в Москве и МО.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ark-construction.ru">
+    <meta property="og:image" content="img/og-image.png">
+
+    <!-- Security -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="img/favicon-32.ico">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="img/favicon-16.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Skip link -->
+<a href="#main" class="skip-link">Перейти к содержимому</a>
+
+<!-- ===================================
+     HEADER
+     =================================== -->
+<header class="header" id="header">
+    <div class="container header__inner">
+        <a href="#" class="header__logo" aria-label="ARK Construction — На главную">
+            <img class="header__logo-mark" src="img/logo-mark.png" alt="" width="36" height="36">
+            <span class="header__logo-text">ARK</span>
+        </a>
+
+        <nav class="nav" id="nav">
+            <a href="#about" class="nav__link">О нас</a>
+            <a href="#services" class="nav__link">Услуги</a>
+            <a href="#process" class="nav__link">Процесс</a>
+            <a href="#advantages" class="nav__link">Преимущества</a>
+            <a href="#portfolio" class="nav__link">Портфолио</a>
+            <a href="#reviews" class="nav__link">Отзывы</a>
+            <div class="nav__cta">
+                <a href="#contact" class="btn btn--primary btn--sm">Связаться</a>
+            </div>
+        </nav>
+
+        <button class="burger" id="burger" aria-label="Открыть меню">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+        </button>
+    </div>
+</header>
+
+<!-- ===================================
+     HERO
+     =================================== -->
+<section class="hero" id="main" data-bg="#faf8f5" data-scroll-fade>
+    <div class="container hero__inner">
+        <span class="hero__label" data-reveal>Москва и Московская область</span>
+        <h1 class="hero__title" data-reveal>Управление ремонтом<br>под личным контролем<br>собственника</h1>
+        <p class="hero__subtitle" data-reveal>Системно. Прозрачно. Без сюрпризов.</p>
+
+        <div class="hero__actions" data-reveal>
+            <a href="#services" class="btn btn--primary">Наши услуги</a>
+            <a href="#contact" class="btn btn--outline">Получить консультацию</a>
+        </div>
+
+        <div class="hero__stats" data-reveal>
+            <div class="hero__stat">
+                <div class="hero__stat-value">10+</div>
+                <div class="hero__stat-label">лет опыта</div>
+            </div>
+            <div class="hero__stat">
+                <div class="hero__stat-value">6</div>
+                <div class="hero__stat-label">этапов контроля</div>
+            </div>
+            <div class="hero__stat">
+                <div class="hero__stat-value">12</div>
+                <div class="hero__stat-label">мес. гарантии</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     PROBLEM-SOLUTION (BAB)
+     =================================== -->
+<section class="problem-solution" id="problem-solution" data-bg="#eee5d8" data-scroll-fade>
+    <div class="container">
+        <div class="section__header">
+            <p class="section__label" data-reveal>Знакомая ситуация?</p>
+            <h2 class="section__title" data-reveal>Почему ремонт превращается в стресс</h2>
+        </div>
+
+        <!-- 3 боли -->
+        <div class="ps__grid">
+            <div class="ps__card ps__card--problem" data-reveal>
+                <div class="ps__icon">&#10007;</div>
+                <h3 class="ps__card-title">Сорванные сроки</h3>
+                <p class="ps__card-text">Бригада обещает закончить за 2 месяца, но ремонт растягивается на полгода. Нет графика, нет контроля, нет ответственных.</p>
+            </div>
+            <div class="ps__card ps__card--problem" data-reveal>
+                <div class="ps__icon">&#10007;</div>
+                <h3 class="ps__card-title">Скрытые доплаты</h3>
+                <p class="ps__card-text">Смета выросла вдвое. Каждую неделю — новые «непредвиденные расходы». Договора нет, спросить не с кого.</p>
+            </div>
+            <div class="ps__card ps__card--problem" data-reveal>
+                <div class="ps__icon">&#10007;</div>
+                <h3 class="ps__card-title">Нет контроля</h3>
+                <p class="ps__card-text">Вы не понимаете, на каком этапе проект. Решения принимаются без вас, качество — на совести бригады.</p>
+            </div>
+        </div>
+
+        <!-- Мост -->
+        <div class="ps__bridge" data-reveal>
+            <div class="ps__bridge-icon">&#8595;</div>
+            <p class="ps__bridge-text">Именно поэтому Марина Филатова создала <span>ARK Construction</span> — компанию, где каждый проект ведётся системно, прозрачно и под личным контролем</p>
+        </div>
+
+        <!-- 3 решения -->
+        <div class="ps__grid">
+            <div class="ps__card ps__card--solution" data-reveal>
+                <div class="ps__icon">&#10003;</div>
+                <h3 class="ps__card-title">Фиксированные сроки</h3>
+                <p class="ps__card-text">Чёткий график в договоре. 6 этапов контроля. Регулярные отчёты — вы всегда знаете, на каком этапе проект.</p>
+            </div>
+            <div class="ps__card ps__card--solution" data-reveal>
+                <div class="ps__icon">&#10003;</div>
+                <h3 class="ps__card-title">Прозрачные сметы</h3>
+                <p class="ps__card-text">Реалистичная смета до начала работ. Официальный договор. Никаких необоснованных доплат и сюрпризов.</p>
+            </div>
+            <div class="ps__card ps__card--solution" data-reveal>
+                <div class="ps__icon">&#10003;</div>
+                <h3 class="ps__card-title">Личный контроль</h3>
+                <p class="ps__card-text">Руководитель лично курирует каждый проект. Решения принимаются с учётом 10+ лет опыта, а не «как получится».</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     ABOUT
+     =================================== -->
+<section class="about section" id="about" data-bg="#dce4ef" data-scroll-fade>
+    <div class="container">
+        <div class="about__grid">
+            <!-- TODO: фото Марины — заменить placeholder на реальное фото -->
+            <div class="about__image" data-editable data-reveal>
+                <div class="about__image-placeholder">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="64" height="64" rx="8" fill="currentColor" opacity=".1"/>
+                        <circle cx="32" cy="24" r="10" stroke="currentColor" stroke-width="2" opacity=".3"/>
+                        <path d="M14 56c0-10 8-18 18-18s18 8 18 18" stroke="currentColor" stroke-width="2" opacity=".3"/>
+                    </svg>
+                    <p>Фото Марины Филатовой</p>
+                </div>
+            </div>
+
+            <div class="about__text" data-reveal>
+                <p class="section__label">О компании</p>
+                <h2 class="section__title">Марина Филатова</h2>
+                <p class="section__description about__role">Руководитель ARK Construction</p>
+
+                <p>Более 10 лет я управляю ремонтными проектами в Москве и Московской области. Моя задача — сделать так, чтобы вы чувствовали себя спокойно на всём протяжении ремонта.</p>
+
+                <p>Я как руководитель лично курирую ваш проект. Это значит, что все решения принимаются с учётом многолетнего опыта, а не на уровне «как получится». Вы получаете не просто ремонт, а управляемый процесс с предсказуемым результатом.</p>
+
+                <div class="about__education">
+                    <h3 class="about__education-title">Образование</h3>
+                    <div class="about__education-item">
+                        Байкальский государственный университет экономики и права
+                    </div>
+                    <div class="about__education-item">
+                        НИУ ВШЭ — Гражданское и промышленное строительство (Повышение квалификации)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     SERVICES
+     =================================== -->
+<section class="services section--alt" id="services" data-bg="#ece2d4" data-scroll-fade>
+    <div class="container">
+        <div class="section__header">
+            <p class="section__label" data-reveal>Услуги</p>
+            <h2 class="section__title" data-reveal>Виды ремонта</h2>
+            <p class="section__description" data-reveal>Полный спектр ремонтных работ для квартир, домов и коммерческих помещений</p>
+        </div>
+
+        <!-- 6 основных услуг -->
+        <div class="services__grid">
+            <div class="service-card" data-reveal>
+                <div class="service-card__icon">&#9998;</div>
+                <h3 class="service-card__title">Косметический ремонт</h3>
+                <p class="service-card__text">Обновление отделки без затрагивания инженерных коммуникаций. Идеально для освежения интерьера.</p>
+                <p class="service-card__price">от 2 000 руб/м&sup2;</p>
+            </div>
+
+            <div class="service-card" data-reveal>
+                <div class="service-card__icon">&#9881;</div>
+                <h3 class="service-card__title">Капитальный ремонт</h3>
+                <p class="service-card__text">Полная замена всех покрытий, коммуникаций и инженерных систем. Новая жизнь вашего пространства.</p>
+                <p class="service-card__price">от 20 000 руб/м&sup2;</p>
+            </div>
+
+            <div class="service-card" data-reveal>
+                <div class="service-card__icon">&#127968;</div>
+                <h3 class="service-card__title">Ремонт под ключ</h3>
+                <p class="service-card__text">Комплексное решение: от проекта до меблировки. Вы получаете готовое к проживанию пространство.</p>
+                <p class="service-card__price">от 32 000 руб/м&sup2;</p>
+            </div>
+
+            <div class="service-card" data-reveal>
+                <div class="service-card__icon">&#127959;</div>
+                <h3 class="service-card__title">Ремонт новостроек</h3>
+                <p class="service-card__text">Профессиональная отделка квартир в новых домах с учётом усадки здания и особенностей новостроек.</p>
+                <p class="service-card__price">от 35 000 руб/м&sup2;</p>
+            </div>
+
+            <div class="service-card" data-reveal>
+                <div class="service-card__icon">&#127960;</div>
+                <h3 class="service-card__title">Ремонт вторичного жилья</h3>
+                <p class="service-card__text">Комплексное обновление квартир на вторичном рынке с демонтажём старых покрытий и заменой коммуникаций.</p>
+                <p class="service-card__price">от 27 000 руб/м&sup2;</p>
+            </div>
+
+            <div class="service-card" data-reveal>
+                <div class="service-card__icon">&#127970;</div>
+                <h3 class="service-card__title">Коммерческие помещения</h3>
+                <p class="service-card__text">Ремонт офисов, магазинов и других коммерческих объектов с учётом специфики бизнеса.</p>
+                <p class="service-card__price">от 12 000 руб/м&sup2;</p>
+            </div>
+        </div>
+
+        <!-- Ориентировочные сроки -->
+        <div class="services__timeline">
+            <div class="services__timeline-item" data-reveal>
+                <div class="services__timeline-type">Косметический ремонт (1-комн.)</div>
+                <div class="services__timeline-value">25 дней</div>
+            </div>
+            <div class="services__timeline-item" data-reveal>
+                <div class="services__timeline-type">Капитальный ремонт (1-комн.)</div>
+                <div class="services__timeline-value">70 дней</div>
+            </div>
+        </div>
+
+        <!-- Перечень работ (теги) — каждый тег ревилится отдельно (волна) -->
+        <div class="services__tags">
+            <span class="services__tag" data-reveal>Демонтаж</span>
+            <span class="services__tag" data-reveal>Черновая отделка</span>
+            <span class="services__tag" data-reveal>Чистовая отделка</span>
+            <span class="services__tag" data-reveal>Электрика</span>
+            <span class="services__tag" data-reveal>Сантехника</span>
+            <span class="services__tag" data-reveal>Плиточные работы</span>
+            <span class="services__tag" data-reveal>Малярные работы</span>
+            <span class="services__tag" data-reveal>Поклейка обоев</span>
+            <span class="services__tag" data-reveal>Укладка полов</span>
+            <span class="services__tag" data-reveal>Натяжные потолки</span>
+            <span class="services__tag" data-reveal>Гипсокартон</span>
+            <span class="services__tag" data-reveal>Перепланировка</span>
+            <span class="services__tag" data-reveal>Возведение перегородок</span>
+            <span class="services__tag" data-reveal>Шумоизоляция</span>
+            <span class="services__tag" data-reveal>Стяжка пола</span>
+            <span class="services__tag" data-reveal>Штукатурка стен</span>
+        </div>
+
+        <!-- Дополнительные услуги -->
+        <div class="section__header" style="margin-top: 20px;">
+            <p class="section__label" data-reveal>Сопутствующие услуги</p>
+            <h2 class="section__title" data-reveal>Дизайн, надзор, комплектация</h2>
+        </div>
+
+        <div class="additional-services__grid">
+            <div class="additional-card" data-reveal>
+                <h3 class="additional-card__title">Дизайн интерьера</h3>
+                <p class="additional-card__price">от 1 800 руб/м&sup2;</p>
+                <div class="additional-card__list">
+                    <div class="additional-card__list-item">Планировочные решения</div>
+                    <div class="additional-card__list-item">Технический дизайн</div>
+                    <div class="additional-card__list-item">3D-визуализация</div>
+                    <div class="additional-card__list-item">Комплектация объекта</div>
+                </div>
+            </div>
+
+            <div class="additional-card additional-card--recommended" data-reveal>
+                <span class="additional-card__badge">Рекомендуем</span>
+                <h3 class="additional-card__title">Авторский надзор</h3>
+                <p class="additional-card__price">от 40 000 руб/мес</p>
+                <div class="additional-card__list">
+                    <div class="additional-card__list-item">Регулярные выезды дизайнера на объект</div>
+                    <div class="additional-card__list-item">Контроль соответствия работ чертежам</div>
+                    <div class="additional-card__list-item">Контроль закупок и материалов</div>
+                    <div class="additional-card__list-item">Фиксация скрытых работ</div>
+                    <div class="additional-card__list-item">Взаимодействие с подрядчиком</div>
+                    <div class="additional-card__list-item">Проверка финишной отделки</div>
+                    <div class="additional-card__list-item">Оперативные корректировки на объекте</div>
+                </div>
+                <p class="additional-card__note">Авторский надзор нужен, чтобы на выходе получить именно ту картинку, которая была задумана, а не «свободную интерпретацию» строителей.</p>
+            </div>
+
+            <div class="additional-card" data-reveal>
+                <h3 class="additional-card__title">Комплектация объекта</h3>
+                <p class="additional-card__price">Индивидуально</p>
+                <div class="additional-card__list">
+                    <div class="additional-card__list-item">Составление спецификации и сметы</div>
+                    <div class="additional-card__list-item">Поиск и подбор поставщиков</div>
+                    <div class="additional-card__list-item">Сравнение цен и оптимизация бюджета</div>
+                    <div class="additional-card__list-item">Контроль закупок и логистика</div>
+                    <div class="additional-card__list-item">Приёмка материалов на объекте</div>
+                    <div class="additional-card__list-item">Работа с браком и пересортом</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     PROCESS
+     =================================== -->
+<section class="process section" id="process" data-bg="#d8e2f0" data-scroll-fade>
+    <div class="container">
+        <div class="section__header">
+            <p class="section__label" data-reveal>Как мы работаем</p>
+            <h2 class="section__title" data-reveal>Процесс работы</h2>
+            <p class="section__description" data-reveal>От первого звонка до сдачи объекта — каждый этап под контролем</p>
+        </div>
+
+        <div class="process__timeline">
+            <div class="process__step" data-reveal>
+                <div class="process__step-number">01</div>
+                <h3 class="process__step-title">Знакомство и подготовка</h3>
+                <div class="process__step-list">
+                    <p class="process__step-item">Заявка и консультация: уточняем тип помещения, метраж, формат работ</p>
+                    <p class="process__step-item">Выезд на замер: обмеры помещения, оценка состояния, фотофиксация</p>
+                    <p class="process__step-item">Обсуждение концепции и пожеланий по стилю и материалам</p>
+                </div>
+            </div>
+
+            <div class="process__step" data-reveal>
+                <div class="process__step-number">02</div>
+                <h3 class="process__step-title">Расчёт и договор</h3>
+                <div class="process__step-list">
+                    <p class="process__step-item">Составление детальной сметы: материалы, работы, спецификация</p>
+                    <p class="process__step-item">Согласование стоимости и объёма работ</p>
+                    <p class="process__step-item">Подписание договора с фиксацией сроков, графика платежей и гарантий</p>
+                </div>
+            </div>
+
+            <div class="process__step" data-reveal>
+                <div class="process__step-number">03</div>
+                <h3 class="process__step-title">Демонтаж и подготовка</h3>
+                <div class="process__step-list">
+                    <p class="process__step-item">Закупка и доставка материалов</p>
+                    <p class="process__step-item">Подготовка объекта: завоз инструментов, защита конструкций</p>
+                    <p class="process__step-item">Демонтажные работы: снос перегородок, снятие покрытий, вывоз мусора</p>
+                </div>
+            </div>
+
+            <div class="process__step" data-reveal>
+                <div class="process__step-number">04</div>
+                <h3 class="process__step-title">Черновая отделка</h3>
+                <div class="process__step-list">
+                    <p class="process__step-item">Возведение перегородок, штробление стен</p>
+                    <p class="process__step-item">Монтаж электрики, сантехники, тёплого пола</p>
+                    <p class="process__step-item">Стяжка пола, штукатурка стен по маякам</p>
+                    <p class="process__step-item">Приёмка скрытых работ</p>
+                </div>
+            </div>
+
+            <div class="process__step" data-reveal>
+                <div class="process__step-number">05</div>
+                <h3 class="process__step-title">Чистовая отделка</h3>
+                <div class="process__step-list">
+                    <p class="process__step-item">Шпаклёвка, грунтовка, укладка плитки</p>
+                    <p class="process__step-item">Монтаж потолков, покраска, оклейка обоями</p>
+                    <p class="process__step-item">Укладка чистовых полов, установка дверей</p>
+                    <p class="process__step-item">Монтаж сантехники, розеток, светильников</p>
+                </div>
+            </div>
+
+            <div class="process__step" data-reveal>
+                <div class="process__step-number">06</div>
+                <h3 class="process__step-title">Сдача объекта</h3>
+                <div class="process__step-list">
+                    <p class="process__step-item">Комплектация и расстановка мебели</p>
+                    <p class="process__step-item">Профессиональная уборка</p>
+                    <p class="process__step-item">Проверка качества, акт приёма-передачи, окончательный расчёт</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     PORTFOLIO
+     =================================== -->
+<section class="portfolio section--alt" id="portfolio" data-bg="#ece2d4" data-scroll-fade>
+    <div class="container">
+        <div class="section__header">
+            <p class="section__label" data-reveal>Портфолио</p>
+            <h2 class="section__title" data-reveal>Наши проекты</h2>
+            <p class="section__description" data-reveal>Каждый проект — это управляемый процесс с предсказуемым результатом</p>
+        </div>
+
+        <div class="portfolio__grid">
+            <!-- TODO: заменить placeholder-проекты на реальные фото от Марины -->
+            <div class="portfolio-card" data-editable data-reveal>
+                <div class="portfolio-card__image">
+                    <div class="portfolio-card__image-placeholder">
+                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="4" fill="currentColor" opacity=".1"/><path d="M8 32l8-12 6 8 4-5 6 9H8z" fill="currentColor" opacity=".2"/><circle cx="28" cy="14" r="4" fill="currentColor" opacity=".2"/></svg>
+                        <p>Фото проекта</p>
+                    </div>
+                </div>
+                <div class="portfolio-card__body">
+                    <h3 class="portfolio-card__title">Квартира на Патриарших</h3>
+                    <div class="portfolio-card__meta">
+                        <span class="portfolio-card__meta-item">78 м&sup2;</span>
+                        <span class="portfolio-card__meta-item">3 месяца</span>
+                        <span class="portfolio-card__meta-item">Ремонт под ключ</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card" data-editable data-reveal>
+                <div class="portfolio-card__image">
+                    <div class="portfolio-card__image-placeholder">
+                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="4" fill="currentColor" opacity=".1"/><path d="M8 32l8-12 6 8 4-5 6 9H8z" fill="currentColor" opacity=".2"/><circle cx="28" cy="14" r="4" fill="currentColor" opacity=".2"/></svg>
+                        <p>Фото проекта</p>
+                    </div>
+                </div>
+                <div class="portfolio-card__body">
+                    <h3 class="portfolio-card__title">Студия в новостройке</h3>
+                    <div class="portfolio-card__meta">
+                        <span class="portfolio-card__meta-item">42 м&sup2;</span>
+                        <span class="portfolio-card__meta-item">2 месяца</span>
+                        <span class="portfolio-card__meta-item">Ремонт новостройки</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card" data-editable data-reveal>
+                <div class="portfolio-card__image">
+                    <div class="portfolio-card__image-placeholder">
+                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="4" fill="currentColor" opacity=".1"/><path d="M8 32l8-12 6 8 4-5 6 9H8z" fill="currentColor" opacity=".2"/><circle cx="28" cy="14" r="4" fill="currentColor" opacity=".2"/></svg>
+                        <p>Фото проекта</p>
+                    </div>
+                </div>
+                <div class="portfolio-card__body">
+                    <h3 class="portfolio-card__title">Трёхкомнатная на Арбате</h3>
+                    <div class="portfolio-card__meta">
+                        <span class="portfolio-card__meta-item">110 м&sup2;</span>
+                        <span class="portfolio-card__meta-item">4 месяца</span>
+                        <span class="portfolio-card__meta-item">Капитальный ремонт</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card" data-editable data-reveal>
+                <div class="portfolio-card__image">
+                    <div class="portfolio-card__image-placeholder">
+                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="4" fill="currentColor" opacity=".1"/><path d="M8 32l8-12 6 8 4-5 6 9H8z" fill="currentColor" opacity=".2"/><circle cx="28" cy="14" r="4" fill="currentColor" opacity=".2"/></svg>
+                        <p>Фото проекта</p>
+                    </div>
+                </div>
+                <div class="portfolio-card__body">
+                    <h3 class="portfolio-card__title">Офис на Белорусской</h3>
+                    <div class="portfolio-card__meta">
+                        <span class="portfolio-card__meta-item">200 м&sup2;</span>
+                        <span class="portfolio-card__meta-item">5 месяцев</span>
+                        <span class="portfolio-card__meta-item">Коммерческий ремонт</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card" data-editable data-reveal>
+                <div class="portfolio-card__image">
+                    <div class="portfolio-card__image-placeholder">
+                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="4" fill="currentColor" opacity=".1"/><path d="M8 32l8-12 6 8 4-5 6 9H8z" fill="currentColor" opacity=".2"/><circle cx="28" cy="14" r="4" fill="currentColor" opacity=".2"/></svg>
+                        <p>Фото проекта</p>
+                    </div>
+                </div>
+                <div class="portfolio-card__body">
+                    <h3 class="portfolio-card__title">Двушка на Тверской</h3>
+                    <div class="portfolio-card__meta">
+                        <span class="portfolio-card__meta-item">65 м&sup2;</span>
+                        <span class="portfolio-card__meta-item">2.5 месяца</span>
+                        <span class="portfolio-card__meta-item">Косметический ремонт</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card" data-editable data-reveal>
+                <div class="portfolio-card__image">
+                    <div class="portfolio-card__image-placeholder">
+                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="4" fill="currentColor" opacity=".1"/><path d="M8 32l8-12 6 8 4-5 6 9H8z" fill="currentColor" opacity=".2"/><circle cx="28" cy="14" r="4" fill="currentColor" opacity=".2"/></svg>
+                        <p>Фото проекта</p>
+                    </div>
+                </div>
+                <div class="portfolio-card__body">
+                    <h3 class="portfolio-card__title">Загородный дом в Подмосковье</h3>
+                    <div class="portfolio-card__meta">
+                        <span class="portfolio-card__meta-item">180 м&sup2;</span>
+                        <span class="portfolio-card__meta-item">6 месяцев</span>
+                        <span class="portfolio-card__meta-item">Ремонт под ключ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     ADVANTAGES
+     =================================== -->
+<section class="advantages section" id="advantages" data-bg="#dce4ef" data-scroll-fade>
+    <div class="container">
+        <div class="section__header">
+            <p class="section__label" data-reveal>Почему мы</p>
+            <h2 class="section__title" data-reveal>Наши преимущества</h2>
+        </div>
+
+        <div class="advantages__grid">
+            <div class="advantage-card" data-reveal>
+                <div class="advantage-card__number">01</div>
+                <h3 class="advantage-card__title">Личный контроль собственника</h3>
+                <p class="advantage-card__text">Процессы отлажены: есть чёткий регламент от замера до сдачи. Руководитель контролирует каждый этап и принимает решения с учётом многолетнего опыта.</p>
+            </div>
+
+            <div class="advantage-card" data-reveal>
+                <div class="advantage-card__number">02</div>
+                <h3 class="advantage-card__title">Сквозной контроль качества</h3>
+                <p class="advantage-card__text">Авторский надзор, технический контроль, управление комплектацией — единый центр управления. Плитка ляжет ровно, розетки будут работать, сроки не сорвутся.</p>
+            </div>
+
+            <div class="advantage-card" data-reveal>
+                <div class="advantage-card__number">03</div>
+                <h3 class="advantage-card__title">Экспертность и нестандартные решения</h3>
+                <p class="advantage-card__text">Знания, как обойти технические сложности. Возможность предложить альтернативы и оптимизировать бюджет без потери качества.</p>
+            </div>
+
+            <div class="advantage-card" data-reveal>
+                <div class="advantage-card__number">04</div>
+                <h3 class="advantage-card__title">Прозрачная коммуникация</h3>
+                <p class="advantage-card__text">Регулярные фото- и видеоотчёты. Чёткие сроки. Руководитель всегда на связи лично. Вы знаете, на каком этапе проект и куда потрачены средства.</p>
+            </div>
+
+            <div class="advantage-card" data-reveal>
+                <div class="advantage-card__number">05</div>
+                <h3 class="advantage-card__title">Финансовая прозрачность</h3>
+                <p class="advantage-card__text">Официальный договор, реалистичные сметы, никаких необоснованных доплат. Юридическая и финансовая безопасность.</p>
+            </div>
+
+            <div class="advantage-card" data-reveal>
+                <div class="advantage-card__number">06</div>
+                <h3 class="advantage-card__title">Гарантия на работы</h3>
+                <p class="advantage-card__text">12 месяцев гарантии на все выполненные работы. Выезд и исправление в течение 7 дней. Спорные вопросы решаем переговорами с привлечением независимого эксперта.</p>
+            </div>
+        </div>
+
+        <!-- Сравнительная таблица -->
+        <div class="comparison" data-reveal>
+            <h3 class="comparison__title">Чем мы отличаемся</h3>
+            <div class="comparison__wrapper">
+                <table class="comparison__table">
+                    <thead>
+                        <tr>
+                            <th>Критерий</th>
+                            <th>Бригады</th>
+                            <th>Крупные компании</th>
+                            <th>Частные прорабы</th>
+                            <th>ARK Construction</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Договор и гарантии</td>
+                            <td>Чаще всего нет</td>
+                            <td>Есть</td>
+                            <td>Редко</td>
+                            <td>Официальный договор</td>
+                        </tr>
+                        <tr>
+                            <td>Личное участие руководителя</td>
+                            <td>Нет</td>
+                            <td>Менеджеры</td>
+                            <td>Частично</td>
+                            <td>Полный контроль</td>
+                        </tr>
+                        <tr>
+                            <td>Системный подход</td>
+                            <td>Нет</td>
+                            <td>Бюрократия</td>
+                            <td>Только стройка</td>
+                            <td>Стройка + дизайн + логистика</td>
+                        </tr>
+                        <tr>
+                            <td>Скорость решений</td>
+                            <td>Зависит от бригады</td>
+                            <td>Дни согласований</td>
+                            <td>Быстро</td>
+                            <td>Решения за минуты</td>
+                        </tr>
+                        <tr>
+                            <td>Контроль бюджета</td>
+                            <td>Нет</td>
+                            <td>Доплаты</td>
+                            <td>Простои</td>
+                            <td>Прозрачные сметы</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     REVIEWS
+     =================================== -->
+<!-- TODO: заменить placeholder-отзывы на реальные от клиентов Марины -->
+<section class="reviews section--alt" id="reviews" data-bg="#ece2d4" data-scroll-fade>
+    <div class="container">
+        <div class="section__header">
+            <p class="section__label" data-reveal>Отзывы</p>
+            <h2 class="section__title" data-reveal>Что говорят клиенты</h2>
+        </div>
+
+        <div class="reviews__grid">
+            <div class="review-card" data-editable data-reveal>
+                <div class="review-card__quote">&laquo;</div>
+                <p class="review-card__text">Марина лично контролировала каждый этап. Ремонт сдали точно в срок, без единой доплаты сверх сметы. Очень довольны результатом — квартира как с картинки.</p>
+                <div class="review-card__author">
+                    <div class="review-card__avatar">А</div>
+                    <div>
+                        <div class="review-card__name">Анна К.</div>
+                        <div class="review-card__type">Ремонт под ключ, 78 м&sup2;</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card" data-editable data-reveal>
+                <div class="review-card__quote">&laquo;</div>
+                <p class="review-card__text">После неудачного опыта с бригадой боялись начинать заново. ARK всё взяли на себя — от демонтажа до финальной уборки. Главное — полная прозрачность по деньгам.</p>
+                <div class="review-card__author">
+                    <div class="review-card__avatar">Д</div>
+                    <div>
+                        <div class="review-card__name">Дмитрий и Елена С.</div>
+                        <div class="review-card__type">Капитальный ремонт, 95 м&sup2;</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card" data-editable data-reveal>
+                <div class="review-card__quote">&laquo;</div>
+                <p class="review-card__text">Новостройка со свободной планировкой — казалось, это невозможно организовать. Марина предложила решения, о которых мы даже не думали. Рекомендуем!</p>
+                <div class="review-card__author">
+                    <div class="review-card__avatar">М</div>
+                    <div>
+                        <div class="review-card__name">Михаил Т.</div>
+                        <div class="review-card__type">Ремонт новостройки, 120 м&sup2;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     CONTACT
+     =================================== -->
+<section class="contact section" id="contact" data-bg="#e8e4df" data-scroll-fade>
+    <div class="container">
+        <div class="section__header">
+            <p class="section__label" data-reveal>Контакты</p>
+            <h2 class="section__title" data-reveal>Свяжитесь с нами</h2>
+            <p class="section__description" data-reveal>Обсудим ваш проект и рассчитаем стоимость</p>
+        </div>
+
+        <div class="contact__grid">
+            <div class="contact__info" data-reveal>
+                <div class="contact__info-card">
+                    <div class="contact__info-icon">&#128205;</div>
+                    <div>
+                        <div class="contact__info-title">География работы</div>
+                        <div class="contact__info-text">Москва, Московская область и по запросу</div>
+                    </div>
+                </div>
+
+                <div class="contact__info-card">
+                    <div class="contact__info-icon">&#9993;</div>
+                    <div>
+                        <div class="contact__info-title">Email</div>
+                        <div class="contact__info-text">info@ark-construction.ru</div>
+                    </div>
+                </div>
+
+                <!-- TODO: добавить реальный номер Telegram -->
+                <div class="contact__info-card" data-editable>
+                    <div class="contact__info-icon">&#9992;</div>
+                    <div>
+                        <div class="contact__info-title">Telegram</div>
+                        <div class="contact__info-text">Напишите нам в Telegram для быстрой связи</div>
+                    </div>
+                </div>
+
+                <div class="contact__guarantee">
+                    <div class="contact__guarantee-title">Гарантия качества</div>
+                    <p class="contact__guarantee-text">Гарантия 12 месяцев на все работы. Выезд и исправление в течение 7 дней.</p>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm" data-reveal>
+                <h3 class="contact-form__title">Оставить заявку</h3>
+
+                <div class="form-group">
+                    <label class="form-group__label" for="name">Имя *</label>
+                    <input class="form-group__input" type="text" id="name" name="name" placeholder="Ваше имя" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-group__label" for="phone">Телефон *</label>
+                    <input class="form-group__input" type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-group__label" for="service">Интересующая услуга</label>
+                    <select class="form-group__select" id="service" name="service">
+                        <option value="">Выберите услугу</option>
+                        <option value="cosmetic">Косметический ремонт</option>
+                        <option value="capital">Капитальный ремонт</option>
+                        <option value="turnkey">Ремонт под ключ</option>
+                        <option value="newbuild">Ремонт новостроек</option>
+                        <option value="secondary">Ремонт вторичного жилья</option>
+                        <option value="commercial">Коммерческие помещения</option>
+                        <option value="design">Дизайн интерьера</option>
+                        <option value="supervision">Авторский надзор</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-group__label" for="message">Описание проекта</label>
+                    <textarea class="form-group__textarea" id="message" name="message" placeholder="Опишите ваш проект: тип помещения, площадь, пожелания"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn--primary btn--block">Отправить заявку</button>
+                <p class="contact-form__note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     FOOTER
+     =================================== -->
+<footer class="footer" data-bg="#1e252b">
+    <div class="container">
+        <div class="footer__grid">
+            <div>
+                <div class="footer__logo">
+                    <img class="footer__logo-mark" src="img/logo-mark-white.png" alt="" width="32" height="32">
+                    <span class="footer__logo-text">ARK</span>
+                </div>
+                <p class="footer__text">Управление ремонтом под личным контролем собственника. Москва и Московская область.</p>
+            </div>
+
+            <div>
+                <h4 class="footer__heading">Навигация</h4>
+                <div class="footer__links">
+                    <a href="#about" class="footer__link">О нас</a>
+                    <a href="#services" class="footer__link">Услуги</a>
+                    <a href="#process" class="footer__link">Процесс</a>
+                    <a href="#advantages" class="footer__link">Преимущества</a>
+                    <a href="#portfolio" class="footer__link">Портфолио</a>
+                    <a href="#contact" class="footer__link">Контакты</a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="footer__heading">Услуги</h4>
+                <div class="footer__links">
+                    <a href="#services" class="footer__link">Косметический ремонт</a>
+                    <a href="#services" class="footer__link">Капитальный ремонт</a>
+                    <a href="#services" class="footer__link">Ремонт под ключ</a>
+                    <a href="#services" class="footer__link">Дизайн интерьера</a>
+                    <a href="#services" class="footer__link">Авторский надзор</a>
+                    <a href="#services" class="footer__link">Комплектация</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            &copy; 2026 ARK Construction. Москва и Московская область.
+        </div>
+    </div>
+</footer>
+
+<!-- ===================================
+     FLOATING BUTTONS
+     =================================== -->
+<!-- TODO: заменить placeholder-ссылки на реальные номера WhatsApp и Telegram -->
+<div class="floating-btns">
+    <!-- TODO: заменить #contact на реальный номер WhatsApp (https://wa.me/7XXXXXXXXXX) -->
+    <a href="#contact" class="floating-btn floating-btn--whatsapp" data-editable aria-label="Написать в WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    <!-- TODO: заменить #contact на реальный Telegram (https://t.me/username) -->
+    <a href="#contact" class="floating-btn floating-btn--telegram" data-editable aria-label="Написать в Telegram">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    </a>
+</div>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
