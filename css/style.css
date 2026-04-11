@@ -625,52 +625,105 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 60px;
 }
 
+/* Premium problem/solution cards (Nikolai 1709, 1710) — photo-bg + accent line */
 .ps__card {
     background: var(--color-surface);
-    border-radius: var(--radius);
-    padding: 32px;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition);
+    border-radius: 16px;
+    padding: 32px 28px;
+    text-align: left;
+    box-shadow: 0 8px 28px rgba(20, 25, 32, 0.1);
+    transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border-top: 2px solid var(--color-gold);
 }
 
-.ps__card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+.ps__card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: .18;
+    z-index: -1;
+    transition: opacity .5s ease;
+}
+.ps__card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,.82) 0%, rgba(255,255,255,.94) 100%);
+    z-index: -1;
 }
 
-.ps__icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
+@media (hover: hover) {
+    .ps__card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 50px rgba(20, 25, 32, 0.16);
+    }
+    .ps__card:hover::before { opacity: .28; }
+}
+
+/* Problem variant — warm charcoal top line, drama photo */
+.ps__card--problem {
+    border-top-color: #9a4a4a;
+}
+.ps__card--problem::before {
+    background-image: url('../img/process-03-demolition.jpg');
+    opacity: .22;
+}
+.ps__card--problem::after {
+    background: linear-gradient(180deg, rgba(250, 245, 240, 0.78) 0%, rgba(250, 245, 240, 0.92) 100%);
+}
+
+/* Solution variant — gold top line, light calm photo */
+.ps__card--solution::before {
+    background-image: url('../img/process-05-finish.jpg');
+    opacity: .22;
+}
+
+.ps__card .ps__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 20px;
-    font-size: 24px;
+    margin: 0 0 20px;
+    font-size: 22px;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
 }
 
 .ps__card--problem .ps__icon {
-    background: rgba(154, 74, 74, .1);
-    color: var(--color-danger);
+    background: rgba(154, 74, 74, .16);
+    color: #9a4a4a;
 }
 
 .ps__card--solution .ps__icon {
-    background: rgba(74, 124, 89, .1);
-    color: var(--color-success);
+    background: rgba(174, 140, 86, .18);
+    color: var(--color-gold);
 }
 
 .ps__card-title {
     font-family: var(--font-heading);
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 12px;
+    color: #1e252b;
+    position: relative;
+    z-index: 1;
+    line-height: 1.25;
 }
 
 .ps__card-text {
     font-size: 15px;
-    color: var(--color-text-secondary);
+    color: #3c4450;
     line-height: 1.6;
+    position: relative;
+    z-index: 1;
 }
 
 .ps__bridge {
