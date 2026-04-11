@@ -967,16 +967,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-card__icon {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-sm);
-    background: var(--color-accent-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    font-size: 22px;
-    color: var(--color-accent);
+    display: none;
 }
 
 .service-card__title {
