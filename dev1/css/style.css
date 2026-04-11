@@ -2433,7 +2433,7 @@ h1, h2, h3, h4, h5, h6 {
         inset: 0;
         background-size: cover;
         background-position: center;
-        opacity: .38;
+        opacity: .58;
         z-index: -1;
         transition: opacity .4s ease;
     }
@@ -2441,7 +2441,7 @@ h1, h2, h3, h4, h5, h6 {
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(180deg, rgba(255,255,255,.5) 0%, rgba(255,255,255,.78) 60%, rgba(255,255,255,.88) 100%);
+        background: linear-gradient(180deg, rgba(255,255,255,.35) 0%, rgba(255,255,255,.58) 60%, rgba(255,255,255,.68) 100%);
         z-index: -1;
     }
     .advantages__grid .advantage-card:nth-child(1)::before { background-image: url('../img/process-01-measure.jpg'); }
