@@ -407,12 +407,12 @@ h1, h2, h3, h4, h5, h6 {
     inset: 0;
     background:
         linear-gradient(90deg,
-            rgba(15, 20, 28, 0.78) 0%,
-            rgba(15, 20, 28, 0.55) 55%,
-            rgba(15, 20, 28, 0.35) 100%),
+            rgba(15, 20, 28, 0.55) 0%,
+            rgba(15, 20, 28, 0.20) 45%,
+            rgba(15, 20, 28, 0) 100%),
         linear-gradient(180deg,
-            rgba(15, 20, 28, 0.25) 0%,
-            rgba(15, 20, 28, 0.55) 100%);
+            rgba(15, 20, 28, 0) 0%,
+            rgba(15, 20, 28, 0.35) 100%);
 }
 
 .hero--dark .hero__title {
@@ -1221,24 +1221,25 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
-.process__step-number {
-    font-family: var(--font-heading);
-    font-size: 80px;
-    font-weight: 400;
-    color: var(--color-gold);
-    line-height: 1;
-    margin-bottom: 16px;
-    opacity: 0.35;
-    letter-spacing: -2px;
-}
-
 .process__step-title {
     font-family: var(--font-heading);
-    font-size: 34px;
+    font-size: 36px;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     line-height: 1.15;
     color: var(--color-text);
+    position: relative;
+    padding-top: 18px;
+}
+
+.process__step-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 48px;
+    height: 2px;
+    background: var(--color-gold);
 }
 
 .process__step-list {
@@ -1866,6 +1867,15 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: auto;
+}
+
+.floating-btns.is-hidden {
+    opacity: 0;
+    transform: translateY(16px);
+    pointer-events: none;
 }
 
 .floating-btn {
@@ -2303,14 +2313,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .floating-btns {
-        bottom: 16px;
-        right: 16px;
-    }
-
-    .floating-btn {
-        width: 48px;
-        height: 48px;
-        font-size: 20px;
+        display: none;
     }
 
     .process__step,
@@ -2327,12 +2330,8 @@ h1, h2, h3, h4, h5, h6 {
         order: 1;
     }
 
-    .process__step-number {
-        font-size: 56px;
-    }
-
     .process__step-title {
-        font-size: 26px;
+        font-size: 28px;
     }
 
     .process__timeline {

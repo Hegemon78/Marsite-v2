@@ -380,4 +380,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Скрываем плавающие кнопки пока hero в зоне видимости —
+    // они дублируют CTA в hero и конфликтуют с ним на мобильной
+    const hero = document.querySelector('.hero');
+    const floatingBtns = document.querySelector('.floating-btns');
+    if (hero && floatingBtns && 'IntersectionObserver' in window) {
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                floatingBtns.classList.toggle('is-hidden', entry.isIntersecting);
+            });
+        }, { threshold: 0.3 });
+        heroObserver.observe(hero);
+    }
+
 });
