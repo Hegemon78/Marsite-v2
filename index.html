@@ -70,15 +70,24 @@
 <!-- ===================================
      HERO
      =================================== -->
-<section class="hero" id="main" data-bg="#faf8f5" data-scroll-fade>
+<section class="hero hero--dark" id="main" data-bg="#1a2028" data-scroll-fade>
+    <!-- Фон hero: тёмный градиент-placeholder + полупрозрачный оверлей.
+         TODO: заменить .hero__bg-placeholder на реальное фото:
+         <img class="hero__bg-img" src="img/hero-bg.jpg" alt=""> (желательно 1920×1080, тёмные тона) -->
+    <div class="hero__bg" aria-hidden="true">
+        <div class="hero__bg-placeholder"></div>
+        <div class="hero__bg-overlay"></div>
+    </div>
+
     <div class="container hero__inner">
         <span class="hero__label" data-reveal>Москва и Московская область</span>
         <h1 class="hero__title" data-reveal>Управление ремонтом<br>под личным контролем<br>собственника</h1>
         <p class="hero__subtitle" data-reveal>Системно. Прозрачно. Без сюрпризов.</p>
 
         <div class="hero__actions" data-reveal>
-            <a href="#services" class="btn btn--primary">Наши услуги</a>
-            <a href="#contact" class="btn btn--outline">Получить консультацию</a>
+            <a href="#contact" class="btn btn--primary">Обсудить проект</a>
+            <!-- TODO: заменить t.me/ark_construction на реальный рабочий Telegram ARK (личный @mavilmar не подходит) -->
+            <a href="https://t.me/ark_construction" class="btn btn--outline btn--tg" target="_blank" rel="noopener">Написать в Telegram</a>
         </div>
 
         <div class="hero__stats" data-reveal>
@@ -130,7 +139,7 @@
         <!-- Мост -->
         <div class="ps__bridge" data-reveal>
             <div class="ps__bridge-icon">&#8595;</div>
-            <p class="ps__bridge-text">Именно поэтому Марина Филатова создала <span>ARK Construction</span> — компанию, где каждый проект ведётся системно, прозрачно и под личным контролем</p>
+            <p class="ps__bridge-text"><span>ARK Construction</span> — компания, где каждый проект ведётся системно, прозрачно и под личным контролем руководителя</p>
         </div>
 
         <!-- 3 решения -->
@@ -177,17 +186,17 @@
                 <h2 class="section__title">Марина Филатова</h2>
                 <p class="section__description about__role">Руководитель ARK Construction</p>
 
-                <p>Более 10 лет я управляю ремонтными проектами в Москве и Московской области. Моя задача — сделать так, чтобы вы чувствовали себя спокойно на всём протяжении ремонта.</p>
+                <p>ARK Construction — это более 10 лет управления ремонтными проектами в Москве и Московской области. Мы делаем так, чтобы каждый клиент чувствовал себя спокойно на всём протяжении ремонта.</p>
 
-                <p>Я как руководитель лично курирую ваш проект. Это значит, что все решения принимаются с учётом многолетнего опыта, а не на уровне «как получится». Вы получаете не просто ремонт, а управляемый процесс с предсказуемым результатом.</p>
+                <p>Руководитель компании лично курирует каждый проект. Все решения принимаются с учётом многолетнего опыта и понимания процесса с трёх сторон: дизайнера, заказчика и исполнителя. Вы получаете не просто ремонт, а управляемый процесс с предсказуемым результатом.</p>
 
                 <div class="about__education">
                     <h3 class="about__education-title">Образование</h3>
                     <div class="about__education-item">
                         Байкальский государственный университет экономики и права
                     </div>
-                    <div class="about__education-item">
-                        НИУ ВШЭ — Гражданское и промышленное строительство (Повышение квалификации)
+                    <div class="about__education-item about__education-item--featured">
+                        НИУ ВШЭ — Гражданское и промышленное строительство
                     </div>
                 </div>
             </div>
@@ -202,11 +211,12 @@
     <div class="container">
         <div class="section__header">
             <p class="section__label" data-reveal>Услуги</p>
-            <h2 class="section__title" data-reveal>Виды ремонта</h2>
+            <h2 class="section__title" data-reveal>Что мы делаем</h2>
             <p class="section__description" data-reveal>Полный спектр ремонтных работ для квартир, домов и коммерческих помещений</p>
         </div>
 
-        <!-- 6 основных услуг -->
+        <!-- ЧАСТНЫЕ ОБЪЕКТЫ -->
+        <h3 class="services__group-title" data-reveal>Частные объекты</h3>
         <div class="services__grid">
             <div class="service-card" data-reveal>
                 <div class="service-card__icon">&#9998;</div>
@@ -243,10 +253,23 @@
                 <p class="service-card__price">от 27 000 руб/м&sup2;</p>
             </div>
 
+            <!-- TODO: финальный контент от Марины (Настя готовит 3 варианта дизайна) -->
+            <div class="service-card service-card--capsule" data-editable data-reveal>
+                <span class="service-card__badge service-card__badge--soon">Скоро</span>
+                <div class="service-card__icon">&#128230;</div>
+                <h3 class="service-card__title">Капсульный ремонт</h3>
+                <p class="service-card__text">Готовое решение для небольшой квартиры: выбираете один из 3 вариантов дизайна — материалы и смета уже просчитаны.</p>
+                <p class="service-card__price service-card__price--muted">Готовое решение</p>
+            </div>
+        </div>
+
+        <!-- КОММЕРЧЕСКИЕ ОБЪЕКТЫ -->
+        <h3 class="services__group-title" data-reveal>Коммерческие объекты</h3>
+        <div class="services__grid services__grid--single">
             <div class="service-card" data-reveal>
                 <div class="service-card__icon">&#127970;</div>
                 <h3 class="service-card__title">Коммерческие помещения</h3>
-                <p class="service-card__text">Ремонт офисов, магазинов и других коммерческих объектов с учётом специфики бизнеса.</p>
+                <p class="service-card__text">Ремонт офисов, магазинов и других коммерческих объектов с учётом специфики бизнеса и сроков запуска.</p>
                 <p class="service-card__price">от 12 000 руб/м&sup2;</p>
             </div>
         </div>
@@ -421,106 +444,73 @@
             <p class="section__description" data-reveal>Каждый проект — это управляемый процесс с предсказуемым результатом</p>
         </div>
 
-        <div class="portfolio__grid">
-            <!-- TODO: заменить placeholder-проекты на реальные фото от Марины -->
+        <div class="portfolio__grid portfolio__grid--4">
+            <!-- TODO: добавить реальные фото от Марины в img/portfolio/{slug}.jpg -->
+
+            <!-- ЖК Плей -->
             <div class="portfolio-card" data-editable data-reveal>
                 <div class="portfolio-card__image">
-                    <div class="portfolio-card__image-placeholder">
+                    <div class="portfolio-card__image-placeholder portfolio__img-placeholder">
                         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="4" fill="currentColor" opacity=".1"/><path d="M8 32l8-12 6 8 4-5 6 9H8z" fill="currentColor" opacity=".2"/><circle cx="28" cy="14" r="4" fill="currentColor" opacity=".2"/></svg>
-                        <p>Фото проекта</p>
+                        <p>Фото скоро</p>
                     </div>
                 </div>
                 <div class="portfolio-card__body">
-                    <h3 class="portfolio-card__title">Квартира на Патриарших</h3>
+                    <h3 class="portfolio-card__title">ЖК Плей</h3>
                     <div class="portfolio-card__meta">
-                        <span class="portfolio-card__meta-item">78 м&sup2;</span>
-                        <span class="portfolio-card__meta-item">3 месяца</span>
+                        <span class="portfolio-card__meta-item">Москва</span>
                         <span class="portfolio-card__meta-item">Ремонт под ключ</span>
                     </div>
                 </div>
             </div>
 
+            <!-- ЖК Левел Нагатинская -->
             <div class="portfolio-card" data-editable data-reveal>
                 <div class="portfolio-card__image">
-                    <div class="portfolio-card__image-placeholder">
+                    <div class="portfolio-card__image-placeholder portfolio__img-placeholder">
                         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="4" fill="currentColor" opacity=".1"/><path d="M8 32l8-12 6 8 4-5 6 9H8z" fill="currentColor" opacity=".2"/><circle cx="28" cy="14" r="4" fill="currentColor" opacity=".2"/></svg>
-                        <p>Фото проекта</p>
+                        <p>Фото скоро</p>
                     </div>
                 </div>
                 <div class="portfolio-card__body">
-                    <h3 class="portfolio-card__title">Студия в новостройке</h3>
+                    <h3 class="portfolio-card__title">ЖК Level Нагатинская</h3>
                     <div class="portfolio-card__meta">
-                        <span class="portfolio-card__meta-item">42 м&sup2;</span>
-                        <span class="portfolio-card__meta-item">2 месяца</span>
+                        <span class="portfolio-card__meta-item">Москва</span>
                         <span class="portfolio-card__meta-item">Ремонт новостройки</span>
                     </div>
                 </div>
             </div>
 
+            <!-- Частный дом — мокрый фасад -->
             <div class="portfolio-card" data-editable data-reveal>
                 <div class="portfolio-card__image">
-                    <div class="portfolio-card__image-placeholder">
+                    <div class="portfolio-card__image-placeholder portfolio__img-placeholder">
                         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="4" fill="currentColor" opacity=".1"/><path d="M8 32l8-12 6 8 4-5 6 9H8z" fill="currentColor" opacity=".2"/><circle cx="28" cy="14" r="4" fill="currentColor" opacity=".2"/></svg>
-                        <p>Фото проекта</p>
+                        <p>Фото скоро</p>
                     </div>
                 </div>
                 <div class="portfolio-card__body">
-                    <h3 class="portfolio-card__title">Трёхкомнатная на Арбате</h3>
+                    <h3 class="portfolio-card__title">Частный дом — мокрый фасад</h3>
                     <div class="portfolio-card__meta">
-                        <span class="portfolio-card__meta-item">110 м&sup2;</span>
-                        <span class="portfolio-card__meta-item">4 месяца</span>
-                        <span class="portfolio-card__meta-item">Капитальный ремонт</span>
+                        <span class="portfolio-card__meta-item">Подмосковье</span>
+                        <span class="portfolio-card__meta-item">Фасадные работы</span>
                     </div>
                 </div>
             </div>
 
+            <!-- Офис на Бауманской -->
             <div class="portfolio-card" data-editable data-reveal>
                 <div class="portfolio-card__image">
-                    <div class="portfolio-card__image-placeholder">
+                    <div class="portfolio-card__image-placeholder portfolio__img-placeholder">
                         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="4" fill="currentColor" opacity=".1"/><path d="M8 32l8-12 6 8 4-5 6 9H8z" fill="currentColor" opacity=".2"/><circle cx="28" cy="14" r="4" fill="currentColor" opacity=".2"/></svg>
-                        <p>Фото проекта</p>
+                        <p>Фото скоро</p>
                     </div>
                 </div>
                 <div class="portfolio-card__body">
-                    <h3 class="portfolio-card__title">Офис на Белорусской</h3>
+                    <h3 class="portfolio-card__title">Офис на Бауманской</h3>
                     <div class="portfolio-card__meta">
-                        <span class="portfolio-card__meta-item">200 м&sup2;</span>
-                        <span class="portfolio-card__meta-item">5 месяцев</span>
-                        <span class="portfolio-card__meta-item">Коммерческий ремонт</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-editable data-reveal>
-                <div class="portfolio-card__image">
-                    <div class="portfolio-card__image-placeholder">
-                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="4" fill="currentColor" opacity=".1"/><path d="M8 32l8-12 6 8 4-5 6 9H8z" fill="currentColor" opacity=".2"/><circle cx="28" cy="14" r="4" fill="currentColor" opacity=".2"/></svg>
-                        <p>Фото проекта</p>
-                    </div>
-                </div>
-                <div class="portfolio-card__body">
-                    <h3 class="portfolio-card__title">Двушка на Тверской</h3>
-                    <div class="portfolio-card__meta">
-                        <span class="portfolio-card__meta-item">65 м&sup2;</span>
-                        <span class="portfolio-card__meta-item">2.5 месяца</span>
-                        <span class="portfolio-card__meta-item">Косметический ремонт</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-editable data-reveal>
-                <div class="portfolio-card__image">
-                    <div class="portfolio-card__image-placeholder">
-                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="4" fill="currentColor" opacity=".1"/><path d="M8 32l8-12 6 8 4-5 6 9H8z" fill="currentColor" opacity=".2"/><circle cx="28" cy="14" r="4" fill="currentColor" opacity=".2"/></svg>
-                        <p>Фото проекта</p>
-                    </div>
-                </div>
-                <div class="portfolio-card__body">
-                    <h3 class="portfolio-card__title">Загородный дом в Подмосковье</h3>
-                    <div class="portfolio-card__meta">
-                        <span class="portfolio-card__meta-item">180 м&sup2;</span>
-                        <span class="portfolio-card__meta-item">6 месяцев</span>
-                        <span class="portfolio-card__meta-item">Ремонт под ключ</span>
+                        <span class="portfolio-card__meta-item">Москва</span>
+                        <span class="portfolio-card__meta-item">Стеклянные перегородки</span>
                     </div>
                 </div>
             </div>
@@ -713,14 +703,14 @@
                     </div>
                 </div>
 
-                <!-- TODO: добавить реальный номер Telegram -->
-                <div class="contact__info-card" data-editable>
+                <!-- TODO: заменить t.me/ark_construction на реальный рабочий Telegram ARK (личный @mavilmar не подходит) -->
+                <a href="https://t.me/ark_construction" target="_blank" rel="noopener" class="contact__info-card contact__info-card--link" data-editable>
                     <div class="contact__info-icon">&#9992;</div>
                     <div>
                         <div class="contact__info-title">Telegram</div>
-                        <div class="contact__info-text">Напишите нам в Telegram для быстрой связи</div>
+                        <div class="contact__info-text">Написать нам — быстрый ответ</div>
                     </div>
-                </div>
+                </a>
 
                 <div class="contact__guarantee">
                     <div class="contact__guarantee-title">Гарантия качества</div>
@@ -822,8 +812,8 @@
     <a href="#contact" class="floating-btn floating-btn--whatsapp" data-editable aria-label="Написать в WhatsApp">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
-    <!-- TODO: заменить #contact на реальный Telegram (https://t.me/username) -->
-    <a href="#contact" class="floating-btn floating-btn--telegram" data-editable aria-label="Написать в Telegram">
+    <!-- TODO: заменить t.me/ark_construction на реальный рабочий Telegram ARK (личный @mavilmar не подходит) -->
+    <a href="https://t.me/ark_construction" target="_blank" rel="noopener" class="floating-btn floating-btn--telegram" data-editable aria-label="Написать в Telegram">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
     </a>
 </div>
