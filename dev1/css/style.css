@@ -2547,26 +2547,68 @@ h1, h2, h3, h4, h5, h6 {
         text-align: center;
     }
 
+    /* Process — mobile scroll-snap carousel (dev1 v3 concept) */
+    .process__timeline {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        overflow-x: auto;
+        overflow-y: visible;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 20px;
+        padding: 8px 20px 24px;
+        margin: 0 -20px;
+        max-width: none;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .process__timeline::-webkit-scrollbar { display: none; }
+
     .process__step,
     .process__step:nth-child(even) {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 82%;
+        scroll-snap-align: start;
+        grid-template-columns: none;
+        gap: 16px;
+        background: var(--color-surface);
+        border-radius: 16px;
+        padding: 20px 20px 24px;
+        box-shadow: 0 8px 32px rgba(67, 83, 100, .14);
     }
 
-    .process__step:nth-child(even) .process__step-photo {
-        order: 0;
-    }
+    .process__step:nth-child(even) .process__step-photo { order: 0; }
+    .process__step:nth-child(even) .process__step-content { order: 1; }
 
-    .process__step:nth-child(even) .process__step-content {
-        order: 1;
+    .process__step-photo {
+        aspect-ratio: 4 / 3;
+        box-shadow: none;
     }
 
     .process__step-title {
-        font-size: 28px;
+        font-size: 24px;
+        margin-bottom: 12px;
+        padding-top: 14px;
     }
 
-    .process__timeline {
-        gap: 48px;
+    .process__step-list {
+        gap: 4px;
+    }
+
+    .process__step-item {
+        font-size: 14px;
+    }
+
+    .process .container::after {
+        content: "Листайте этапы пальцем";
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        color: var(--color-text-secondary);
+        margin-top: 4px;
+        opacity: .6;
+        letter-spacing: .04em;
     }
 
     .ps__bridge-text {
