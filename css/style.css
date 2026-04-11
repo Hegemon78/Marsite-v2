@@ -1708,13 +1708,37 @@ h1, h2, h3, h4, h5, h6 {
     transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
     border-top: 2px solid var(--color-gold);
     position: relative;
+    overflow: hidden;
+    isolation: isolate;
 }
+
+.review-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: .45;
+    z-index: -2;
+    transition: opacity .5s ease;
+}
+.review-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,.58) 0%, rgba(255,255,255,.78) 55%, rgba(255,255,255,.88) 100%);
+    z-index: -1;
+}
+.reviews__grid > .review-card:nth-child(1)::before { background-image: url('../img/portfolio-zhk-play.jpg'); }
+.reviews__grid > .review-card:nth-child(2)::before { background-image: url('../img/portfolio-level-nagatinskaya.jpg'); }
+.reviews__grid > .review-card:nth-child(3)::before { background-image: url('../img/portfolio-house-facade.jpg'); }
 
 @media (hover: hover) {
     .review-card:hover {
         transform: translateY(-6px);
         box-shadow: 0 24px 50px rgba(20, 25, 32, 0.18);
     }
+    .review-card:hover::before { opacity: .58; }
 }
 
 .review-card__quote {
@@ -2652,14 +2676,40 @@ h1, h2, h3, h4, h5, h6 {
         letter-spacing: .04em;
     }
 
-    /* Reviews */
+    /* Reviews — mobile scroll-snap carousel (Nikolai 1802) */
     .reviews__grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        grid-template-columns: none;
+        gap: 16px;
+        overflow-x: auto;
+        overflow-y: visible;
+        scroll-snap-type: none;
+        padding: 8px 20px 24px;
+        margin: 0 -20px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        overscroll-behavior-x: contain;
+        touch-action: pan-x pan-y;
+        align-items: stretch;
     }
-
-    .reviews__grid .review-card:last-child {
+    .reviews__grid::-webkit-scrollbar { display: none; }
+    .reviews__grid .review-card {
+        flex: 0 0 82%;
+        max-width: 82%;
         grid-column: auto;
-        max-width: 100%;
+        scroll-snap-align: start;
+    }
+    .reviews__grid .review-card:last-child { margin-right: 16px; }
+
+    .reviews .container::after {
+        content: "Листайте отзывы пальцем";
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        color: var(--color-text-secondary);
+        margin-top: 4px;
+        opacity: .6;
+        letter-spacing: .04em;
     }
 
     /* Contact */
