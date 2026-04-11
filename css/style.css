@@ -440,7 +440,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero--dark .btn--outline.btn--tg {
-    background: rgba(42, 171, 238, 0.08);
+    background: rgba(15, 20, 28, 0.55);
+    border-color: rgba(255, 255, 255, 0.7);
+    color: #fff;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.hero--dark .btn--outline.btn--tg:hover {
+    background: #2AABEE;
+    border-color: #2AABEE;
+    color: #fff;
 }
 
 .hero__inner {
@@ -2314,6 +2324,25 @@ h1, h2, h3, h4, h5, h6 {
 
     .floating-btns {
         display: none;
+    }
+
+    /* === Mobile hero layout — Вариант B + доработка Марины (1565) ===
+       Убраны label и статистика. Кнопки в половину ширины, слева */
+    .hero__label {
+        display: none;
+    }
+    .hero__stats {
+        display: none;
+    }
+    .hero__actions {
+        align-items: flex-start !important;
+    }
+    .hero__actions .btn {
+        width: 220px !important;
+        min-width: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
     }
 
     .process__step,
