@@ -1017,18 +1017,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .services-teaser__icon {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-sm);
-    background: rgba(20, 25, 32, 0.92);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 14px;
-    font-size: 20px;
-    color: #fff;
-    box-shadow: 0 4px 16px rgba(20, 25, 32, 0.18);
-    position: relative;
+    display: none;
 }
 
 .services-teaser__title {
