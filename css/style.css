@@ -1556,17 +1556,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .advantage-card {
     background: var(--color-surface);
-    border-radius: var(--radius);
+    border-radius: 16px;
     padding: 32px;
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition);
-    border: 1px solid transparent;
+    box-shadow: 0 8px 28px rgba(20, 25, 32, 0.1);
+    transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
+    border-top: 2px solid var(--color-gold);
 }
 
-.advantage-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--color-border);
+@media (hover: hover) {
+    .advantage-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 50px rgba(20, 25, 32, 0.18);
+    }
 }
 
 .advantage-card__number {
