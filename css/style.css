@@ -978,14 +978,14 @@ h1, h2, h3, h4, h5, h6 {
     isolation: isolate;
 }
 
-/* Tinted themed photo behind each service card (Nikolai 1704) */
+/* Tinted themed photo behind each service card (Nikolai 1704, 1754 — plotnee) */
 .services-teaser__card::before {
     content: "";
     position: absolute;
     inset: 0;
     background-size: cover;
     background-position: center;
-    opacity: .48;
+    opacity: .72;
     z-index: -1;
     transition: opacity .4s ease;
 }
@@ -993,10 +993,10 @@ h1, h2, h3, h4, h5, h6 {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(255,255,255,.45) 0%, rgba(255,255,255,.7) 55%, rgba(255,255,255,.82) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,.22) 0%, rgba(255,255,255,.48) 60%, rgba(255,255,255,.6) 100%);
     z-index: -1;
 }
-.services-teaser__card:hover::before { opacity: .6; }
+.services-teaser__card:hover::before { opacity: .85; }
 
 .services-teaser__card:nth-child(1)::before { background-image: url('../img/process-04-rough.jpg'); }
 .services-teaser__card:nth-child(2)::before { background-image: url('../img/process-03-demolition.jpg'); }
@@ -1017,16 +1017,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .services-teaser__icon {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     border-radius: var(--radius-sm);
-    background: var(--color-accent-light);
+    background: rgba(20, 25, 32, 0.92);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 14px;
     font-size: 20px;
-    color: var(--color-accent);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(20, 25, 32, 0.18);
+    position: relative;
 }
 
 .services-teaser__title {
@@ -1034,14 +1036,18 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 8px;
-    color: var(--color-text);
+    color: #111821;
+    text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 0 18px rgba(255,255,255,.55);
+    position: relative;
 }
 
 .services-teaser__price {
     font-size: 14px;
     font-weight: 600;
-    color: var(--color-accent);
+    color: #1e252b;
     margin-top: auto;
+    text-shadow: 0 1px 0 rgba(255,255,255,.85);
+    position: relative;
 }
 
 .services-teaser__price--muted {
