@@ -380,17 +380,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Скрываем плавающие кнопки пока hero в зоне видимости —
-    // они дублируют CTA в hero и конфликтуют с ним на мобильной
-    const hero = document.querySelector('.hero');
-    const floatingBtns = document.querySelector('.floating-btns');
-    if (hero && floatingBtns && 'IntersectionObserver' in window) {
-        const heroObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                floatingBtns.classList.toggle('is-hidden', entry.isIntersecting);
-            });
-        }, { threshold: 0.3 });
-        heroObserver.observe(hero);
+    // Parallax hero-фото: при скролле контент едет обычной скоростью,
+    // а фоновая картинка чуть медленнее — создаёт глубину
+    const heroBgImg = document.querySelector('.hero__bg-img');
+    if (heroBgImg && !prefersReducedMotion) {
+        let parallaxTicking = false;
+        const updateHeroParallax = () => {
+            const y = window.scrollY;
+            heroBgImg.style.transform = `translate3d(0, ${y * 0.3}px, 0)`;
+            parallaxTicking = false;
+        };
+        window.addEventListener('scroll', () => {
+            if (!parallaxTicking) {
+                requestAnimationFrame(updateHeroParallax);
+                parallaxTicking = true;
+            }
+        }, { passive: true });
+        updateHeroParallax();
     }
 
 });
