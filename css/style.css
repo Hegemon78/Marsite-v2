@@ -973,8 +973,37 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     align-items: flex-start;
     position: relative;
-    min-height: 160px;
+    min-height: 200px;
+    overflow: hidden;
+    isolation: isolate;
 }
+
+/* Tinted themed photo behind each service card (Nikolai 1704) */
+.services-teaser__card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: .48;
+    z-index: -1;
+    transition: opacity .4s ease;
+}
+.services-teaser__card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,.45) 0%, rgba(255,255,255,.7) 55%, rgba(255,255,255,.82) 100%);
+    z-index: -1;
+}
+.services-teaser__card:hover::before { opacity: .6; }
+
+.services-teaser__card:nth-child(1)::before { background-image: url('../img/process-04-rough.jpg'); }
+.services-teaser__card:nth-child(2)::before { background-image: url('../img/process-03-demolition.jpg'); }
+.services-teaser__card:nth-child(3)::before { background-image: url('../img/portfolio-zhk-play.jpg'); }
+.services-teaser__card:nth-child(4)::before { background-image: url('../img/portfolio-level-nagatinskaya.jpg'); }
+.services-teaser__card:nth-child(5)::before { background-image: url('../img/process-06-delivery.jpg'); }
+.services-teaser__card:nth-child(6)::before { background-image: url('../img/portfolio-office-baumanskaya.jpg'); }
 
 .services-teaser__card:hover {
     transform: translateY(-4px);
