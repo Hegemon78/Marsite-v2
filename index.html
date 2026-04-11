@@ -138,7 +138,7 @@
         <!-- Мост -->
         <div class="ps__bridge" data-reveal>
             <div class="ps__bridge-icon">&#8595;</div>
-            <p class="ps__bridge-text"><span>ARK Construction</span> — компания, где каждый проект ведётся системно, прозрачно и под личным контролем руководителя</p>
+            <p class="ps__bridge-text"><span>ARK Construction</span> превращает ремонт в понятную инженерную технологию — системно, прозрачно и под личным контролем руководителя</p>
         </div>
 
         <!-- 3 решения -->
@@ -168,15 +168,11 @@
 <section class="about section" id="about" data-bg="#dce4ef" data-scroll-fade>
     <div class="container">
         <div class="about__grid">
-            <!-- TODO: фото Марины — заменить placeholder на реальное фото -->
+            <!-- TODO: mood-фото рабочего места — заменить на реальное фото Марины после студийной съёмки -->
             <div class="about__image" data-editable data-reveal>
-                <div class="about__image-placeholder">
-                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="64" height="64" rx="8" fill="currentColor" opacity=".1"/>
-                        <circle cx="32" cy="24" r="10" stroke="currentColor" stroke-width="2" opacity=".3"/>
-                        <path d="M14 56c0-10 8-18 18-18s18 8 18 18" stroke="currentColor" stroke-width="2" opacity=".3"/>
-                    </svg>
-                    <p>Фото Марины Филатовой</p>
+                <img class="about__image-photo" src="img/about-desk.jpg" alt="Рабочее место руководителя ARK Construction — чертежи квартиры в Москве" loading="lazy">
+                <div class="about__image-caption">
+                    <span>Рабочее место руководителя</span>
                 </div>
             </div>
 
@@ -185,9 +181,11 @@
                 <h2 class="section__title">Марина Филатова</h2>
                 <p class="section__description about__role">Руководитель ARK Construction</p>
 
-                <p>ARK Construction — это более 10 лет управления ремонтными проектами в Москве и Московской области. Мы делаем так, чтобы каждый клиент чувствовал себя спокойно на всём протяжении ремонта.</p>
+                <p>ARK Construction — ремонтная компания, где инженерия важнее эстетики. Более 10 лет работы с объектами в Москве и Московской области — от небольших косметических обновлений до капитального ремонта и коммерческих помещений.</p>
 
-                <p>Руководитель компании лично курирует каждый проект. Все решения принимаются с учётом многолетнего опыта и понимания процесса с трёх сторон: дизайнера, заказчика и исполнителя. Вы получаете не просто ремонт, а управляемый процесс с предсказуемым результатом.</p>
+                <p class="about__quote">«По образованию и практике я в первую очередь строитель. Дизайн — это попутное. Технологические процессы в ремонте всем неизвестны — и именно в этом наша ценность: мы умеем превратить их в понятные и предсказуемые шаги для клиента».</p>
+
+                <p>Руководитель лично курирует каждый проект и принимает решения с пониманием трёх сторон процесса: как инженер-строитель, как заказчик и как дизайнер. На выходе — не абстрактный «ремонт», а управляемая технология с предсказуемым результатом.</p>
 
                 <div class="about__education">
                     <h3 class="about__education-title">Образование</h3>
@@ -269,64 +267,94 @@
 
         <div class="process__timeline">
             <div class="process__step" data-reveal>
-                <div class="process__step-number">01</div>
-                <h3 class="process__step-title">Знакомство и подготовка</h3>
-                <div class="process__step-list">
-                    <p class="process__step-item">Заявка и консультация: уточняем тип помещения, метраж, формат работ</p>
-                    <p class="process__step-item">Выезд на замер: обмеры помещения, оценка состояния, фотофиксация</p>
-                    <p class="process__step-item">Обсуждение концепции и пожеланий по стилю и материалам</p>
+                <div class="process__step-photo">
+                    <img src="img/process-01-measure.jpg" alt="Замер и подготовка" loading="lazy">
+                </div>
+                <div class="process__step-content">
+                    <div class="process__step-number">01</div>
+                    <h3 class="process__step-title">Знакомство и подготовка</h3>
+                    <div class="process__step-list">
+                        <p class="process__step-item">Заявка и консультация: уточняем тип помещения, метраж, формат работ</p>
+                        <p class="process__step-item">Выезд на замер: обмеры помещения, оценка состояния, фотофиксация</p>
+                        <p class="process__step-item">Обсуждение концепции и пожеланий по стилю и материалам</p>
+                    </div>
                 </div>
             </div>
 
             <div class="process__step" data-reveal>
-                <div class="process__step-number">02</div>
-                <h3 class="process__step-title">Расчёт и договор</h3>
-                <div class="process__step-list">
-                    <p class="process__step-item">Составление детальной сметы: материалы, работы, спецификация</p>
-                    <p class="process__step-item">Согласование стоимости и объёма работ</p>
-                    <p class="process__step-item">Подписание договора с фиксацией сроков, графика платежей и гарантий</p>
+                <div class="process__step-photo">
+                    <img src="img/process-02-contract.jpg" alt="Расчёт сметы и договор" loading="lazy">
+                </div>
+                <div class="process__step-content">
+                    <div class="process__step-number">02</div>
+                    <h3 class="process__step-title">Расчёт и договор</h3>
+                    <div class="process__step-list">
+                        <p class="process__step-item">Составление детальной сметы: материалы, работы, спецификация</p>
+                        <p class="process__step-item">Согласование стоимости и объёма работ</p>
+                        <p class="process__step-item">Подписание договора с фиксацией сроков, графика платежей и гарантий</p>
+                    </div>
                 </div>
             </div>
 
             <div class="process__step" data-reveal>
-                <div class="process__step-number">03</div>
-                <h3 class="process__step-title">Демонтаж и подготовка</h3>
-                <div class="process__step-list">
-                    <p class="process__step-item">Закупка и доставка материалов</p>
-                    <p class="process__step-item">Подготовка объекта: завоз инструментов, защита конструкций</p>
-                    <p class="process__step-item">Демонтажные работы: снос перегородок, снятие покрытий, вывоз мусора</p>
+                <div class="process__step-photo">
+                    <img src="img/process-03-demolition.jpg" alt="Демонтаж и подготовка объекта" loading="lazy">
+                </div>
+                <div class="process__step-content">
+                    <div class="process__step-number">03</div>
+                    <h3 class="process__step-title">Демонтаж и подготовка</h3>
+                    <div class="process__step-list">
+                        <p class="process__step-item">Закупка и доставка материалов</p>
+                        <p class="process__step-item">Подготовка объекта: завоз инструментов, защита конструкций</p>
+                        <p class="process__step-item">Демонтажные работы: снос перегородок, снятие покрытий, вывоз мусора</p>
+                    </div>
                 </div>
             </div>
 
             <div class="process__step" data-reveal>
-                <div class="process__step-number">04</div>
-                <h3 class="process__step-title">Черновая отделка</h3>
-                <div class="process__step-list">
-                    <p class="process__step-item">Возведение перегородок, штробление стен</p>
-                    <p class="process__step-item">Монтаж электрики, сантехники, тёплого пола</p>
-                    <p class="process__step-item">Стяжка пола, штукатурка стен по маякам</p>
-                    <p class="process__step-item">Приёмка скрытых работ</p>
+                <div class="process__step-photo">
+                    <img src="img/process-04-rough.jpg" alt="Черновая отделка: электрика, сантехника, стяжка" loading="lazy">
+                </div>
+                <div class="process__step-content">
+                    <div class="process__step-number">04</div>
+                    <h3 class="process__step-title">Черновая отделка</h3>
+                    <div class="process__step-list">
+                        <p class="process__step-item">Возведение перегородок, штробление стен</p>
+                        <p class="process__step-item">Монтаж электрики, сантехники, тёплого пола</p>
+                        <p class="process__step-item">Стяжка пола, штукатурка стен по маякам</p>
+                        <p class="process__step-item">Приёмка скрытых работ</p>
+                    </div>
                 </div>
             </div>
 
             <div class="process__step" data-reveal>
-                <div class="process__step-number">05</div>
-                <h3 class="process__step-title">Чистовая отделка</h3>
-                <div class="process__step-list">
-                    <p class="process__step-item">Шпаклёвка, грунтовка, укладка плитки</p>
-                    <p class="process__step-item">Монтаж потолков, покраска, оклейка обоями</p>
-                    <p class="process__step-item">Укладка чистовых полов, установка дверей</p>
-                    <p class="process__step-item">Монтаж сантехники, розеток, светильников</p>
+                <div class="process__step-photo">
+                    <img src="img/process-05-finish.jpg" alt="Чистовая отделка: покраска стен премиум-кистью" loading="lazy">
+                </div>
+                <div class="process__step-content">
+                    <div class="process__step-number">05</div>
+                    <h3 class="process__step-title">Чистовая отделка</h3>
+                    <div class="process__step-list">
+                        <p class="process__step-item">Шпаклёвка, грунтовка, укладка плитки</p>
+                        <p class="process__step-item">Монтаж потолков, покраска, оклейка обоями</p>
+                        <p class="process__step-item">Укладка чистовых полов, установка дверей</p>
+                        <p class="process__step-item">Монтаж сантехники, розеток, светильников</p>
+                    </div>
                 </div>
             </div>
 
             <div class="process__step" data-reveal>
-                <div class="process__step-number">06</div>
-                <h3 class="process__step-title">Сдача объекта</h3>
-                <div class="process__step-list">
-                    <p class="process__step-item">Комплектация и расстановка мебели</p>
-                    <p class="process__step-item">Профессиональная уборка</p>
-                    <p class="process__step-item">Проверка качества, акт приёма-передачи, окончательный расчёт</p>
+                <div class="process__step-photo">
+                    <img src="img/process-06-delivery.jpg" alt="Сдача готового объекта" loading="lazy">
+                </div>
+                <div class="process__step-content">
+                    <div class="process__step-number">06</div>
+                    <h3 class="process__step-title">Сдача объекта</h3>
+                    <div class="process__step-list">
+                        <p class="process__step-item">Комплектация и расстановка мебели</p>
+                        <p class="process__step-item">Профессиональная уборка</p>
+                        <p class="process__step-item">Проверка качества, акт приёма-передачи, окончательный расчёт</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -345,75 +373,55 @@
         </div>
 
         <div class="portfolio__grid portfolio__grid--4">
-            <!-- TODO: добавить реальные фото от Марины в img/portfolio/{slug}.jpg -->
+            <!-- TODO: заменить AI-сгенерированные фото на реальные от Марины (+ убрать провода/кабели через обработку) -->
 
             <!-- ЖК Плей -->
-            <div class="portfolio-card" data-editable data-reveal>
-                <div class="portfolio-card__image">
-                    <div class="portfolio-card__image-placeholder portfolio__img-placeholder">
-                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="4" fill="currentColor" opacity=".1"/><path d="M8 32l8-12 6 8 4-5 6 9H8z" fill="currentColor" opacity=".2"/><circle cx="28" cy="14" r="4" fill="currentColor" opacity=".2"/></svg>
-                        <p>Фото скоро</p>
-                    </div>
-                </div>
-                <div class="portfolio-card__body">
+            <figure class="portfolio-card portfolio-card--deniot" data-editable data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-zhk-play.jpg" alt="ЖК Плей — гостиная с видом на Москва-Сити" loading="lazy">
+                <figcaption class="portfolio-card__caption">
                     <h3 class="portfolio-card__title">ЖК Плей</h3>
                     <div class="portfolio-card__meta">
-                        <span class="portfolio-card__meta-item">Москва</span>
-                        <span class="portfolio-card__meta-item">Ремонт под ключ</span>
+                        <span>Москва</span>
+                        <span>Ремонт под ключ</span>
                     </div>
-                </div>
-            </div>
+                </figcaption>
+            </figure>
 
-            <!-- ЖК Левел Нагатинская -->
-            <div class="portfolio-card" data-editable data-reveal>
-                <div class="portfolio-card__image">
-                    <div class="portfolio-card__image-placeholder portfolio__img-placeholder">
-                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="4" fill="currentColor" opacity=".1"/><path d="M8 32l8-12 6 8 4-5 6 9H8z" fill="currentColor" opacity=".2"/><circle cx="28" cy="14" r="4" fill="currentColor" opacity=".2"/></svg>
-                        <p>Фото скоро</p>
-                    </div>
-                </div>
-                <div class="portfolio-card__body">
+            <!-- ЖК Level Нагатинская -->
+            <figure class="portfolio-card portfolio-card--deniot" data-editable data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-level-nagatinskaya.jpg" alt="ЖК Level Нагатинская — новостройка с панорамными окнами" loading="lazy">
+                <figcaption class="portfolio-card__caption">
                     <h3 class="portfolio-card__title">ЖК Level Нагатинская</h3>
                     <div class="portfolio-card__meta">
-                        <span class="portfolio-card__meta-item">Москва</span>
-                        <span class="portfolio-card__meta-item">Ремонт новостройки</span>
+                        <span>Москва</span>
+                        <span>Ремонт новостройки</span>
                     </div>
-                </div>
-            </div>
+                </figcaption>
+            </figure>
 
             <!-- Частный дом — мокрый фасад -->
-            <div class="portfolio-card" data-editable data-reveal>
-                <div class="portfolio-card__image">
-                    <div class="portfolio-card__image-placeholder portfolio__img-placeholder">
-                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="4" fill="currentColor" opacity=".1"/><path d="M8 32l8-12 6 8 4-5 6 9H8z" fill="currentColor" opacity=".2"/><circle cx="28" cy="14" r="4" fill="currentColor" opacity=".2"/></svg>
-                        <p>Фото скоро</p>
-                    </div>
-                </div>
-                <div class="portfolio-card__body">
+            <figure class="portfolio-card portfolio-card--deniot" data-editable data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-house-facade.jpg" alt="Частный дом — мокрый фасад в Подмосковье" loading="lazy">
+                <figcaption class="portfolio-card__caption">
                     <h3 class="portfolio-card__title">Частный дом — мокрый фасад</h3>
                     <div class="portfolio-card__meta">
-                        <span class="portfolio-card__meta-item">Подмосковье</span>
-                        <span class="portfolio-card__meta-item">Фасадные работы</span>
+                        <span>Подмосковье</span>
+                        <span>Фасадные работы</span>
                     </div>
-                </div>
-            </div>
+                </figcaption>
+            </figure>
 
             <!-- Офис на Бауманской -->
-            <div class="portfolio-card" data-editable data-reveal>
-                <div class="portfolio-card__image">
-                    <div class="portfolio-card__image-placeholder portfolio__img-placeholder">
-                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="4" fill="currentColor" opacity=".1"/><path d="M8 32l8-12 6 8 4-5 6 9H8z" fill="currentColor" opacity=".2"/><circle cx="28" cy="14" r="4" fill="currentColor" opacity=".2"/></svg>
-                        <p>Фото скоро</p>
-                    </div>
-                </div>
-                <div class="portfolio-card__body">
+            <figure class="portfolio-card portfolio-card--deniot" data-editable data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-office-baumanskaya.jpg" alt="Офис на Бауманской — open-plan со стеклянными перегородками" loading="lazy">
+                <figcaption class="portfolio-card__caption">
                     <h3 class="portfolio-card__title">Офис на Бауманской</h3>
                     <div class="portfolio-card__meta">
-                        <span class="portfolio-card__meta-item">Москва</span>
-                        <span class="portfolio-card__meta-item">Стеклянные перегородки</span>
+                        <span>Москва</span>
+                        <span>Стеклянные перегородки</span>
                     </div>
-                </div>
-            </div>
+                </figcaption>
+            </figure>
         </div>
     </div>
 </section>
@@ -431,8 +439,8 @@
         <div class="advantages__grid">
             <div class="advantage-card" data-reveal>
                 <div class="advantage-card__number">01</div>
-                <h3 class="advantage-card__title">Личный контроль собственника</h3>
-                <p class="advantage-card__text">Руководитель компании — не «мультипрораб», а человек, который понимает проект с трёх сторон: как дизайнер, как заказчик и как исполнитель. Решения принимаются с учётом этой полной картины.</p>
+                <h3 class="advantage-card__title">Строитель, а не «мультипрораб»</h3>
+                <p class="advantage-card__text">Ремонт — это в первую очередь технология. Мы управляем процессами, которые скрыты от заказчика: от демонтажа и стяжки до инженерии и чистовой отделки. Руководитель понимает проект как строитель, как заказчик и как дизайнер — и принимает решения из этой полной картины.</p>
             </div>
 
             <div class="advantage-card" data-reveal>
@@ -443,8 +451,8 @@
 
             <div class="advantage-card" data-reveal>
                 <div class="advantage-card__number">03</div>
-                <h3 class="advantage-card__title">Экспертность и нестандартные решения</h3>
-                <p class="advantage-card__text">Знания, как обойти технические сложности. Возможность предложить альтернативы и оптимизировать бюджет без потери качества.</p>
+                <h3 class="advantage-card__title">Технологическая экспертиза</h3>
+                <p class="advantage-card__text">Мы знаем, как обойти технические сложности: усадка новостроек, перепланировка в вторичке, несущие стены, коммуникации старого фонда. Предлагаем альтернативы и оптимизируем бюджет без потери качества.</p>
             </div>
 
             <div class="advantage-card" data-reveal>
