@@ -2408,16 +2408,48 @@ h1, h2, h3, h4, h5, h6 {
         margin: 0 -20px;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
+        overscroll-behavior-x: contain;
+        overscroll-behavior-y: auto;
+        touch-action: pan-x pan-y;
     }
     .advantages__grid::-webkit-scrollbar { display: none; }
+
     .advantages__grid .advantage-card {
         flex: 0 0 82%;
         scroll-snap-align: start;
         box-shadow: 0 8px 32px rgba(67, 83, 100, .14);
         border-radius: 16px;
         padding: 28px 24px;
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
     }
     .advantages__grid .advantage-card:last-child { margin-right: 16px; }
+
+    /* Фото-фон под содержимым карточки, полупрозрачное */
+    .advantages__grid .advantage-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        opacity: .38;
+        z-index: -1;
+        transition: opacity .4s ease;
+    }
+    .advantages__grid .advantage-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(255,255,255,.5) 0%, rgba(255,255,255,.78) 60%, rgba(255,255,255,.88) 100%);
+        z-index: -1;
+    }
+    .advantages__grid .advantage-card:nth-child(1)::before { background-image: url('../img/process-01-measure.jpg'); }
+    .advantages__grid .advantage-card:nth-child(2)::before { background-image: url('../img/process-05-finish.jpg'); }
+    .advantages__grid .advantage-card:nth-child(3)::before { background-image: url('../img/process-03-demolition.jpg'); }
+    .advantages__grid .advantage-card:nth-child(4)::before { background-image: url('../img/process-02-contract.jpg'); }
+    .advantages__grid .advantage-card:nth-child(5)::before { background-image: url('../img/about-desk.jpg'); }
+    .advantages__grid .advantage-card:nth-child(6)::before { background-image: url('../img/process-06-delivery.jpg'); }
 
     /* carousel hint */
     .advantages .container::after {
@@ -2561,6 +2593,9 @@ h1, h2, h3, h4, h5, h6 {
         max-width: none;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
+        overscroll-behavior-x: contain;
+        overscroll-behavior-y: auto;
+        touch-action: pan-x pan-y;
     }
     .process__timeline::-webkit-scrollbar { display: none; }
 
@@ -2619,3 +2654,7 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 24px;
     }
 }
+
+/* dev1 global overrides */
+.advantage-card__number { display: none; }
+
