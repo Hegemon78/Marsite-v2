@@ -510,6 +510,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Guide magnet fake submit (no backend yet, TODO Formspree/EmailJS)
+    const guideForm = document.getElementById('guideForm');
+    if (guideForm) {
+        guideForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const input = document.getElementById('guideEmail');
+            if (!input || !input.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+                input && input.focus();
+                return;
+            }
+            const section = guideForm.closest('.guide-magnet');
+            if (section) section.classList.add('is-success');
+        });
+    }
+
     // Navigation FAB — плавающая кнопка "в начало" (запрос Марины 1584, 1598)
     const navFab = document.querySelector('.nav-fab');
     const navFabTop = document.querySelector('.nav-fab__btn--top');
