@@ -960,43 +960,48 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 48px;
 }
 
+/* Minimalism premium card (Marina+Nikolai 1770, 1771)
+   Photo on top half, clean white bottom, thin gold underline on title */
 .services-teaser__card {
     background: var(--color-surface);
     border-radius: var(--radius);
-    padding: 28px 24px;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid transparent;
-    transition: all var(--transition);
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(20, 25, 32, 0.07);
+    border: 1px solid rgba(174, 140, 86, 0.12);
+    transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
     text-decoration: none;
     color: inherit;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     position: relative;
-    min-height: 200px;
     overflow: hidden;
     isolation: isolate;
 }
 
-/* Tinted themed photo behind each service card (Nikolai 1704, 1754 — plotnee) */
+/* Photo on top of card (not full-bleed background) */
 .services-teaser__card::before {
     content: "";
-    position: absolute;
-    inset: 0;
+    display: block;
+    height: 180px;
     background-size: cover;
     background-position: center;
-    opacity: .72;
-    z-index: -1;
-    transition: opacity .4s ease;
+    opacity: 1;
+    transition: transform 1s cubic-bezier(.2,.7,.2,1);
+    flex-shrink: 0;
 }
-.services-teaser__card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(255,255,255,.22) 0%, rgba(255,255,255,.48) 60%, rgba(255,255,255,.6) 100%);
-    z-index: -1;
+.services-teaser__card::after { display: none; }
+
+@media (hover: hover) {
+    .services-teaser__card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 24px 50px rgba(20, 25, 32, 0.18);
+        border-color: rgba(174, 140, 86, 0.3);
+    }
+    .services-teaser__card:hover::before {
+        transform: scale(1.06);
+    }
 }
-.services-teaser__card:hover::before { opacity: .85; }
 
 .services-teaser__card:nth-child(1)::before { background-image: url('../img/process-04-rough.jpg'); }
 .services-teaser__card:nth-child(2)::before { background-image: url('../img/process-03-demolition.jpg'); }
@@ -1022,21 +1027,39 @@ h1, h2, h3, h4, h5, h6 {
 
 .services-teaser__title {
     font-family: var(--font-heading);
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #111821;
-    text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 0 18px rgba(255,255,255,.55);
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0;
+    padding: 28px 26px 12px;
+    color: var(--color-text);
+    text-shadow: none;
     position: relative;
+    line-height: 1.25;
+}
+.services-teaser__title::after {
+    content: "";
+    display: block;
+    width: 36px;
+    height: 1px;
+    background: var(--color-gold);
+    margin-top: 14px;
+    transition: width .45s cubic-bezier(.2,.8,.2,1);
+}
+@media (hover: hover) {
+    .services-teaser__card:hover .services-teaser__title::after {
+        width: 72px;
+    }
 }
 
 .services-teaser__price {
-    font-size: 14px;
-    font-weight: 600;
-    color: #1e252b;
-    margin-top: auto;
-    text-shadow: 0 1px 0 rgba(255,255,255,.85);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin: 0;
+    padding: 0 26px 26px;
+    text-shadow: none;
     position: relative;
+    letter-spacing: .02em;
 }
 
 .services-teaser__price--muted {
