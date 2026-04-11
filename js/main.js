@@ -425,11 +425,28 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', updateScrubberFromScroll, { passive: true });
         updateScrubberFromScroll();
 
+        // Inertial interpolation: target follows finger, page catches up smoothly
+        // (Nikolai 1715 — don't snap, ease towards the drag point)
+        let targetScroll = window.scrollY;
+        let scrubRaf = null;
+        const scrubTick = () => {
+            const current = window.scrollY;
+            const diff = targetScroll - current;
+            if (Math.abs(diff) < 0.5) {
+                window.scrollTo(0, targetScroll);
+                scrubRaf = null;
+                return;
+            }
+            window.scrollTo(0, current + diff * 0.18);
+            scrubRaf = requestAnimationFrame(scrubTick);
+        };
+
         const scrollToClientY = (clientY) => {
             const rect = scrubberTrack.getBoundingClientRect();
             const pct = Math.max(0, Math.min(1, (clientY - rect.top) / rect.height));
             const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            window.scrollTo({ top: pct * maxScroll, behavior: 'auto' });
+            targetScroll = pct * maxScroll;
+            if (!scrubRaf) scrubRaf = requestAnimationFrame(scrubTick);
         };
 
         let isDragging = false;
