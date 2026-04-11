@@ -2395,9 +2395,82 @@ h1, h2, h3, h4, h5, h6 {
         grid-template-columns: 1fr;
     }
 
-    /* Advantages */
+    /* Advantages — mobile scroll-snap carousel (v3 concept, approved 11.04) */
     .advantages__grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        grid-template-columns: none;
+        gap: 16px;
+        overflow-x: auto;
+        overflow-y: visible;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 20px;
+        padding: 8px 20px 24px;
+        margin: 0 -20px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        overscroll-behavior-x: contain;
+        overscroll-behavior-y: auto;
+        touch-action: pan-x pan-y;
+    }
+    .advantages__grid::-webkit-scrollbar { display: none; }
+
+    .advantages__grid .advantage-card {
+        flex: 0 0 82%;
+        scroll-snap-align: start;
+        box-shadow: 0 8px 32px rgba(67, 83, 100, .14);
+        border-radius: 16px;
+        padding: 28px 24px;
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+    }
+    .advantages__grid .advantage-card:last-child { margin-right: 16px; }
+
+    /* Текст поверх фото — темнее и с лёгкой тенью для читаемости (Марина 1675, Николай 1676-1677) */
+    .advantages__grid .advantage-card__title {
+        color: #111821;
+        text-shadow: 0 1px 0 rgba(255,255,255,.85);
+        position: relative;
+    }
+    .advantages__grid .advantage-card__text {
+        color: #1e252b;
+        text-shadow: 0 1px 0 rgba(255,255,255,.75);
+        position: relative;
+    }
+
+    .advantages__grid .advantage-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        opacity: .58;
+        z-index: -1;
+        transition: opacity .4s ease;
+    }
+    .advantages__grid .advantage-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(255,255,255,.35) 0%, rgba(255,255,255,.58) 60%, rgba(255,255,255,.68) 100%);
+        z-index: -1;
+    }
+    .advantages__grid .advantage-card:nth-child(1)::before { background-image: url('../img/process-01-measure.jpg'); }
+    .advantages__grid .advantage-card:nth-child(2)::before { background-image: url('../img/process-05-finish.jpg'); }
+    .advantages__grid .advantage-card:nth-child(3)::before { background-image: url('../img/process-03-demolition.jpg'); }
+    .advantages__grid .advantage-card:nth-child(4)::before { background-image: url('../img/process-02-contract.jpg'); }
+    .advantages__grid .advantage-card:nth-child(5)::before { background-image: url('../img/about-desk.jpg'); }
+    .advantages__grid .advantage-card:nth-child(6)::before { background-image: url('../img/process-06-delivery.jpg'); }
+
+    .advantages .container::after {
+        content: "Листайте карточки пальцем";
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        color: var(--color-text-secondary);
+        margin-top: 4px;
+        opacity: .6;
+        letter-spacing: .04em;
     }
 
     /* Reviews */
@@ -2516,26 +2589,71 @@ h1, h2, h3, h4, h5, h6 {
         text-align: center;
     }
 
+    /* Process — mobile scroll-snap carousel (v3 concept, approved 11.04) */
+    .process__timeline {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        overflow-x: auto;
+        overflow-y: visible;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 20px;
+        padding: 8px 20px 24px;
+        margin: 0 -20px;
+        max-width: none;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        overscroll-behavior-x: contain;
+        overscroll-behavior-y: auto;
+        touch-action: pan-x pan-y;
+    }
+    .process__timeline::-webkit-scrollbar { display: none; }
+
     .process__step,
     .process__step:nth-child(even) {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 82%;
+        scroll-snap-align: start;
+        grid-template-columns: none;
+        gap: 16px;
+        background: var(--color-surface);
+        border-radius: 16px;
+        padding: 20px 20px 24px;
+        box-shadow: 0 8px 32px rgba(67, 83, 100, .14);
     }
 
-    .process__step:nth-child(even) .process__step-photo {
-        order: 0;
-    }
+    .process__step:nth-child(even) .process__step-photo { order: 0; }
+    .process__step:nth-child(even) .process__step-content { order: 1; }
 
-    .process__step:nth-child(even) .process__step-content {
-        order: 1;
+    .process__step-photo {
+        aspect-ratio: 4 / 3;
+        box-shadow: none;
     }
 
     .process__step-title {
-        font-size: 28px;
+        font-size: 24px;
+        margin-bottom: 12px;
+        padding-top: 14px;
     }
 
-    .process__timeline {
-        gap: 48px;
+    .process__step-list {
+        gap: 4px;
+    }
+
+    .process__step-item {
+        font-size: 14px;
+    }
+
+    .process .container::after {
+        content: "Листайте этапы пальцем";
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        color: var(--color-text-secondary);
+        margin-top: 4px;
+        opacity: .6;
+        letter-spacing: .04em;
     }
 
     .ps__bridge-text {
@@ -2546,3 +2664,7 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 24px;
     }
 }
+
+/* Advantage card numbers hidden (Marina 1668, approved 11.04) */
+.advantage-card__number { display: none; }
+
