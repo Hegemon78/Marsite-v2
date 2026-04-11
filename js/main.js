@@ -381,22 +381,91 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Parallax hero-фото: при скролле контент едет обычной скоростью,
-    // а фоновая картинка чуть медленнее — создаёт глубину
+    // а фоновая картинка сильно медленнее — создаёт ощущение "тяжести" фона
     const heroBgImg = document.querySelector('.hero__bg-img');
     if (heroBgImg && !prefersReducedMotion) {
-        let parallaxTicking = false;
+        let parallaxTarget = 0;
+        let parallaxCurrent = 0;
+        let parallaxRafId = null;
+
         const updateHeroParallax = () => {
-            const y = window.scrollY;
-            heroBgImg.style.transform = `translate3d(0, ${y * 0.3}px, 0)`;
-            parallaxTicking = false;
-        };
-        window.addEventListener('scroll', () => {
-            if (!parallaxTicking) {
-                requestAnimationFrame(updateHeroParallax);
-                parallaxTicking = true;
+            // Smooth interpolation к целевому значению — тяжёлый "инерционный" скролл
+            parallaxCurrent += (parallaxTarget - parallaxCurrent) * 0.12;
+            heroBgImg.style.transform = `translate3d(0, ${parallaxCurrent}px, 0)`;
+            if (Math.abs(parallaxTarget - parallaxCurrent) > 0.1) {
+                parallaxRafId = requestAnimationFrame(updateHeroParallax);
+            } else {
+                parallaxRafId = null;
             }
-        }, { passive: true });
-        updateHeroParallax();
+        };
+
+        const onScroll = () => {
+            parallaxTarget = window.scrollY * 0.18;
+            if (!parallaxRafId) {
+                parallaxRafId = requestAnimationFrame(updateHeroParallax);
+            }
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+    }
+
+    // Page scrubber — тонкий вертикальный ползунок слева (запрос Николая 1587)
+    const scrubber = document.querySelector('.page-scrubber');
+    const scrubberTrack = scrubber ? scrubber.querySelector('.page-scrubber__track') : null;
+    const scrubberThumb = scrubber ? scrubber.querySelector('.page-scrubber__thumb') : null;
+    if (scrubber && scrubberTrack && scrubberThumb) {
+        const updateScrubberFromScroll = () => {
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = maxScroll > 0 ? Math.min(1, Math.max(0, window.scrollY / maxScroll)) : 0;
+            scrubberThumb.style.top = `${pct * 100}%`;
+            scrubber.classList.toggle('is-visible', window.scrollY > 200);
+        };
+        window.addEventListener('scroll', updateScrubberFromScroll, { passive: true });
+        updateScrubberFromScroll();
+
+        const scrollToClientY = (clientY) => {
+            const rect = scrubberTrack.getBoundingClientRect();
+            const pct = Math.max(0, Math.min(1, (clientY - rect.top) / rect.height));
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            window.scrollTo({ top: pct * maxScroll, behavior: 'auto' });
+        };
+
+        let isDragging = false;
+        const onTouchStart = (e) => {
+            isDragging = true;
+            scrubber.classList.add('is-dragging');
+            if (e.touches && e.touches[0]) scrollToClientY(e.touches[0].clientY);
+        };
+        const onTouchMove = (e) => {
+            if (!isDragging || !e.touches || !e.touches[0]) return;
+            scrollToClientY(e.touches[0].clientY);
+        };
+        const onTouchEnd = () => {
+            isDragging = false;
+            scrubber.classList.remove('is-dragging');
+        };
+        scrubber.addEventListener('touchstart', onTouchStart, { passive: true });
+        document.addEventListener('touchmove', onTouchMove, { passive: true });
+        document.addEventListener('touchend', onTouchEnd);
+
+        scrubber.addEventListener('click', (e) => {
+            scrollToClientY(e.clientY);
+        });
+    }
+
+    // Navigation FAB — плавающая кнопка "в начало" (запрос Марины 1584, 1598)
+    const navFab = document.querySelector('.nav-fab');
+    const navFabTop = document.querySelector('.nav-fab__btn--top');
+    if (navFab && navFabTop) {
+        const navFabToggle = () => {
+            navFab.classList.toggle('is-visible', window.scrollY > 400);
+        };
+        window.addEventListener('scroll', navFabToggle, { passive: true });
+        navFabToggle();
+
+        navFabTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     }
 
 });

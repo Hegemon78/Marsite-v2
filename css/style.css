@@ -1891,6 +1891,117 @@ h1, h2, h3, h4, h5, h6 {
     pointer-events: none;
 }
 
+/* Scrubber — тонкая вертикальная навигация слева */
+.page-scrubber {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 60vh;
+    max-height: 520px;
+    z-index: 94;
+    display: none;
+    padding: 20px 8px;
+    cursor: pointer;
+    touch-action: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.page-scrubber.is-visible {
+    opacity: 1;
+}
+
+.page-scrubber__track {
+    position: relative;
+    width: 2px;
+    height: 100%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 2px;
+}
+
+.page-scrubber__thumb {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    margin-left: -6px;
+    margin-top: -6px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+    will-change: top;
+}
+
+.page-scrubber.is-dragging .page-scrubber__thumb {
+    width: 16px;
+    height: 16px;
+    margin-left: -8px;
+    margin-top: -8px;
+}
+
+@media (max-width: 768px) {
+    .page-scrubber {
+        display: block;
+    }
+}
+
+/* Navigation FAB — плавающие кнопки "в начало" и "предыдущий раздел" */
+.nav-fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 95;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.nav-fab.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.nav-fab__btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(15, 20, 28, 0.45);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    transition: background 0.2s, transform 0.15s;
+}
+
+.nav-fab__btn:active {
+    transform: scale(0.92);
+    background: rgba(15, 20, 28, 0.7);
+}
+
+.nav-fab__btn:hover {
+    background: rgba(15, 20, 28, 0.65);
+}
+
+@media (max-width: 768px) {
+    .nav-fab {
+        display: flex;
+    }
+}
+
 .floating-btn {
     width: 56px;
     height: 56px;
