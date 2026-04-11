@@ -2402,7 +2402,7 @@ h1, h2, h3, h4, h5, h6 {
         gap: 16px;
         overflow-x: auto;
         overflow-y: visible;
-        scroll-snap-type: x proximity;
+        scroll-snap-type: none;
         scroll-padding-left: 20px;
         padding: 8px 20px 24px;
         margin: 0 -20px;
@@ -2599,7 +2599,7 @@ h1, h2, h3, h4, h5, h6 {
         gap: 16px;
         overflow-x: auto;
         overflow-y: visible;
-        scroll-snap-type: x proximity;
+        scroll-snap-type: none;
         scroll-padding-left: 20px;
         padding: 8px 20px 24px;
         margin: 0 -20px;

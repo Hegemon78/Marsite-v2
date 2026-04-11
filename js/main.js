@@ -270,9 +270,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Section scroll-fade (focus effect) ---
+    // Disabled on mobile (<768px) because per-scroll opacity writes were causing
+    // repaint jitter inside horizontal carousels (Marina 1705, 1712).
     const fadeSections = document.querySelectorAll('[data-scroll-fade]');
 
-    if (fadeSections.length && !prefersReducedMotion) {
+    if (fadeSections.length && !prefersReducedMotion && window.innerWidth >= 768) {
         const updateSectionFade = () => {
             const viewportCenter = window.scrollY + window.innerHeight / 2;
 
