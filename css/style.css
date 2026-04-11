@@ -2402,15 +2402,15 @@ h1, h2, h3, h4, h5, h6 {
         gap: 16px;
         overflow-x: auto;
         overflow-y: visible;
-        scroll-snap-type: x mandatory;
+        scroll-snap-type: x proximity;
         scroll-padding-left: 20px;
         padding: 8px 20px 24px;
         margin: 0 -20px;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         overscroll-behavior-x: contain;
-        overscroll-behavior-y: auto;
-        touch-action: pan-x pan-y;
+        touch-action: pan-x;
+        align-items: stretch;
     }
     .advantages__grid::-webkit-scrollbar { display: none; }
 
@@ -2423,6 +2423,9 @@ h1, h2, h3, h4, h5, h6 {
         position: relative;
         overflow: hidden;
         isolation: isolate;
+        min-height: 420px;
+        display: flex;
+        flex-direction: column;
     }
     .advantages__grid .advantage-card:last-child { margin-right: 16px; }
 
@@ -2596,7 +2599,7 @@ h1, h2, h3, h4, h5, h6 {
         gap: 16px;
         overflow-x: auto;
         overflow-y: visible;
-        scroll-snap-type: x mandatory;
+        scroll-snap-type: x proximity;
         scroll-padding-left: 20px;
         padding: 8px 20px 24px;
         margin: 0 -20px;
@@ -2604,8 +2607,8 @@ h1, h2, h3, h4, h5, h6 {
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         overscroll-behavior-x: contain;
-        overscroll-behavior-y: auto;
-        touch-action: pan-x pan-y;
+        touch-action: pan-x;
+        align-items: stretch;
     }
     .process__timeline::-webkit-scrollbar { display: none; }
 
@@ -2621,6 +2624,7 @@ h1, h2, h3, h4, h5, h6 {
         border-radius: 16px;
         padding: 20px 20px 24px;
         box-shadow: 0 8px 32px rgba(67, 83, 100, .14);
+        min-height: 520px;
     }
 
     .process__step:nth-child(even) .process__step-photo { order: 0; }
