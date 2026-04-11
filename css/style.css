@@ -2409,7 +2409,7 @@ h1, h2, h3, h4, h5, h6 {
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         overscroll-behavior-x: contain;
-        touch-action: pan-x;
+        touch-action: pan-x pan-y;
         align-items: stretch;
     }
     .advantages__grid::-webkit-scrollbar { display: none; }
@@ -2607,7 +2607,7 @@ h1, h2, h3, h4, h5, h6 {
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         overscroll-behavior-x: contain;
-        touch-action: pan-x;
+        touch-action: pan-x pan-y;
         align-items: stretch;
     }
     .process__timeline::-webkit-scrollbar { display: none; }
