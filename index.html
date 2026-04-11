@@ -30,7 +30,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css?v=20260412-0135">
+    <link rel="stylesheet" href="css/style.css?v=20260412-0200">
 </head>
 <body>
 
@@ -634,45 +634,60 @@
 <!-- ===================================
      CONTACT
      =================================== -->
-<section class="contact section" id="contact" data-bg="#e8e4df" data-scroll-fade>
+<section class="contact" id="contact" data-bg="#14181d" data-scroll-fade>
+    <!-- Dark premium hero (variant C, Nikolai 1814) -->
+    <div class="contact-hero">
+        <div class="container contact-hero__inner">
+            <p class="contact-hero__label" data-reveal>Контакты</p>
+            <h2 class="contact-hero__title" data-reveal>Свяжитесь<br>с нами</h2>
+            <span class="contact-hero__stroke" data-reveal></span>
+            <p class="contact-hero__desc" data-reveal>Расскажите о проекте, и мы сделаем предварительный расчёт сметы, сроков и этапов. Первая консультация и выезд на объект бесплатно.</p>
+            <a href="#contactForm" class="btn btn--gold btn--lg contact-hero__cta" data-reveal>Оставить заявку</a>
+        </div>
+    </div>
+
+    <!-- Yandex map inline -->
     <div class="container">
-        <div class="section__header">
-            <p class="section__label" data-reveal>Контакты</p>
-            <h2 class="section__title" data-reveal>Свяжитесь с нами</h2>
-            <p class="section__description" data-reveal>Расскажите о проекте, и мы сделаем предварительный расчёт сметы, сроков и этапов. Первая консультация и выезд на объект бесплатно.</p>
+        <div class="contact-map-wide" data-reveal>
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=37.617778%2C55.755833&z=8&l=map" width="100%" height="100%" frameborder="0" loading="lazy" allowfullscreen title="Москва и Московская область на Яндекс Картах"></iframe>
+            <div class="contact-map-wide__caption">
+                <span class="contact-map-wide__pin"></span>
+                Москва и Московская область, по запросу работаем в других регионах
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact cards scroll-snap carousel -->
+    <div class="container contact-cards-wrap">
+        <div class="contact-cards" data-reveal>
+            <a href="https://t.me/+79267608826" target="_blank" rel="noopener" class="contact-card" data-editable>
+                <div class="contact-card__label">Telegram</div>
+                <div class="contact-card__value">Написать нам</div>
+                <div class="contact-card__hint">Быстрый ответ в рабочие часы</div>
+                <span class="contact-card__arrow">→</span>
+            </a>
+            <a href="tel:+79267608826" class="contact-card" data-editable>
+                <div class="contact-card__label">Телефон</div>
+                <div class="contact-card__value">+7 926 760 88 26</div>
+                <div class="contact-card__hint">Звонок или мессенджер по этому номеру</div>
+                <span class="contact-card__arrow">→</span>
+            </a>
+            <div class="contact-card contact-card--static">
+                <div class="contact-card__label">График работы</div>
+                <div class="contact-card__value">09:00 — 21:00</div>
+                <div class="contact-card__hint">Ежедневно, отвечаем в течение 15 минут</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guarantee + form -->
+    <div class="container contact-form-wrap">
+        <div class="contact__guarantee" data-reveal>
+            <div class="contact__guarantee-title">Гарантия качества</div>
+            <p class="contact__guarantee-text">12 месяцев гарантии на все работы. Выезд и исправление в течение 7 дней. Спорные вопросы решаем переговорами с независимым экспертом.</p>
         </div>
 
-        <div class="contact__grid">
-            <div class="contact__info" data-reveal>
-                <div class="contact__info-card">
-                    <div class="contact__info-label">География работы</div>
-                    <div class="contact__info-value">Москва и Московская область. По запросу рассматриваем объекты в других регионах.</div>
-                </div>
-
-                <a href="https://t.me/+79267608826" target="_blank" rel="noopener" class="contact__info-card contact__info-card--link" data-editable>
-                    <div class="contact__info-label">Telegram</div>
-                    <div class="contact__info-value">Написать нам, быстрый ответ</div>
-                    <span class="contact__info-arrow">→</span>
-                </a>
-
-                <a href="tel:+79267608826" class="contact__info-card contact__info-card--link" data-editable>
-                    <div class="contact__info-label">Телефон</div>
-                    <div class="contact__info-value">+7 926 760 88 26</div>
-                    <span class="contact__info-arrow">→</span>
-                </a>
-
-                <div class="contact__info-card">
-                    <div class="contact__info-label">График работы</div>
-                    <div class="contact__info-value">Ежедневно с 09:00 до 21:00. Отвечаем в течение 15 минут в рабочие часы.</div>
-                </div>
-
-                <div class="contact__guarantee">
-                    <div class="contact__guarantee-title">Гарантия качества</div>
-                    <p class="contact__guarantee-text">12 месяцев гарантии на все работы. Выезд и исправление в течение 7 дней. Спорные вопросы решаем переговорами с независимым экспертом.</p>
-                </div>
-            </div>
-
-            <form class="contact-form" id="contactForm" data-reveal>
+        <form class="contact-form" id="contactForm" data-reveal>
                 <h3 class="contact-form__title">Оставить заявку</h3>
 
                 <div class="form-group">
@@ -708,15 +723,6 @@
                 <button type="submit" class="btn btn--primary btn--block">Отправить заявку</button>
                 <p class="contact-form__note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
             </form>
-        </div>
-
-        <div class="contact__map" data-reveal>
-            <div class="contact__map-label">География работы</div>
-            <div class="contact__map-frame">
-                <iframe src="https://yandex.ru/map-widget/v1/?ll=37.617778%2C55.755833&z=8&l=map" width="100%" height="100%" frameborder="0" loading="lazy" allowfullscreen title="Москва и Московская область на Яндекс Картах"></iframe>
-            </div>
-            <p class="contact__map-note">Работаем по Москве и всей Московской области. По запросу рассматриваем объекты в других регионах.</p>
-        </div>
     </div>
 </section>
 
