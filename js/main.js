@@ -411,25 +411,54 @@ document.addEventListener('DOMContentLoaded', () => {
         onScroll();
     }
 
-    // Page scrubber — тонкий вертикальный ползунок слева (запрос Николая 1587)
+    // Section label map for scrubber pill (variant A, approved Marina 1744)
+    const sectionLabels = {
+        'main': 'Главная',
+        'problem-solution': 'Проблемы',
+        'about': 'О компании',
+        'services': 'Услуги',
+        'process': 'Процесс',
+        'portfolio': 'Портфолио',
+        'advantages': 'Преимущества',
+        'reviews': 'Отзывы',
+        'contact': 'Контакты'
+    };
+    const labeledSections = Array.from(document.querySelectorAll('section[id]'))
+        .filter(s => sectionLabels[s.id]);
+
+    // Page scrubber — тонкий вертикальный ползунок справа (запрос Николая 1587)
     const scrubber = document.querySelector('.page-scrubber');
     const scrubberTrack = scrubber ? scrubber.querySelector('.page-scrubber__track') : null;
     const scrubberThumb = scrubber ? scrubber.querySelector('.page-scrubber__thumb') : null;
+    const scrubberLabel = scrubber ? scrubber.querySelector('[data-scrubber-label]') : null;
     if (scrubber && scrubberTrack && scrubberThumb) {
         const updateScrubberFromScroll = () => {
             const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
             const pct = maxScroll > 0 ? Math.min(1, Math.max(0, window.scrollY / maxScroll)) : 0;
             scrubberThumb.style.top = `${pct * 100}%`;
             scrubber.classList.toggle('is-visible', window.scrollY > 200);
+
+            if (scrubberLabel) {
+                const viewportCenter = window.scrollY + window.innerHeight / 2;
+                let currentLabel = 'Главная';
+                for (const sec of labeledSections) {
+                    if (sec.offsetTop <= viewportCenter && sec.offsetTop + sec.offsetHeight > viewportCenter) {
+                        currentLabel = sectionLabels[sec.id];
+                        break;
+                    }
+                }
+                if (scrubberLabel.textContent !== currentLabel) {
+                    scrubberLabel.textContent = currentLabel;
+                }
+            }
         };
         window.addEventListener('scroll', updateScrubberFromScroll, { passive: true });
         updateScrubberFromScroll();
 
-        // Hybrid scroll: instant during active drag, inertial smoothing after release
-        // (Nikolai 1715 — don't snap; Marina 1725 — fast drag must not fall behind)
+        // Smooth inertia: target follows finger, page eases toward it
+        // (Nikolai 1743 — plavnost' back; distance-aware easing so fast drag catches up faster)
         let targetScroll = window.scrollY;
         let scrubRaf = null;
-        let isActiveDrag = false;
 
         const scrubTick = () => {
             const current = window.scrollY;
@@ -439,7 +468,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrubRaf = null;
                 return;
             }
-            window.scrollTo(0, current + diff * 0.32);
+            // Easing scales with distance: big jump → 0.35, small → 0.18
+            const absDiff = Math.abs(diff);
+            const ease = Math.max(0.18, Math.min(0.35, absDiff / 600));
+            window.scrollTo(0, current + diff * ease);
             scrubRaf = requestAnimationFrame(scrubTick);
         };
 
@@ -448,19 +480,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const pct = Math.max(0, Math.min(1, (clientY - rect.top) / rect.height));
             const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
             targetScroll = pct * maxScroll;
-            if (isActiveDrag) {
-                // Snap directly under the finger while dragging — no lag
-                window.scrollTo(0, targetScroll);
-                if (scrubRaf) { cancelAnimationFrame(scrubRaf); scrubRaf = null; }
-            } else if (!scrubRaf) {
-                scrubRaf = requestAnimationFrame(scrubTick);
-            }
+            if (!scrubRaf) scrubRaf = requestAnimationFrame(scrubTick);
         };
 
         let isDragging = false;
         const onTouchStart = (e) => {
             isDragging = true;
-            isActiveDrag = true;
             scrubber.classList.add('is-dragging');
             if (e.touches && e.touches[0]) scrollToClientY(e.touches[0].clientY);
         };
@@ -470,7 +495,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         const onTouchEnd = () => {
             isDragging = false;
-            isActiveDrag = false;
             scrubber.classList.remove('is-dragging');
         };
         scrubber.addEventListener('touchstart', onTouchStart, { passive: true });
