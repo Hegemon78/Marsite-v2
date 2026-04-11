@@ -979,11 +979,11 @@ h1, h2, h3, h4, h5, h6 {
     isolation: isolate;
 }
 
-/* Photo on top of card (not full-bleed background) */
+/* Photo on top of card (not full-bleed background) — taller per Nikolai 1775 */
 .services-teaser__card::before {
     content: "";
     display: block;
-    height: 180px;
+    height: 240px;
     background-size: cover;
     background-position: center;
     opacity: 1;
@@ -1030,19 +1030,19 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 22px;
     font-weight: 500;
     margin: 0;
-    padding: 28px 26px 12px;
+    padding: 18px 24px 6px;
     color: var(--color-text);
     text-shadow: none;
     position: relative;
-    line-height: 1.25;
+    line-height: 1.2;
 }
 .services-teaser__title::after {
     content: "";
     display: block;
-    width: 36px;
+    width: 32px;
     height: 1px;
     background: var(--color-gold);
-    margin-top: 14px;
+    margin-top: 8px;
     transition: width .45s cubic-bezier(.2,.8,.2,1);
 }
 @media (hover: hover) {
@@ -1056,7 +1056,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
     color: var(--color-text-secondary);
     margin: 0;
-    padding: 0 26px 26px;
+    padding: 4px 24px 18px;
     text-shadow: none;
     position: relative;
     letter-spacing: .02em;
