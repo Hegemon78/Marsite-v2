@@ -425,10 +425,12 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', updateScrubberFromScroll, { passive: true });
         updateScrubberFromScroll();
 
-        // Inertial interpolation: target follows finger, page catches up smoothly
-        // (Nikolai 1715 — don't snap, ease towards the drag point)
+        // Hybrid scroll: instant during active drag, inertial smoothing after release
+        // (Nikolai 1715 — don't snap; Marina 1725 — fast drag must not fall behind)
         let targetScroll = window.scrollY;
         let scrubRaf = null;
+        let isActiveDrag = false;
+
         const scrubTick = () => {
             const current = window.scrollY;
             const diff = targetScroll - current;
@@ -437,7 +439,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrubRaf = null;
                 return;
             }
-            window.scrollTo(0, current + diff * 0.18);
+            window.scrollTo(0, current + diff * 0.32);
             scrubRaf = requestAnimationFrame(scrubTick);
         };
 
@@ -446,12 +448,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const pct = Math.max(0, Math.min(1, (clientY - rect.top) / rect.height));
             const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
             targetScroll = pct * maxScroll;
-            if (!scrubRaf) scrubRaf = requestAnimationFrame(scrubTick);
+            if (isActiveDrag) {
+                // Snap directly under the finger while dragging — no lag
+                window.scrollTo(0, targetScroll);
+                if (scrubRaf) { cancelAnimationFrame(scrubRaf); scrubRaf = null; }
+            } else if (!scrubRaf) {
+                scrubRaf = requestAnimationFrame(scrubTick);
+            }
         };
 
         let isDragging = false;
         const onTouchStart = (e) => {
             isDragging = true;
+            isActiveDrag = true;
             scrubber.classList.add('is-dragging');
             if (e.touches && e.touches[0]) scrollToClientY(e.touches[0].clientY);
         };
@@ -461,6 +470,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         const onTouchEnd = () => {
             isDragging = false;
+            isActiveDrag = false;
             scrubber.classList.remove('is-dragging');
         };
         scrubber.addEventListener('touchstart', onTouchStart, { passive: true });

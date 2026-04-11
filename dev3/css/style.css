@@ -2678,28 +2678,28 @@ h1, h2, h3, h4, h5, h6 {
 .page-scrubber__pill,
 .page-scrubber__overlay { display: none; }
 
-/* Variant A — Pill sidecar (Apple Photos style) */
+/* Variant A — Pill sidecar (Apple Photos style), increased scale per Nikolai 1734 */
 .scrubber-variant-a .page-scrubber__pill {
     display: inline-block;
     position: absolute;
-    right: 26px;
+    right: 32px;
     top: 50%;
-    transform: translateY(-50%) translateX(6px);
-    background: rgba(20, 25, 32, 0.88);
+    transform: translateY(-50%) translateX(8px);
+    background: rgba(20, 25, 32, 0.9);
     color: #fff;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 10px 16px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 16px 24px;
     border-radius: 999px;
-    font-family: var(--font-body);
-    font-size: 13px;
+    font-family: var(--font-heading);
+    font-size: 22px;
     font-weight: 500;
-    letter-spacing: .01em;
+    letter-spacing: -.005em;
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
     transition: opacity .25s ease, transform .25s ease;
-    box-shadow: 0 6px 22px rgba(0,0,0,.28);
+    box-shadow: 0 10px 32px rgba(0,0,0,.32);
 }
 .scrubber-variant-a .page-scrubber.is-dragging .page-scrubber__pill,
 .scrubber-variant-a .page-scrubber.is-peek .page-scrubber__pill {
@@ -2739,13 +2739,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 .scrubber-variant-b .page-scrubber__overlay-label {
     font-family: var(--font-heading);
-    font-size: 56px;
+    font-size: 42px;
     font-weight: 500;
     color: var(--color-text);
-    letter-spacing: -.01em;
+    letter-spacing: -.005em;
     text-align: center;
-    padding: 0 40px;
-    line-height: 1.1;
+    padding: 0 28px;
+    line-height: 1.08;
+    max-width: 100%;
+    word-break: break-word;
 }
 .scrubber-variant-b .page-scrubber__overlay-progress {
     width: 200px;
