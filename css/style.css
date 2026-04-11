@@ -1891,10 +1891,10 @@ h1, h2, h3, h4, h5, h6 {
     pointer-events: none;
 }
 
-/* Scrubber — тонкая вертикальная навигация слева */
+/* Scrubber — тонкая вертикальная навигация справа */
 .page-scrubber {
     position: fixed;
-    left: 10px;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     width: 20px;
@@ -2299,6 +2299,29 @@ h1, h2, h3, h4, h5, h6 {
 
     .hero__stat-value {
         font-size: 28px;
+    }
+
+    /* Services teaser — 1 колонка на мобильной */
+    .services-teaser__grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    /* Comparison table — wrap в горизонтальный скролл контейнер */
+    .comparison__wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -20px;
+        padding: 0 20px;
+    }
+
+    .comparison__table {
+        min-width: 560px;
+    }
+
+    /* Защита от случайного overflow на уровне body */
+    html, body {
+        overflow-x: hidden;
     }
 
     /* PS grid — компактный горизонтальный формат карточек */
