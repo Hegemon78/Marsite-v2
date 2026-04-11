@@ -49,7 +49,7 @@
 
         <nav class="nav" id="nav">
             <a href="#about" class="nav__link">О нас</a>
-            <a href="#services" class="nav__link">Услуги</a>
+            <a href="services.html" class="nav__link">Услуги</a>
             <a href="#process" class="nav__link">Процесс</a>
             <a href="#advantages" class="nav__link">Преимущества</a>
             <a href="#portfolio" class="nav__link">Портфолио</a>
@@ -71,11 +71,10 @@
      HERO
      =================================== -->
 <section class="hero hero--dark" id="main" data-bg="#1a2028" data-scroll-fade>
-    <!-- Фон hero: тёмный градиент-placeholder + полупрозрачный оверлей.
-         TODO: заменить .hero__bg-placeholder на реальное фото:
-         <img class="hero__bg-img" src="img/hero-bg.jpg" alt=""> (желательно 1920×1080, тёмные тона) -->
+    <!-- Фон hero: фото интерьера в процессе ремонта + полупрозрачный тёмный оверлей.
+         TODO: после фотосессии заменить img/hero-bg.jpg на реальное фото Марины с объекта -->
     <div class="hero__bg" aria-hidden="true">
-        <div class="hero__bg-placeholder"></div>
+        <img class="hero__bg-img" src="img/hero-bg.jpg" alt="" loading="eager" decoding="async">
         <div class="hero__bg-overlay"></div>
     </div>
 
@@ -205,153 +204,54 @@
 </section>
 
 <!-- ===================================
-     SERVICES
+     SERVICES TEASER
+     (полный блок — на services.html)
      =================================== -->
-<section class="services section--alt" id="services" data-bg="#ece2d4" data-scroll-fade>
+<section class="services-teaser section--alt" id="services" data-bg="#ece2d4" data-scroll-fade>
     <div class="container">
         <div class="section__header">
             <p class="section__label" data-reveal>Услуги</p>
-            <h2 class="section__title" data-reveal>Что мы делаем</h2>
+            <h2 class="section__title" data-reveal>Наши услуги</h2>
             <p class="section__description" data-reveal>Полный спектр ремонтных работ для квартир, домов и коммерческих помещений</p>
         </div>
 
-        <!-- ЧАСТНЫЕ ОБЪЕКТЫ -->
-        <h3 class="services__group-title" data-reveal>Частные объекты</h3>
-        <div class="services__grid">
-            <div class="service-card" data-reveal>
-                <div class="service-card__icon">&#9998;</div>
-                <h3 class="service-card__title">Косметический ремонт</h3>
-                <p class="service-card__text">Обновление отделки без затрагивания инженерных коммуникаций. Идеально для освежения интерьера.</p>
-                <p class="service-card__price">от 2 000 руб/м&sup2;</p>
-            </div>
-
-            <div class="service-card" data-reveal>
-                <div class="service-card__icon">&#9881;</div>
-                <h3 class="service-card__title">Капитальный ремонт</h3>
-                <p class="service-card__text">Полная замена всех покрытий, коммуникаций и инженерных систем. Новая жизнь вашего пространства.</p>
-                <p class="service-card__price">от 20 000 руб/м&sup2;</p>
-            </div>
-
-            <div class="service-card" data-reveal>
-                <div class="service-card__icon">&#127968;</div>
-                <h3 class="service-card__title">Ремонт под ключ</h3>
-                <p class="service-card__text">Комплексное решение: от проекта до меблировки. Вы получаете готовое к проживанию пространство.</p>
-                <p class="service-card__price">от 32 000 руб/м&sup2;</p>
-            </div>
-
-            <div class="service-card" data-reveal>
-                <div class="service-card__icon">&#127959;</div>
-                <h3 class="service-card__title">Ремонт новостроек</h3>
-                <p class="service-card__text">Профессиональная отделка квартир в новых домах с учётом усадки здания и особенностей новостроек.</p>
-                <p class="service-card__price">от 35 000 руб/м&sup2;</p>
-            </div>
-
-            <div class="service-card" data-reveal>
-                <div class="service-card__icon">&#127960;</div>
-                <h3 class="service-card__title">Ремонт вторичного жилья</h3>
-                <p class="service-card__text">Комплексное обновление квартир на вторичном рынке с демонтажём старых покрытий и заменой коммуникаций.</p>
-                <p class="service-card__price">от 27 000 руб/м&sup2;</p>
-            </div>
-
-            <!-- TODO: финальный контент от Марины (Настя готовит 3 варианта дизайна) -->
-            <div class="service-card service-card--capsule" data-editable data-reveal>
+        <div class="services-teaser__grid">
+            <a href="services.html" class="services-teaser__card" data-reveal>
+                <div class="services-teaser__icon">&#9998;</div>
+                <h3 class="services-teaser__title">Косметический ремонт</h3>
+                <p class="services-teaser__price">от 2 000 ₽/м&sup2;</p>
+            </a>
+            <a href="services.html" class="services-teaser__card" data-reveal>
+                <div class="services-teaser__icon">&#9881;</div>
+                <h3 class="services-teaser__title">Капитальный ремонт</h3>
+                <p class="services-teaser__price">от 20 000 ₽/м&sup2;</p>
+            </a>
+            <a href="services.html" class="services-teaser__card" data-reveal>
+                <div class="services-teaser__icon">&#127968;</div>
+                <h3 class="services-teaser__title">Ремонт под ключ</h3>
+                <p class="services-teaser__price">от 32 000 ₽/м&sup2;</p>
+            </a>
+            <a href="services.html" class="services-teaser__card" data-reveal>
+                <div class="services-teaser__icon">&#127959;</div>
+                <h3 class="services-teaser__title">Ремонт новостроек</h3>
+                <p class="services-teaser__price">от 35 000 ₽/м&sup2;</p>
+            </a>
+            <a href="services.html" class="services-teaser__card services-teaser__card--capsule" data-reveal>
                 <span class="service-card__badge service-card__badge--soon">Скоро</span>
-                <div class="service-card__icon">&#128230;</div>
-                <h3 class="service-card__title">Капсульный ремонт</h3>
-                <p class="service-card__text">Готовое решение для небольшой квартиры: выбираете один из 3 вариантов дизайна — материалы и смета уже просчитаны.</p>
-                <p class="service-card__price service-card__price--muted">Готовое решение</p>
-            </div>
+                <div class="services-teaser__icon">&#128230;</div>
+                <h3 class="services-teaser__title">Капсульный ремонт</h3>
+                <p class="services-teaser__price services-teaser__price--muted">Готовое решение</p>
+            </a>
+            <a href="services.html" class="services-teaser__card" data-reveal>
+                <div class="services-teaser__icon">&#127970;</div>
+                <h3 class="services-teaser__title">Коммерческие помещения</h3>
+                <p class="services-teaser__price">от 12 000 ₽/м&sup2;</p>
+            </a>
         </div>
 
-        <!-- КОММЕРЧЕСКИЕ ОБЪЕКТЫ -->
-        <h3 class="services__group-title" data-reveal>Коммерческие объекты</h3>
-        <div class="services__grid services__grid--single">
-            <div class="service-card" data-reveal>
-                <div class="service-card__icon">&#127970;</div>
-                <h3 class="service-card__title">Коммерческие помещения</h3>
-                <p class="service-card__text">Ремонт офисов, магазинов и других коммерческих объектов с учётом специфики бизнеса и сроков запуска.</p>
-                <p class="service-card__price">от 12 000 руб/м&sup2;</p>
-            </div>
-        </div>
-
-        <!-- Ориентировочные сроки -->
-        <div class="services__timeline">
-            <div class="services__timeline-item" data-reveal>
-                <div class="services__timeline-type">Косметический ремонт (1-комн.)</div>
-                <div class="services__timeline-value">25 дней</div>
-            </div>
-            <div class="services__timeline-item" data-reveal>
-                <div class="services__timeline-type">Капитальный ремонт (1-комн.)</div>
-                <div class="services__timeline-value">70 дней</div>
-            </div>
-        </div>
-
-        <!-- Перечень работ (теги) — каждый тег ревилится отдельно (волна) -->
-        <div class="services__tags">
-            <span class="services__tag" data-reveal>Демонтаж</span>
-            <span class="services__tag" data-reveal>Черновая отделка</span>
-            <span class="services__tag" data-reveal>Чистовая отделка</span>
-            <span class="services__tag" data-reveal>Электрика</span>
-            <span class="services__tag" data-reveal>Сантехника</span>
-            <span class="services__tag" data-reveal>Плиточные работы</span>
-            <span class="services__tag" data-reveal>Малярные работы</span>
-            <span class="services__tag" data-reveal>Поклейка обоев</span>
-            <span class="services__tag" data-reveal>Укладка полов</span>
-            <span class="services__tag" data-reveal>Натяжные потолки</span>
-            <span class="services__tag" data-reveal>Гипсокартон</span>
-            <span class="services__tag" data-reveal>Перепланировка</span>
-            <span class="services__tag" data-reveal>Возведение перегородок</span>
-            <span class="services__tag" data-reveal>Шумоизоляция</span>
-            <span class="services__tag" data-reveal>Стяжка пола</span>
-            <span class="services__tag" data-reveal>Штукатурка стен</span>
-        </div>
-
-        <!-- Дополнительные услуги -->
-        <div class="section__header" style="margin-top: 20px;">
-            <p class="section__label" data-reveal>Сопутствующие услуги</p>
-            <h2 class="section__title" data-reveal>Дизайн, надзор, комплектация</h2>
-        </div>
-
-        <div class="additional-services__grid">
-            <div class="additional-card" data-reveal>
-                <h3 class="additional-card__title">Дизайн интерьера</h3>
-                <p class="additional-card__price">от 1 800 руб/м&sup2;</p>
-                <div class="additional-card__list">
-                    <div class="additional-card__list-item">Планировочные решения</div>
-                    <div class="additional-card__list-item">Технический дизайн</div>
-                    <div class="additional-card__list-item">3D-визуализация</div>
-                    <div class="additional-card__list-item">Комплектация объекта</div>
-                </div>
-            </div>
-
-            <div class="additional-card additional-card--recommended" data-reveal>
-                <span class="additional-card__badge">Рекомендуем</span>
-                <h3 class="additional-card__title">Авторский надзор</h3>
-                <p class="additional-card__price">от 40 000 руб/мес</p>
-                <div class="additional-card__list">
-                    <div class="additional-card__list-item">Регулярные выезды дизайнера на объект</div>
-                    <div class="additional-card__list-item">Контроль соответствия работ чертежам</div>
-                    <div class="additional-card__list-item">Контроль закупок и материалов</div>
-                    <div class="additional-card__list-item">Фиксация скрытых работ</div>
-                    <div class="additional-card__list-item">Взаимодействие с подрядчиком</div>
-                    <div class="additional-card__list-item">Проверка финишной отделки</div>
-                    <div class="additional-card__list-item">Оперативные корректировки на объекте</div>
-                </div>
-                <p class="additional-card__note">Авторский надзор нужен, чтобы на выходе получить именно ту картинку, которая была задумана, а не «свободную интерпретацию» строителей.</p>
-            </div>
-
-            <div class="additional-card" data-reveal>
-                <h3 class="additional-card__title">Комплектация объекта</h3>
-                <p class="additional-card__price">Индивидуально</p>
-                <div class="additional-card__list">
-                    <div class="additional-card__list-item">Составление спецификации и сметы</div>
-                    <div class="additional-card__list-item">Поиск и подбор поставщиков</div>
-                    <div class="additional-card__list-item">Сравнение цен и оптимизация бюджета</div>
-                    <div class="additional-card__list-item">Контроль закупок и логистика</div>
-                    <div class="additional-card__list-item">Приёмка материалов на объекте</div>
-                    <div class="additional-card__list-item">Работа с браком и пересортом</div>
-                </div>
-            </div>
+        <div class="services-teaser__footer" data-reveal>
+            <a href="services.html" class="btn btn--primary btn--lg">Все услуги и детали &rarr;</a>
+            <p class="services-teaser__note">Дизайн интерьера, авторский надзор, комплектация, сроки, виды работ — на странице услуг</p>
         </div>
     </div>
 </section>
@@ -532,7 +432,7 @@
             <div class="advantage-card" data-reveal>
                 <div class="advantage-card__number">01</div>
                 <h3 class="advantage-card__title">Личный контроль собственника</h3>
-                <p class="advantage-card__text">Процессы отлажены: есть чёткий регламент от замера до сдачи. Руководитель контролирует каждый этап и принимает решения с учётом многолетнего опыта.</p>
+                <p class="advantage-card__text">Руководитель компании — не «мультипрораб», а человек, который понимает проект с трёх сторон: как дизайнер, как заказчик и как исполнитель. Решения принимаются с учётом этой полной картины.</p>
             </div>
 
             <div class="advantage-card" data-reveal>
@@ -776,7 +676,7 @@
                 <h4 class="footer__heading">Навигация</h4>
                 <div class="footer__links">
                     <a href="#about" class="footer__link">О нас</a>
-                    <a href="#services" class="footer__link">Услуги</a>
+                    <a href="services.html" class="footer__link">Услуги</a>
                     <a href="#process" class="footer__link">Процесс</a>
                     <a href="#advantages" class="footer__link">Преимущества</a>
                     <a href="#portfolio" class="footer__link">Портфолио</a>
@@ -787,12 +687,12 @@
             <div>
                 <h4 class="footer__heading">Услуги</h4>
                 <div class="footer__links">
-                    <a href="#services" class="footer__link">Косметический ремонт</a>
-                    <a href="#services" class="footer__link">Капитальный ремонт</a>
-                    <a href="#services" class="footer__link">Ремонт под ключ</a>
-                    <a href="#services" class="footer__link">Дизайн интерьера</a>
-                    <a href="#services" class="footer__link">Авторский надзор</a>
-                    <a href="#services" class="footer__link">Комплектация</a>
+                    <a href="services.html" class="footer__link">Косметический ремонт</a>
+                    <a href="services.html" class="footer__link">Капитальный ремонт</a>
+                    <a href="services.html" class="footer__link">Ремонт под ключ</a>
+                    <a href="services.html" class="footer__link">Дизайн интерьера</a>
+                    <a href="services.html" class="footer__link">Авторский надзор</a>
+                    <a href="services.html" class="footer__link">Комплектация</a>
                 </div>
             </div>
         </div>
