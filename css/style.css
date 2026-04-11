@@ -1561,6 +1561,37 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 8px 28px rgba(20, 25, 32, 0.1);
     transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
     border-top: 2px solid var(--color-gold);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Photo background on desktop cards too (Nikolai 1795) */
+.advantage-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: .5;
+    z-index: -1;
+    transition: opacity .5s ease;
+}
+.advantage-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,.42) 0%, rgba(255,255,255,.66) 60%, rgba(255,255,255,.78) 100%);
+    z-index: -1;
+}
+.advantages__grid > .advantage-card:nth-child(1)::before { background-image: url('../img/process-01-measure.jpg'); }
+.advantages__grid > .advantage-card:nth-child(2)::before { background-image: url('../img/process-05-finish.jpg'); }
+.advantages__grid > .advantage-card:nth-child(3)::before { background-image: url('../img/process-03-demolition.jpg'); }
+.advantages__grid > .advantage-card:nth-child(4)::before { background-image: url('../img/process-02-contract.jpg'); }
+.advantages__grid > .advantage-card:nth-child(5)::before { background-image: url('../img/about-desk.jpg'); }
+.advantages__grid > .advantage-card:nth-child(6)::before { background-image: url('../img/process-06-delivery.jpg'); }
+@media (hover: hover) {
+    .advantage-card:hover::before { opacity: .62; }
 }
 
 @media (hover: hover) {
