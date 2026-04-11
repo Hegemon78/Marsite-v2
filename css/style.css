@@ -1937,16 +1937,24 @@ h1, h2, h3, h4, h5, h6 {
     will-change: top;
     transition: transform .2s ease;
 }
+/* Extended touch hitbox (44x44 min per Apple HIG) without visual growth */
+.page-scrubber__thumb::before {
+    content: "";
+    position: absolute;
+    inset: -16px;
+    border-radius: 50%;
+}
 
 .page-scrubber.is-dragging .page-scrubber__thumb {
     transform: scale(1.25);
 }
 
-/* Section label pill (variant A, Marina approved 1744) — light warm background */
+/* Section label pill (variant A, Marina approved 1744) — light warm background
+   Positioned further left so the finger on the thumb does not cover text start (Nikolai 1747) */
 .page-scrubber__pill {
     display: inline-block;
     position: absolute;
-    right: 28px;
+    right: 48px;
     top: 50%;
     transform: translateY(-50%) translateX(8px);
     background: rgba(250, 250, 250, 0.96);

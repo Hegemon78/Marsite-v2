@@ -441,8 +441,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (scrubberLabel) {
                 const viewportCenter = window.scrollY + window.innerHeight / 2;
                 let currentLabel = 'Главная';
+                // getBoundingClientRect gives absolute layout even when nested in offsetParent
                 for (const sec of labeledSections) {
-                    if (sec.offsetTop <= viewportCenter && sec.offsetTop + sec.offsetHeight > viewportCenter) {
+                    const rect = sec.getBoundingClientRect();
+                    const top = rect.top + window.scrollY;
+                    const bottom = top + rect.height;
+                    if (top <= viewportCenter && bottom > viewportCenter) {
                         currentLabel = sectionLabels[sec.id];
                         break;
                     }
