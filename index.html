@@ -15,7 +15,7 @@
     <meta property="og:image" content="img/og-image.png">
 
     <!-- Security -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-src https://yandex.ru https://*.yandex.ru https://*.yandex.net;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
@@ -30,7 +30,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css?v=20260412-0125">
+    <link rel="stylesheet" href="css/style.css?v=20260412-0135">
 </head>
 <body>
 
@@ -708,6 +708,14 @@
                 <button type="submit" class="btn btn--primary btn--block">Отправить заявку</button>
                 <p class="contact-form__note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
             </form>
+        </div>
+
+        <div class="contact__map" data-reveal>
+            <div class="contact__map-label">География работы</div>
+            <div class="contact__map-frame">
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=37.617778%2C55.755833&z=8&l=map" width="100%" height="100%" frameborder="0" loading="lazy" allowfullscreen title="Москва и Московская область на Яндекс Картах"></iframe>
+            </div>
+            <p class="contact__map-note">Работаем по Москве и всей Московской области. По запросу рассматриваем объекты в других регионах.</p>
         </div>
     </div>
 </section>
