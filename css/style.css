@@ -2976,21 +2976,11 @@ h1, h2, h3, h4, h5, h6 {
     }
     .contact-cards {
         display: flex;
-        grid-template-columns: none;
-        gap: 14px;
-        overflow-x: auto;
-        overflow-y: visible;
-        padding: 4px 20px 20px;
-        margin: 0 -20px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        overscroll-behavior-x: contain;
-        touch-action: pan-x pan-y;
+        flex-direction: column;
+        gap: 12px;
     }
-    .contact-cards::-webkit-scrollbar { display: none; }
     .contact-card {
-        flex: 0 0 82%;
-        padding: 22px 24px 20px;
+        padding: 20px 22px 18px;
     }
     .contact-card__value {
         font-size: 20px;
