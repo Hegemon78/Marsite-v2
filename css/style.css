@@ -3450,3 +3450,118 @@ h1, h2, h3, h4, h5, h6 {
     .guide-magnet__doc-heading { font-size: 24px; }
 }
 
+/* ===================================
+   CONTACT SPLIT OVERLAY (variant C hybrid, Marina 1845 + Nikolai 1846)
+   =================================== */
+.contact-split {
+    background: #fafafa;
+    border-radius: 22px;
+    padding: 42px 38px 44px;
+    margin-top: -48px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(174, 140, 86, 0.2);
+    margin-bottom: 80px;
+}
+
+/* Horizontal action buttons row */
+.contact-split__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 32px;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.contact-split__btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 22px 16px;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: background .3s ease, color .3s ease;
+    cursor: pointer;
+}
+
+.contact-split__btn:not(.contact-split__btn--static):hover {
+    background: rgba(174, 140, 86, 0.08);
+}
+
+.contact-split__icon {
+    color: var(--color-gold);
+    width: 28px;
+    height: 28px;
+}
+
+.contact-split__btn-label {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .02em;
+    color: var(--color-text);
+}
+
+.contact-split__divider {
+    width: 1px;
+    height: 52px;
+    background: var(--color-border);
+    flex-shrink: 0;
+}
+
+/* Guarantee compact */
+.contact-split__guarantee {
+    text-align: center;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    padding: 18px 20px;
+    margin-bottom: 28px;
+    background: rgba(174, 140, 86, 0.06);
+    border-radius: 10px;
+    border-left: 2px solid var(--color-gold);
+}
+
+/* Form inside split card */
+.contact-split__form {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+}
+
+.contact-split__form .contact-form__title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .contact-split {
+        padding: 28px 22px 32px;
+        margin-top: -30px;
+        border-radius: 18px;
+        margin-bottom: 50px;
+    }
+    .contact-split__btn {
+        padding: 16px 10px;
+        gap: 6px;
+    }
+    .contact-split__icon {
+        width: 24px;
+        height: 24px;
+    }
+    .contact-split__btn-label {
+        font-size: 12px;
+    }
+    .contact-split__divider {
+        height: 40px;
+    }
+}
+
+
