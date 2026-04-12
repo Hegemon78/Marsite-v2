@@ -1718,7 +1718,7 @@ h1, h2, h3, h4, h5, h6 {
 .review-card::before {
     content: "";
     display: block;
-    height: 180px;
+    height: 240px;
     background-size: cover;
     background-position: center;
     opacity: 1;
@@ -1740,26 +1740,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .review-card__quote {
-    font-size: 40px;
+    font-size: 36px;
     color: var(--color-gold);
     opacity: .45;
     line-height: 1;
-    margin: 22px 28px 4px;
+    margin: 16px 24px 2px;
     font-family: Georgia, serif;
 }
 
 .review-card__text {
-    font-size: 15px;
+    font-size: 14px;
     color: var(--color-text);
-    line-height: 1.7;
-    margin: 0 28px 20px;
+    line-height: 1.65;
+    margin: 0 24px 12px;
 }
 
 .review-card__author {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 18px 28px 24px;
+    padding: 12px 24px 18px;
     margin-top: auto;
     border-top: 1px solid var(--color-border);
 }
