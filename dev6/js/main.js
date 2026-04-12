@@ -540,4 +540,109 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* ===================================
+       Snake Timeline — SVG path + scroll animation
+       =================================== */
+    const snakeTimeline = document.getElementById('snakeTimeline');
+    const snakeSvg = document.getElementById('snakeSvg');
+
+    if (snakeTimeline && snakeSvg) {
+        const steps = snakeTimeline.querySelectorAll('.snake-step');
+
+        function buildSnakePath() {
+            const rect = snakeTimeline.getBoundingClientRect();
+            const svgW = rect.width;
+            const svgH = rect.height;
+            snakeSvg.setAttribute('viewBox', `0 0 ${svgW} ${svgH}`);
+            snakeSvg.setAttribute('width', svgW);
+            snakeSvg.setAttribute('height', svgH);
+
+            // Get center points of each circle
+            const points = [];
+            steps.forEach(step => {
+                const circle = step.querySelector('.snake-step__circle');
+                if (!circle) return;
+                const cr = circle.getBoundingClientRect();
+                const x = cr.left - rect.left + cr.width / 2;
+                const y = cr.top - rect.top + cr.height / 2;
+                points.push({ x, y });
+            });
+
+            if (points.length < 2) return;
+
+            // Build smooth cubic bezier path through all points
+            let d = `M ${points[0].x} ${points[0].y}`;
+            for (let i = 1; i < points.length; i++) {
+                const prev = points[i - 1];
+                const curr = points[i];
+                const midY = (prev.y + curr.y) / 2;
+                d += ` C ${prev.x} ${midY}, ${curr.x} ${midY}, ${curr.x} ${curr.y}`;
+            }
+
+            // Remove old path, create new
+            const oldPath = snakeSvg.querySelector('.snake-path');
+            if (oldPath) oldPath.remove();
+
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute('d', d);
+            path.setAttribute('class', 'snake-path');
+            snakeSvg.appendChild(path);
+
+            // Set up dash animation
+            const totalLen = path.getTotalLength();
+            path.style.strokeDasharray = totalLen;
+            path.style.strokeDashoffset = totalLen;
+
+            return { path, totalLen, points };
+        }
+
+        let snakeData = null;
+
+        function animateSnakeOnScroll() {
+            if (!snakeData) return;
+            const { path, totalLen } = snakeData;
+
+            const rect = snakeTimeline.getBoundingClientRect();
+            const viewH = window.innerHeight;
+            const sectionTop = rect.top;
+            const sectionH = rect.height;
+
+            // Progress: 0 when section enters bottom, 1 when section top reaches viewport top
+            const rawProgress = (viewH - sectionTop) / (viewH + sectionH);
+            const progress = Math.max(0, Math.min(1, rawProgress));
+
+            // Draw path proportionally
+            const drawLen = totalLen * (1 - progress * 1.3); // 1.3x to finish before end
+            path.style.strokeDashoffset = Math.max(0, drawLen);
+
+            // Activate steps as path reaches them
+            const stepFraction = 1 / snakeData.points.length;
+            steps.forEach((step, i) => {
+                const threshold = (i + 0.5) * stepFraction / 1.3;
+                if (progress >= threshold) {
+                    step.classList.add('is-active');
+                } else {
+                    step.classList.remove('is-active');
+                }
+            });
+        }
+
+        // Build on load + resize
+        function initSnake() {
+            // Small delay to ensure layout is stable
+            requestAnimationFrame(() => {
+                snakeData = buildSnakePath();
+                animateSnakeOnScroll();
+            });
+        }
+
+        initSnake();
+        window.addEventListener('resize', () => {
+            snakeData = buildSnakePath();
+            animateSnakeOnScroll();
+        });
+
+        window.addEventListener('scroll', animateSnakeOnScroll, { passive: true });
+    }
+
 });

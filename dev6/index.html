@@ -296,98 +296,81 @@
 <!-- ===================================
      PROCESS
      =================================== -->
-<section class="process section" id="process" data-bg="#d8e2f0" data-scroll-fade>
+<section class="process section" id="process" data-bg="#f3f2f0" data-scroll-fade>
     <div class="container">
         <div class="section__header">
             <p class="section__label" data-reveal>Как мы работаем</p>
             <h2 class="section__title" data-reveal>Процесс работы</h2>
-            <p class="section__description" data-reveal>От первого звонка до сдачи объекта — каждый этап под контролем</p>
+            <p class="section__description" data-reveal>От первого звонка до сдачи объекта</p>
         </div>
 
-        <div class="process__timeline">
-            <div class="process__step" data-reveal>
-                <div class="process__step-photo">
-                    <img src="img/process-01-measure.jpg" alt="Замер и подготовка" loading="lazy">
+        <div class="snake-timeline" id="snakeTimeline">
+            <!-- SVG snake path (drawn dynamically by JS) -->
+            <svg class="snake-timeline__svg" id="snakeSvg" preserveAspectRatio="none"></svg>
+
+            <div class="snake-step" data-step="1">
+                <div class="snake-step__circle">
+                    <img src="img/process-01-measure.jpg" alt="Замер">
+                    <span class="snake-step__badge">01</span>
                 </div>
-                <div class="process__step-content">
-                    <h3 class="process__step-title">Знакомство и подготовка</h3>
-                    <div class="process__step-list">
-                        <p class="process__step-item">Заявка и консультация: уточняем тип помещения, метраж, формат работ</p>
-                        <p class="process__step-item">Выезд на замер: обмеры помещения, оценка состояния, фотофиксация</p>
-                        <p class="process__step-item">Обсуждение концепции и пожеланий по стилю и материалам</p>
-                    </div>
+                <div class="snake-step__content">
+                    <h3 class="snake-step__title">Знакомство и подготовка</h3>
+                    <p class="snake-step__desc">Консультация, замер, обсуждение концепции</p>
                 </div>
             </div>
 
-            <div class="process__step" data-reveal>
-                <div class="process__step-photo">
-                    <img src="img/process-02-contract.jpg" alt="Расчёт сметы и договор" loading="lazy">
+            <div class="snake-step" data-step="2">
+                <div class="snake-step__circle">
+                    <img src="img/process-02-contract.jpg" alt="Договор">
+                    <span class="snake-step__badge">02</span>
                 </div>
-                <div class="process__step-content">
-                    <h3 class="process__step-title">Расчёт и договор</h3>
-                    <div class="process__step-list">
-                        <p class="process__step-item">Составление детальной сметы: материалы, работы, спецификация</p>
-                        <p class="process__step-item">Согласование стоимости и объёма работ</p>
-                        <p class="process__step-item">Подписание договора с фиксацией сроков, графика платежей и гарантий</p>
-                    </div>
+                <div class="snake-step__content">
+                    <h3 class="snake-step__title">Расчёт и договор</h3>
+                    <p class="snake-step__desc">Детальная смета, фиксация сроков и гарантий</p>
                 </div>
             </div>
 
-            <div class="process__step" data-reveal>
-                <div class="process__step-photo">
-                    <img src="img/process-03-demolition.jpg" alt="Демонтаж и подготовка объекта" loading="lazy">
+            <div class="snake-step" data-step="3">
+                <div class="snake-step__circle">
+                    <img src="img/process-03-demolition.jpg" alt="Демонтаж">
+                    <span class="snake-step__badge">03</span>
                 </div>
-                <div class="process__step-content">
-                    <h3 class="process__step-title">Демонтаж и подготовка</h3>
-                    <div class="process__step-list">
-                        <p class="process__step-item">Закупка и доставка материалов</p>
-                        <p class="process__step-item">Подготовка объекта: завоз инструментов, защита конструкций</p>
-                        <p class="process__step-item">Демонтажные работы: снос перегородок, снятие покрытий, вывоз мусора</p>
-                    </div>
+                <div class="snake-step__content">
+                    <h3 class="snake-step__title">Демонтаж и подготовка</h3>
+                    <p class="snake-step__desc">Закупка материалов, подготовка объекта, демонтаж</p>
                 </div>
             </div>
 
-            <div class="process__step" data-reveal>
-                <div class="process__step-photo">
-                    <img src="img/process-04-rough.jpg" alt="Черновая отделка: электрика, сантехника, стяжка" loading="lazy">
+            <div class="snake-step" data-step="4">
+                <div class="snake-step__circle">
+                    <img src="img/process-04-rough.jpg" alt="Черновая">
+                    <span class="snake-step__badge">04</span>
                 </div>
-                <div class="process__step-content">
-                    <h3 class="process__step-title">Черновая отделка</h3>
-                    <div class="process__step-list">
-                        <p class="process__step-item">Возведение перегородок, штробление стен</p>
-                        <p class="process__step-item">Монтаж электрики, сантехники, тёплого пола</p>
-                        <p class="process__step-item">Стяжка пола, штукатурка стен по маякам</p>
-                        <p class="process__step-item">Приёмка скрытых работ</p>
-                    </div>
+                <div class="snake-step__content">
+                    <h3 class="snake-step__title">Черновая отделка</h3>
+                    <p class="snake-step__desc">Электрика, сантехника, стяжка, штукатурка</p>
                 </div>
             </div>
 
-            <div class="process__step" data-reveal>
-                <div class="process__step-photo">
-                    <img src="img/process-05-finish.jpg" alt="Чистовая отделка: покраска стен премиум-кистью" loading="lazy">
+            <div class="snake-step" data-step="5">
+                <div class="snake-step__circle">
+                    <img src="img/process-05-finish.jpg" alt="Чистовая">
+                    <span class="snake-step__badge">05</span>
                 </div>
-                <div class="process__step-content">
-                    <h3 class="process__step-title">Чистовая отделка</h3>
-                    <div class="process__step-list">
-                        <p class="process__step-item">Шпаклёвка, грунтовка, укладка плитки</p>
-                        <p class="process__step-item">Монтаж потолков, покраска, оклейка обоями</p>
-                        <p class="process__step-item">Укладка чистовых полов, установка дверей</p>
-                        <p class="process__step-item">Монтаж сантехники, розеток, светильников</p>
-                    </div>
+                <div class="snake-step__content">
+                    <h3 class="snake-step__title">Чистовая отделка</h3>
+                    <p class="snake-step__desc">Плитка, покраска, полы, двери, светильники</p>
                 </div>
             </div>
 
-            <div class="process__step" data-reveal>
-                <div class="process__step-photo">
-                    <img src="img/process-06-delivery.jpg" alt="Сдача готового объекта" loading="lazy">
+            <div class="snake-step" data-step="6">
+                <div class="snake-step__circle">
+                    <img src="img/process-06-delivery.jpg" alt="Сдача">
+                    <span class="snake-step__badge">✓</span>
                 </div>
-                <div class="process__step-content">
-                    <h3 class="process__step-title">Сдача объекта</h3>
-                    <div class="process__step-list">
-                        <p class="process__step-item">Комплектация и расстановка мебели</p>
-                        <p class="process__step-item">Профессиональная уборка</p>
-                        <p class="process__step-item">Проверка качества, акт приёма-передачи, окончательный расчёт</p>
-                    </div>
+                <div class="snake-step__content">
+                    <h3 class="snake-step__title">Сдача объекта</h3>
+                    <p class="snake-step__desc">Уборка, проверка качества, акт приёмки</p>
                 </div>
             </div>
         </div>

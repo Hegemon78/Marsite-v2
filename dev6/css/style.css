@@ -3535,97 +3535,131 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===================================
-   DEV6: Variant 3 — Vertical Timeline + Tall Carousel
-   Process: zigzag timeline with circular photos + gold line
-   Advantages: horizontal carousel of tall vertical cards
+   DEV6: Snake Timeline (Process A) + Dark Cards (Advantages B)
    =================================== */
 
-/* Process — vertical zigzag timeline */
-.process__timeline {
+/* --- Snake Timeline --- */
+.snake-timeline {
     position: relative;
-    max-width: 700px;
+    max-width: 500px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding-left: 60px;
+    padding: 20px 0 40px;
 }
 
-/* Vertical gold line */
-.process__timeline::before {
-    content: '';
+.snake-timeline__svg {
     position: absolute;
-    left: 30px;
     top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(180deg, var(--color-gold) 0%, rgba(174,140,86,.2) 100%);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
 }
 
-.process__step {
-    display: flex !important;
-    flex-direction: row !important;
-    grid-template-columns: none !important;
-    gap: 20px;
-    align-items: flex-start;
+.snake-timeline__svg .snake-path {
+    fill: none;
+    stroke: var(--color-gold);
+    stroke-width: 2;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0s;
+}
+
+.snake-step {
     position: relative;
-    padding: 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 0;
+    z-index: 1;
+    opacity: 0.35;
+    transform: translateY(8px);
+    transition: opacity .6s ease, transform .6s ease;
 }
 
-/* Gold dot on timeline */
-.process__step::before {
-    content: '';
-    position: absolute;
-    left: -38px;
-    top: 32px;
-    width: 14px;
-    height: 14px;
+.snake-step.is-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Alternate sides: odd = circle left, even = circle right */
+.snake-step:nth-child(odd) {
+    flex-direction: row;
+    padding-left: 10px;
+}
+.snake-step:nth-child(even) {
+    flex-direction: row-reverse;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.snake-step__circle {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
     border-radius: 50%;
-    background: var(--color-gold);
-    border: 3px solid #fafafa;
-    box-shadow: 0 0 0 2px var(--color-gold);
-    z-index: 2;
-}
-
-.process__step:nth-child(even) {
-    grid-template-columns: none !important;
-}
-.process__step:nth-child(even) .process__step-photo { order: 0 !important; }
-.process__step:nth-child(even) .process__step-content { order: 0 !important; }
-
-.process__step-photo {
-    width: 80px !important;
-    height: 80px !important;
-    min-width: 80px;
-    aspect-ratio: 1 / 1 !important;
-    border-radius: 50% !important;
     overflow: hidden;
-    box-shadow: 0 4px 16px rgba(20, 25, 32, 0.12) !important;
-    border: 3px solid var(--color-gold);
-    flex-shrink: 0;
+    border: 3px solid rgba(174, 140, 86, 0.3);
+    box-shadow: 0 6px 20px rgba(20, 25, 32, 0.12);
+    transition: border-color .5s ease, box-shadow .5s ease;
 }
 
-.process__step-content {
+.snake-step.is-active .snake-step__circle {
+    border-color: var(--color-gold);
+    box-shadow: 0 6px 24px rgba(174, 140, 86, 0.25);
+}
+
+.snake-step__circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.snake-step__badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 28px;
+    height: 28px;
+    background: var(--color-gold);
+    color: #fff;
+    border-radius: 50%;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(174, 140, 86, 0.4);
+    z-index: 3;
+}
+
+.snake-step__content {
     flex: 1;
-    padding: 0;
 }
 
-.process__step-title {
-    font-size: 22px !important;
-    margin-bottom: 8px !important;
-    padding-top: 0 !important;
+.snake-step__title {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 4px;
+    line-height: 1.2;
 }
 
-.process__step-title::before {
+.snake-step__desc {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+/* Hide old process__timeline in dev6 */
+.process__timeline {
     display: none !important;
 }
 
-.process__step-item {
-    font-size: 13px !important;
-    line-height: 1.5 !important;
-}
-
-/* Advantages — tall vertical cards in horizontal carousel */
+/* --- Advantages: Dark tall cards carousel (Variant B) --- */
 .advantages__grid {
     display: flex !important;
     flex-direction: row !important;
@@ -3697,24 +3731,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
-    .process__timeline {
-        padding-left: 50px;
+    .snake-step__circle {
+        width: 72px;
+        height: 72px;
+        min-width: 72px;
     }
-    .process__timeline::before {
-        left: 24px;
+    .snake-step__title {
+        font-size: 17px;
     }
-    .process__step::before {
-        left: -33px;
-        width: 12px;
-        height: 12px;
-    }
-    .process__step-photo {
-        width: 64px !important;
-        height: 64px !important;
-        min-width: 64px;
-    }
-    .process__step-title {
-        font-size: 18px !important;
+    .snake-step__badge {
+        width: 24px;
+        height: 24px;
+        font-size: 11px;
     }
     .advantage-card {
         min-width: 200px !important;
