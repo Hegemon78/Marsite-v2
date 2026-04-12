@@ -31,7 +31,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css?v=20260412-1500">
+    <link rel="stylesheet" href="css/style.css?v=20260412-1458">
 
     <!-- JSON-LD -->
     <script type="application/ld+json">
@@ -886,45 +886,53 @@
 <!-- Design System Switcher JS -->
 <script>
 (function() {
-    const groups = { typo: 'typo-b', space: 'space-normal', gold: 'gold-normal' };
+    var allVariants = {
+        typo: ['typo-a', 'typo-b', 'typo-c'],
+        space: ['space-airy', 'space-normal', 'space-compact'],
+        gold: ['gold-min', 'gold-normal', 'gold-max']
+    };
+    var defaults = { typo: 'typo-b', space: 'space-normal', gold: 'gold-normal' };
+    var current = { typo: 'typo-b', space: 'space-normal', gold: 'gold-normal' };
 
     function applyVariant(group, variant) {
-        // Remove all variants of this group from body
-        document.body.classList.forEach(c => {
-            if (c.startsWith(group.replace('space','space-').replace('typo','typo-').replace('gold','gold-'))) {
-                document.body.classList.remove(c);
-            }
+        // Remove all variants of this group
+        allVariants[group].forEach(function(v) {
+            document.body.classList.remove(v);
         });
-        // Remove old class for this group
-        Object.keys(groups).forEach(g => {
-            if (g === group) {
-                document.body.classList.remove(groups[g]);
-            }
-        });
-        // Add new if not default
-        const defaults = { typo: 'typo-b', space: 'space-normal', gold: 'gold-normal' };
+        // Add new (skip default — no CSS override needed)
         if (variant !== defaults[group]) {
             document.body.classList.add(variant);
         }
-        groups[group] = variant;
+        current[group] = variant;
 
-        // Update active buttons
-        document.querySelectorAll(`[data-group="${group}"]`).forEach(btn => {
-            btn.classList.toggle('ds-switcher__btn--active', btn.dataset.variant === variant);
+        // Update buttons
+        var btns = document.querySelectorAll('[data-group="' + group + '"]');
+        for (var i = 0; i < btns.length; i++) {
+            if (btns[i].dataset.variant === variant) {
+                btns[i].classList.add('ds-switcher__btn--active');
+            } else {
+                btns[i].classList.remove('ds-switcher__btn--active');
+            }
+        }
+    }
+
+    var panel = document.getElementById('dsSwitcher');
+    if (panel) {
+        panel.addEventListener('click', function(e) {
+            var btn = e.target;
+            while (btn && !btn.classList.contains('ds-switcher__btn')) {
+                btn = btn.parentElement;
+            }
+            if (!btn || !btn.dataset.group) return;
+            applyVariant(btn.dataset.group, btn.dataset.variant);
         });
     }
 
-    document.getElementById('dsSwitcher').addEventListener('click', function(e) {
-        const btn = e.target.closest('.ds-switcher__btn');
-        if (!btn) return;
-        applyVariant(btn.dataset.group, btn.dataset.variant);
-    });
-
-    // Apply from URL params
-    const params = new URLSearchParams(location.search);
-    ['typo', 'space', 'gold'].forEach(g => {
-        const v = params.get(g);
-        if (v) applyVariant(g, v);
+    // URL params
+    var params = new URLSearchParams(location.search);
+    ['typo', 'space', 'gold'].forEach(function(g) {
+        var v = params.get(g);
+        if (v && allVariants[g].indexOf(v) !== -1) applyVariant(g, v);
     });
 })();
 </script>
