@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио ARK Construction — Наши работы по ремонту в Москве и Подмосковье</title>
+    <meta name="description" content="Каталог выполненных объектов: квартиры, частные дома, коммерческие помещения. Фото, описание, площадь, сроки.">
+
+    <meta property="og:title" content="Портфолио ARK Construction — Наши работы">
+    <meta property="og:description" content="Каталог выполненных объектов ARK Construction: квартиры, частные дома, офисы.">
+    <meta property="og:type" content="website">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="img/favicon-32.ico">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="img/favicon-16.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css?v=20260412-1010">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Перейти к содержимому</a>
+
+<header class="header" id="header">
+    <div class="container header__inner">
+        <a href="index.html" class="header__logo" aria-label="ARK Construction — На главную">
+            <img class="header__logo-mark" src="img/logo-mark.png" alt="" width="36" height="36">
+            <span class="header__logo-text">ARK</span>
+        </a>
+
+        <nav class="nav" id="nav">
+            <a href="index.html#about" class="nav__link">О нас</a>
+            <a href="services.html" class="nav__link">Услуги</a>
+            <a href="index.html#process" class="nav__link">Процесс</a>
+            <a href="index.html#advantages" class="nav__link">Преимущества</a>
+            <a href="portfolio.html" class="nav__link nav__link--active">Портфолио</a>
+            <a href="index.html#reviews" class="nav__link">Отзывы</a>
+            <div class="nav__cta">
+                <a href="index.html#contact" class="btn btn--primary btn--sm">Связаться</a>
+            </div>
+        </nav>
+
+        <button class="burger" id="burger" aria-label="Открыть меню">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+        </button>
+    </div>
+</header>
+
+<section class="page-hero" id="main" data-bg="#f0f3f6" data-scroll-fade>
+    <div class="container">
+        <nav class="breadcrumbs" aria-label="Навигация по сайту">
+            <a href="index.html" class="breadcrumbs__link">Главная</a>
+            <span class="breadcrumbs__sep">/</span>
+            <span class="breadcrumbs__current">Портфолио</span>
+        </nav>
+        <h1 class="page-hero__title" data-reveal>Портфолио</h1>
+        <p class="page-hero__subtitle" data-reveal>Каталог выполненных объектов. Квартиры, частные дома, коммерческие помещения. Каждый проект, это управляемый процесс с предсказуемым результатом.</p>
+    </div>
+</section>
+
+<section class="portfolio-page section--alt" data-bg="#ece2d4" data-scroll-fade>
+    <div class="container">
+
+        <div class="portfolio-filters" role="tablist" aria-label="Фильтр по типу объекта">
+            <button class="portfolio-filter portfolio-filter--active" data-filter="all" type="button">Все</button>
+            <button class="portfolio-filter" data-filter="flat" type="button">Квартиры</button>
+            <button class="portfolio-filter" data-filter="house" type="button">Частные дома</button>
+            <button class="portfolio-filter" data-filter="commercial" type="button">Коммерция</button>
+        </div>
+
+        <div class="portfolio-catalog" id="portfolioCatalog">
+            <figure class="portfolio-card portfolio-card--deniot" data-type="flat" data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-zhk-play.jpg" alt="ЖК Плей, гостиная с видом на Москва-Сити" loading="lazy">
+                <figcaption class="portfolio-card__caption">
+                    <h3 class="portfolio-card__title">ЖК Плей</h3>
+                    <div class="portfolio-card__meta">
+                        <span>Москва</span>
+                        <span>95 м²</span>
+                        <span>4 месяца</span>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <figure class="portfolio-card portfolio-card--deniot" data-type="flat" data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-level-nagatinskaya.jpg" alt="ЖК Level Нагатинская, новостройка с панорамными окнами" loading="lazy">
+                <figcaption class="portfolio-card__caption">
+                    <h3 class="portfolio-card__title">ЖК Level Нагатинская</h3>
+                    <div class="portfolio-card__meta">
+                        <span>Москва</span>
+                        <span>72 м²</span>
+                        <span>Ремонт новостройки</span>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <figure class="portfolio-card portfolio-card--deniot" data-type="house" data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-house-facade.jpg" alt="Частный дом, мокрый фасад в Подмосковье" loading="lazy">
+                <figcaption class="portfolio-card__caption">
+                    <h3 class="portfolio-card__title">Частный дом, мокрый фасад</h3>
+                    <div class="portfolio-card__meta">
+                        <span>Подмосковье</span>
+                        <span>220 м²</span>
+                        <span>Фасадные работы</span>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <figure class="portfolio-card portfolio-card--deniot" data-type="commercial" data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-office-baumanskaya.jpg" alt="Офис на Бауманской, open-plan со стеклянными перегородками" loading="lazy">
+                <figcaption class="portfolio-card__caption">
+                    <h3 class="portfolio-card__title">Офис на Бауманской</h3>
+                    <div class="portfolio-card__meta">
+                        <span>Москва</span>
+                        <span>180 м²</span>
+                        <span>Open-plan</span>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <figure class="portfolio-card portfolio-card--deniot" data-type="flat" data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-zhk-play.jpg" alt="Пример объекта, квартира" loading="lazy">
+                <figcaption class="portfolio-card__caption">
+                    <h3 class="portfolio-card__title">Квартира в центре</h3>
+                    <div class="portfolio-card__meta">
+                        <span>Москва</span>
+                        <span>60 м²</span>
+                        <span>Капитальный</span>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <figure class="portfolio-card portfolio-card--deniot" data-type="flat" data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-level-nagatinskaya.jpg" alt="Пример объекта, квартира" loading="lazy">
+                <figcaption class="portfolio-card__caption">
+                    <h3 class="portfolio-card__title">Квартира в новостройке</h3>
+                    <div class="portfolio-card__meta">
+                        <span>Москва</span>
+                        <span>110 м²</span>
+                        <span>Под ключ</span>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <figure class="portfolio-card portfolio-card--deniot" data-type="house" data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-house-facade.jpg" alt="Пример объекта, частный дом" loading="lazy">
+                <figcaption class="portfolio-card__caption">
+                    <h3 class="portfolio-card__title">Коттедж в КП Истра</h3>
+                    <div class="portfolio-card__meta">
+                        <span>Подмосковье</span>
+                        <span>310 м²</span>
+                        <span>Под ключ</span>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <figure class="portfolio-card portfolio-card--deniot" data-type="commercial" data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-office-baumanskaya.jpg" alt="Пример объекта, коммерция" loading="lazy">
+                <figcaption class="portfolio-card__caption">
+                    <h3 class="portfolio-card__title">Шоурум на Цветном</h3>
+                    <div class="portfolio-card__meta">
+                        <span>Москва</span>
+                        <span>140 м²</span>
+                        <span>Коммерческий ремонт</span>
+                    </div>
+                </figcaption>
+            </figure>
+
+        </div>
+
+        <p class="portfolio-catalog__hint">Примеры объектов, каталог пополняется по мере завершения работ.</p>
+
+    </div>
+</section>
+
+<footer class="footer" data-bg="#1e252b">
+    <div class="container">
+        <div class="footer__grid">
+            <div>
+                <div class="footer__logo">
+                    <img class="footer__logo-mark" src="img/logo-mark-white.png" alt="" width="32" height="32">
+                    <span class="footer__logo-text">ARK</span>
+                </div>
+                <p class="footer__text">Управление ремонтом под личным контролем собственника. Москва и Московская область.</p>
+            </div>
+            <div>
+                <h4 class="footer__heading">Навигация</h4>
+                <div class="footer__links">
+                    <a href="index.html#about" class="footer__link">О нас</a>
+                    <a href="services.html" class="footer__link">Услуги</a>
+                    <a href="index.html#process" class="footer__link">Процесс</a>
+                    <a href="index.html#advantages" class="footer__link">Преимущества</a>
+                    <a href="portfolio.html" class="footer__link">Портфолио</a>
+                    <a href="index.html#contact" class="footer__link">Контакты</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer__heading">Типы объектов</h4>
+                <div class="footer__links">
+                    <a href="portfolio.html?type=flat" class="footer__link">Квартиры</a>
+                    <a href="portfolio.html?type=house" class="footer__link">Частные дома</a>
+                    <a href="portfolio.html?type=commercial" class="footer__link">Коммерция</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            &copy; 2026 ARK Construction. Москва и Московская область.
+        </div>
+    </div>
+</footer>
+
+<script>
+(function(){
+    const filters = document.querySelectorAll('.portfolio-filter');
+    const cards = document.querySelectorAll('#portfolioCatalog .portfolio-card');
+
+    function applyFilter(type) {
+        cards.forEach(card => {
+            const match = type === 'all' || card.getAttribute('data-type') === type;
+            card.style.display = match ? '' : 'none';
+        });
+        filters.forEach(f => f.classList.toggle('portfolio-filter--active', f.getAttribute('data-filter') === type));
+    }
+
+    filters.forEach(f => {
+        f.addEventListener('click', () => applyFilter(f.getAttribute('data-filter')));
+    });
+
+    const urlType = new URLSearchParams(location.search).get('type');
+    if (urlType && ['flat','house','commercial'].includes(urlType)) {
+        applyFilter(urlType);
+    }
+})();
+</script>
+
+</body>
+</html>
