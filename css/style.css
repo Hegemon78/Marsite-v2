@@ -1581,7 +1581,7 @@ h1, h2, h3, h4, h5, h6 {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(255,255,255,.42) 0%, rgba(255,255,255,.66) 60%, rgba(255,255,255,.78) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,.55) 0%, rgba(255,255,255,.76) 60%, rgba(255,255,255,.88) 100%);
     z-index: -1;
 }
 .advantages__grid > .advantage-card:nth-child(1)::before { background-image: url('../img/process-01-measure.jpg'); }
