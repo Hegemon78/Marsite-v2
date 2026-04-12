@@ -1,2 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /dev1/
+Disallow: /dev2/
+Disallow: /dev3/
+Disallow: /dev4/
+
+Sitemap: https://hegemon78.github.io/Marsite-v2/sitemap.xml
