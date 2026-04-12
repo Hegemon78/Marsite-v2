@@ -3016,6 +3016,21 @@ h1, h2, h3, h4, h5, h6 {
         margin: 0 -20px;
         border-radius: 0;
     }
+
+    /* Kill reveal animation inside horizontal carousels (Nikolai 1834 — дёргание)
+       Cards are already visible in the carousel viewport, stagger transition
+       on each card causes visible jitter during horizontal swipe */
+    .advantages__grid [data-reveal],
+    .process__timeline [data-reveal],
+    .reviews__grid [data-reveal],
+    .contact-cards [data-reveal],
+    .advantages__grid .advantage-card,
+    .process__timeline .process__step,
+    .reviews__grid .review-card {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
 }
 
 /* Mobile (480px) */
@@ -3287,9 +3302,12 @@ h1, h2, h3, h4, h5, h6 {
     padding: 16px 22px;
     color: #fff;
     font-family: var(--font-body);
-    font-size: 15px;
+    font-size: 16px;
     outline: none;
     transition: border-color .3s ease, background .3s ease;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
 }
 .guide-magnet__input::placeholder { color: rgba(255, 255, 255, 0.45); }
 .guide-magnet__input:focus {
