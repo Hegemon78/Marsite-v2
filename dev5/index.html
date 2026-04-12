@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARK Construction — Управление ремонтом под личным контролем собственника</title>
+    <meta name="description" content="ARK Construction — ремонт квартир в Москве и Московской области. Личный контроль собственника, прозрачные сметы, гарантия 12 месяцев.">
+    <link rel="canonical" href="https://hegemon78.github.io/Marsite-v2/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ARK Construction — Управление ремонтом под личным контролем собственника">
+    <meta property="og:description" content="Системно. Прозрачно. Без сюрпризов. Ремонт квартир в Москве и МО.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hegemon78.github.io/Marsite-v2/">
+    <meta property="og:image" content="https://hegemon78.github.io/Marsite-v2/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Security -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-src https://yandex.ru https://*.yandex.ru https://*.yandex.net;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="img/favicon-32.ico">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="img/favicon-16.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css?v=20260412-1016">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HomeAndConstructionBusiness",
+        "name": "ARK Construction",
+        "description": "Ремонт квартир, домов и коммерческих помещений под ключ в Москве и МО. Личный контроль собственника на каждом этапе.",
+        "url": "https://hegemon78.github.io/Marsite-v2/",
+        "telephone": "+79267608826",
+        "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 55.7558, "longitude": 37.6173 },
+            "geoRadius": "100000"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Москва",
+            "addressCountry": "RU"
+        },
+        "openingHours": "Mo-Su 09:00-21:00",
+        "priceRange": "₽₽₽"
+    }
+    </script>
+</head>
+<body>
+
+<!-- Skip link -->
+<a href="#main" class="skip-link">Перейти к содержимому</a>
+
+<!-- ===================================
+     HEADER
+     =================================== -->
+<header class="header" id="header">
+    <div class="container header__inner">
+        <a href="#" class="header__logo" aria-label="ARK Construction — На главную">
+            <img class="header__logo-mark" src="img/logo-mark.png" alt="" width="36" height="36">
+            <span class="header__logo-text">ARK</span>
+        </a>
+
+        <nav class="nav" id="nav">
+            <a href="#about" class="nav__link">О нас</a>
+            <a href="services.html" class="nav__link">Услуги</a>
+            <a href="#process" class="nav__link">Процесс</a>
+            <a href="#advantages" class="nav__link">Преимущества</a>
+            <a href="#portfolio" class="nav__link">Портфолио</a>
+            <a href="#reviews" class="nav__link">Отзывы</a>
+            <div class="nav__cta">
+                <a href="#contact" class="btn btn--primary btn--sm">Связаться</a>
+            </div>
+        </nav>
+
+        <button class="burger" id="burger" aria-label="Открыть меню">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+        </button>
+    </div>
+</header>
+
+<!-- ===================================
+     HERO
+     =================================== -->
+<section class="hero hero--dark" id="main" data-bg="#1a2028" data-scroll-fade>
+    <!-- Фон hero: фото интерьера в процессе ремонта + полупрозрачный тёмный оверлей.
+         TODO: после фотосессии заменить img/hero-bg.jpg на реальное фото Марины с объекта -->
+    <div class="hero__bg" aria-hidden="true">
+        <img class="hero__bg-img" src="img/hero-bg.jpg" alt="" loading="eager" decoding="async">
+        <div class="hero__bg-overlay"></div>
+    </div>
+
+    <div class="container hero__inner">
+        <span class="hero__label" data-reveal>Москва и Московская область</span>
+        <h1 class="hero__title" data-reveal>Управление ремонтом<br>под личным контролем<br>собственника</h1>
+        <p class="hero__subtitle" data-reveal>Системно. Прозрачно. Без сюрпризов.</p>
+
+        <div class="hero__actions" data-reveal>
+            <a href="#contact" class="btn btn--primary">Обсудить проект</a>
+            <!-- TODO: заменить t.me/ark_construction на реальный рабочий Telegram ARK (личный @mavilmar не подходит) -->
+            <a href="https://t.me/+79267608826" class="btn btn--outline btn--tg" target="_blank" rel="noopener">Написать в Telegram</a>
+        </div>
+
+        <div class="hero__stats" data-reveal>
+            <div class="hero__stat">
+                <div class="hero__stat-value">10+</div>
+                <div class="hero__stat-label">лет опыта</div>
+            </div>
+            <div class="hero__stat">
+                <div class="hero__stat-value">6</div>
+                <div class="hero__stat-label">этапов контроля</div>
+            </div>
+            <div class="hero__stat">
+                <div class="hero__stat-value">12</div>
+                <div class="hero__stat-label">мес. гарантии</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     PROBLEM-SOLUTION (BAB)
+     =================================== -->
+<section class="problem-solution" id="problem-solution" data-bg="#eee5d8" data-scroll-fade>
+    <div class="container">
+        <div class="section__header">
+            <p class="section__label" data-reveal>Знакомая ситуация?</p>
+            <h2 class="section__title" data-reveal>Почему ремонт превращается в стресс</h2>
+        </div>
+
+        <!-- 3 боли -->
+        <div class="ps__grid">
+            <div class="ps__card ps__card--problem" data-reveal>
+                <div class="ps__icon">&#10007;</div>
+                <h3 class="ps__card-title">Сорванные сроки</h3>
+                <p class="ps__card-text">Бригада обещает закончить за 2 месяца, но ремонт растягивается на полгода. Нет графика, нет контроля, нет ответственных.</p>
+            </div>
+            <div class="ps__card ps__card--problem" data-reveal>
+                <div class="ps__icon">&#10007;</div>
+                <h3 class="ps__card-title">Скрытые доплаты</h3>
+                <p class="ps__card-text">Смета выросла вдвое. Каждую неделю — новые «непредвиденные расходы». Договора нет, спросить не с кого.</p>
+            </div>
+            <div class="ps__card ps__card--problem" data-reveal>
+                <div class="ps__icon">&#10007;</div>
+                <h3 class="ps__card-title">Нет контроля</h3>
+                <p class="ps__card-text">Вы не понимаете, на каком этапе проект. Решения принимаются без вас, качество — на совести бригады.</p>
+            </div>
+        </div>
+
+        <!-- Мост -->
+        <div class="ps__bridge" data-reveal>
+            <div class="ps__bridge-icon">&#8595;</div>
+            <p class="ps__bridge-text"><span>ARK Construction</span> превращает ремонт в понятную инженерную технологию — системно, прозрачно и под личным контролем руководителя</p>
+        </div>
+
+        <!-- 3 решения -->
+        <div class="ps__grid">
+            <div class="ps__card ps__card--solution" data-reveal>
+                <div class="ps__icon">&#10003;</div>
+                <h3 class="ps__card-title">Фиксированные сроки</h3>
+                <p class="ps__card-text">Чёткий график в договоре. 6 этапов контроля. Регулярные отчёты — вы всегда знаете, на каком этапе проект.</p>
+            </div>
+            <div class="ps__card ps__card--solution" data-reveal>
+                <div class="ps__icon">&#10003;</div>
+                <h3 class="ps__card-title">Прозрачные сметы</h3>
+                <p class="ps__card-text">Реалистичная смета до начала работ. Официальный договор. Никаких необоснованных доплат и сюрпризов.</p>
+            </div>
+            <div class="ps__card ps__card--solution" data-reveal>
+                <div class="ps__icon">&#10003;</div>
+                <h3 class="ps__card-title">Личный контроль</h3>
+                <p class="ps__card-text">Руководитель лично курирует каждый проект. Решения принимаются с учётом 10+ лет опыта, а не «как получится».</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     ABOUT
+     =================================== -->
+<section class="about section" id="about" data-bg="#dce4ef" data-scroll-fade>
+    <div class="container">
+        <div class="about__grid">
+            <!-- TODO: mood-фото рабочего места — заменить на реальное фото Марины после студийной съёмки -->
+            <div class="about__image" data-editable data-reveal>
+                <img class="about__image-photo" src="img/about-desk.jpg" alt="Рабочее место руководителя ARK Construction — чертежи квартиры в Москве" loading="lazy">
+                <div class="about__image-caption">
+                    <span>Рабочее место руководителя</span>
+                </div>
+            </div>
+
+            <div class="about__text" data-reveal>
+                <p class="section__label">О компании</p>
+                <h2 class="section__title">Марина Филатова</h2>
+                <p class="section__description about__role">Руководитель ARK Construction</p>
+
+                <p>ARK Construction — строительно-ремонтная компания. Работаем более 10 лет с объектами разного формата: косметический и капитальный ремонт, квартиры в новостройках и вторичке, частные дома, коммерческая недвижимость.</p>
+
+                <p>Эстетика и инженерия в ремонте идут рука об руку. Но за красивой картинкой всегда стоит технология: скрытые работы, коммуникации, последовательность операций. Это наша сильная сторона, и от неё зависит, выдержит ли ремонт годы эксплуатации.</p>
+
+                <p class="about__quote">«По образованию и практике я в первую очередь строитель. Дизайн — это попутное. Технологические процессы в ремонте всем неизвестны — и именно в этом наша ценность: мы умеем превратить их в понятные и предсказуемые шаги для клиента».</p>
+
+                <p>Марина лично курирует каждый проект от первого замера до сдачи объекта. Решения принимает человек, который видит ремонт изнутри: как строитель, отвечающий за результат, и как собственник, который будет в этом жить.</p>
+
+                <div class="about__education">
+                    <h3 class="about__education-title">Образование</h3>
+                    <div class="about__education-item">
+                        Байкальский государственный университет экономики и права
+                    </div>
+                    <div class="about__education-item about__education-item--featured">
+                        НИУ ВШЭ — Гражданское и промышленное строительство
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     SERVICES TEASER
+     (полный блок — на services.html)
+     =================================== -->
+<section class="services-teaser section--alt" id="services" data-bg="#ece2d4" data-scroll-fade>
+    <div class="container">
+        <div class="section__header">
+            <p class="section__label" data-reveal>Услуги</p>
+            <h2 class="section__title" data-reveal>Наши услуги</h2>
+            <p class="section__description" data-reveal>Полный спектр ремонтных работ для квартир, домов и коммерческих помещений</p>
+        </div>
+
+        <div class="services-teaser__grid">
+            <a href="services.html" class="services-teaser__card" data-reveal>
+                <div class="services-teaser__icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19.9V16h3a2 2 0 0 0 2-2v-2H5v2c0 1.1.9 2 2 2h3v3.9a2 2 0 1 0 4 0Z"/><path d="M6 12V2h12v10"/><path d="M14 2v4"/><path d="M10 2v2"/></svg>
+                </div>
+                <h3 class="services-teaser__title">Косметический ремонт</h3>
+                <p class="services-teaser__price">от 2 000 ₽/м&sup2;</p>
+            </a>
+            <a href="services.html" class="services-teaser__card" data-reveal>
+                <div class="services-teaser__icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <h3 class="services-teaser__title">Капитальный ремонт</h3>
+                <p class="services-teaser__price">от 20 000 ₽/м&sup2;</p>
+            </a>
+            <a href="services.html" class="services-teaser__card" data-reveal>
+                <div class="services-teaser__icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21 2-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+                </div>
+                <h3 class="services-teaser__title">Ремонт под ключ</h3>
+                <p class="services-teaser__price">от 32 000 ₽/м&sup2;</p>
+            </a>
+            <a href="services.html" class="services-teaser__card" data-reveal>
+                <div class="services-teaser__icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+                </div>
+                <h3 class="services-teaser__title">Ремонт новостроек</h3>
+                <p class="services-teaser__price">от 35 000 ₽/м&sup2;</p>
+            </a>
+            <a href="services.html" class="services-teaser__card services-teaser__card--capsule" data-reveal>
+                <span class="service-card__badge service-card__badge--soon">Скоро</span>
+                <div class="services-teaser__icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 9.4 7.55 4.24"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                </div>
+                <h3 class="services-teaser__title">Капсульный ремонт</h3>
+                <p class="services-teaser__price services-teaser__price--muted">Готовое решение</p>
+            </a>
+            <a href="services.html" class="services-teaser__card" data-reveal>
+                <div class="services-teaser__icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+                </div>
+                <h3 class="services-teaser__title">Коммерческие помещения</h3>
+                <p class="services-teaser__price">от 12 000 ₽/м&sup2;</p>
+            </a>
+        </div>
+
+        <div class="services-teaser__footer" data-reveal>
+            <a href="services.html" class="btn btn--primary btn--lg">Все услуги и детали &rarr;</a>
+            <p class="services-teaser__note">Дизайн интерьера, авторский надзор, комплектация, сроки, виды работ — на странице услуг</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     PROCESS
+     =================================== -->
+<section class="process section" id="process" data-bg="#d8e2f0" data-scroll-fade>
+    <div class="container">
+        <div class="section__header">
+            <p class="section__label" data-reveal>Как мы работаем</p>
+            <h2 class="section__title" data-reveal>Процесс работы</h2>
+            <p class="section__description" data-reveal>От первого звонка до сдачи объекта — каждый этап под контролем</p>
+        </div>
+
+        <div class="process__timeline">
+            <div class="process__step" data-reveal>
+                <div class="process__step-photo">
+                    <img src="img/process-01-measure.jpg" alt="Замер и подготовка" loading="lazy">
+                </div>
+                <div class="process__step-content">
+                    <h3 class="process__step-title">Знакомство и подготовка</h3>
+                    <div class="process__step-list">
+                        <p class="process__step-item">Заявка и консультация: уточняем тип помещения, метраж, формат работ</p>
+                        <p class="process__step-item">Выезд на замер: обмеры помещения, оценка состояния, фотофиксация</p>
+                        <p class="process__step-item">Обсуждение концепции и пожеланий по стилю и материалам</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process__step" data-reveal>
+                <div class="process__step-photo">
+                    <img src="img/process-02-contract.jpg" alt="Расчёт сметы и договор" loading="lazy">
+                </div>
+                <div class="process__step-content">
+                    <h3 class="process__step-title">Расчёт и договор</h3>
+                    <div class="process__step-list">
+                        <p class="process__step-item">Составление детальной сметы: материалы, работы, спецификация</p>
+                        <p class="process__step-item">Согласование стоимости и объёма работ</p>
+                        <p class="process__step-item">Подписание договора с фиксацией сроков, графика платежей и гарантий</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process__step" data-reveal>
+                <div class="process__step-photo">
+                    <img src="img/process-03-demolition.jpg" alt="Демонтаж и подготовка объекта" loading="lazy">
+                </div>
+                <div class="process__step-content">
+                    <h3 class="process__step-title">Демонтаж и подготовка</h3>
+                    <div class="process__step-list">
+                        <p class="process__step-item">Закупка и доставка материалов</p>
+                        <p class="process__step-item">Подготовка объекта: завоз инструментов, защита конструкций</p>
+                        <p class="process__step-item">Демонтажные работы: снос перегородок, снятие покрытий, вывоз мусора</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process__step" data-reveal>
+                <div class="process__step-photo">
+                    <img src="img/process-04-rough.jpg" alt="Черновая отделка: электрика, сантехника, стяжка" loading="lazy">
+                </div>
+                <div class="process__step-content">
+                    <h3 class="process__step-title">Черновая отделка</h3>
+                    <div class="process__step-list">
+                        <p class="process__step-item">Возведение перегородок, штробление стен</p>
+                        <p class="process__step-item">Монтаж электрики, сантехники, тёплого пола</p>
+                        <p class="process__step-item">Стяжка пола, штукатурка стен по маякам</p>
+                        <p class="process__step-item">Приёмка скрытых работ</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process__step" data-reveal>
+                <div class="process__step-photo">
+                    <img src="img/process-05-finish.jpg" alt="Чистовая отделка: покраска стен премиум-кистью" loading="lazy">
+                </div>
+                <div class="process__step-content">
+                    <h3 class="process__step-title">Чистовая отделка</h3>
+                    <div class="process__step-list">
+                        <p class="process__step-item">Шпаклёвка, грунтовка, укладка плитки</p>
+                        <p class="process__step-item">Монтаж потолков, покраска, оклейка обоями</p>
+                        <p class="process__step-item">Укладка чистовых полов, установка дверей</p>
+                        <p class="process__step-item">Монтаж сантехники, розеток, светильников</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process__step" data-reveal>
+                <div class="process__step-photo">
+                    <img src="img/process-06-delivery.jpg" alt="Сдача готового объекта" loading="lazy">
+                </div>
+                <div class="process__step-content">
+                    <h3 class="process__step-title">Сдача объекта</h3>
+                    <div class="process__step-list">
+                        <p class="process__step-item">Комплектация и расстановка мебели</p>
+                        <p class="process__step-item">Профессиональная уборка</p>
+                        <p class="process__step-item">Проверка качества, акт приёма-передачи, окончательный расчёт</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     PORTFOLIO
+     =================================== -->
+<section class="portfolio section--alt" id="portfolio" data-bg="#ece2d4" data-scroll-fade>
+    <div class="container">
+        <div class="section__header">
+            <p class="section__label" data-reveal>Портфолио</p>
+            <h2 class="section__title" data-reveal>Наши проекты</h2>
+            <p class="section__description" data-reveal>Каждый проект — это управляемый процесс с предсказуемым результатом</p>
+        </div>
+
+        <div class="portfolio__grid portfolio__grid--4">
+            <!-- TODO: заменить AI-сгенерированные фото на реальные от Марины (+ убрать провода/кабели через обработку) -->
+
+            <!-- ЖК Плей -->
+            <figure class="portfolio-card portfolio-card--deniot" data-editable data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-zhk-play.jpg" alt="ЖК Плей — гостиная с видом на Москва-Сити" loading="lazy">
+                <figcaption class="portfolio-card__caption">
+                    <h3 class="portfolio-card__title">ЖК Плей</h3>
+                    <div class="portfolio-card__meta">
+                        <span>Москва</span>
+                        <span>Ремонт под ключ</span>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <!-- ЖК Level Нагатинская -->
+            <figure class="portfolio-card portfolio-card--deniot" data-editable data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-level-nagatinskaya.jpg" alt="ЖК Level Нагатинская — новостройка с панорамными окнами" loading="lazy">
+                <figcaption class="portfolio-card__caption">
+                    <h3 class="portfolio-card__title">ЖК Level Нагатинская</h3>
+                    <div class="portfolio-card__meta">
+                        <span>Москва</span>
+                        <span>Ремонт новостройки</span>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <!-- Частный дом — мокрый фасад -->
+            <figure class="portfolio-card portfolio-card--deniot" data-editable data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-house-facade.jpg" alt="Частный дом — мокрый фасад в Подмосковье" loading="lazy">
+                <figcaption class="portfolio-card__caption">
+                    <h3 class="portfolio-card__title">Частный дом — мокрый фасад</h3>
+                    <div class="portfolio-card__meta">
+                        <span>Подмосковье</span>
+                        <span>Фасадные работы</span>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <!-- Офис на Бауманской -->
+            <figure class="portfolio-card portfolio-card--deniot" data-editable data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-office-baumanskaya.jpg" alt="Офис на Бауманской — open-plan со стеклянными перегородками" loading="lazy">
+                <figcaption class="portfolio-card__caption">
+                    <h3 class="portfolio-card__title">Офис на Бауманской</h3>
+                    <div class="portfolio-card__meta">
+                        <span>Москва</span>
+                        <span>Стеклянные перегородки</span>
+                    </div>
+                </figcaption>
+            </figure>
+        </div>
+
+        <div class="portfolio-teaser__cta" data-reveal>
+            <a href="portfolio.html" class="btn btn--primary btn--lg">Смотреть все работы</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     ADVANTAGES
+     =================================== -->
+<section class="advantages section" id="advantages" data-bg="#dce4ef" data-scroll-fade>
+    <div class="container">
+        <div class="section__header">
+            <p class="section__label" data-reveal>Почему мы</p>
+            <h2 class="section__title" data-reveal>Наши преимущества</h2>
+        </div>
+
+        <div class="advantages__grid">
+            <div class="advantage-card" data-reveal>
+                <div class="advantage-card__number">01</div>
+                <h3 class="advantage-card__title">Строитель, а не «мультипрораб»</h3>
+                <p class="advantage-card__text">Ремонт — это в первую очередь технология. Мы управляем процессами, которые скрыты от заказчика: от демонтажа и стяжки до инженерии и чистовой отделки. Руководитель понимает проект как строитель, как заказчик и как дизайнер — и принимает решения из этой полной картины.</p>
+            </div>
+
+            <div class="advantage-card" data-reveal>
+                <div class="advantage-card__number">02</div>
+                <h3 class="advantage-card__title">Сквозной контроль качества</h3>
+                <p class="advantage-card__text">Авторский надзор, технический контроль, управление комплектацией — единый центр управления. Плитка ляжет ровно, розетки будут работать, сроки не сорвутся.</p>
+            </div>
+
+            <div class="advantage-card" data-reveal>
+                <div class="advantage-card__number">03</div>
+                <h3 class="advantage-card__title">Технологическая экспертиза</h3>
+                <p class="advantage-card__text">Мы знаем, как обойти технические сложности: усадка новостроек, перепланировка в вторичке, несущие стены, коммуникации старого фонда. Предлагаем альтернативы и оптимизируем бюджет без потери качества.</p>
+            </div>
+
+            <div class="advantage-card" data-reveal>
+                <div class="advantage-card__number">04</div>
+                <h3 class="advantage-card__title">Прозрачная коммуникация</h3>
+                <p class="advantage-card__text">Регулярные фото- и видеоотчёты. Чёткие сроки. Руководитель всегда на связи лично. Вы знаете, на каком этапе проект и куда потрачены средства.</p>
+            </div>
+
+            <div class="advantage-card" data-reveal>
+                <div class="advantage-card__number">05</div>
+                <h3 class="advantage-card__title">Финансовая прозрачность</h3>
+                <p class="advantage-card__text">Официальный договор, реалистичные сметы, никаких необоснованных доплат. Юридическая и финансовая безопасность.</p>
+            </div>
+
+            <div class="advantage-card" data-reveal>
+                <div class="advantage-card__number">06</div>
+                <h3 class="advantage-card__title">Гарантия на работы</h3>
+                <p class="advantage-card__text">12 месяцев гарантии на все выполненные работы. Выезд и исправление в течение 7 дней. Спорные вопросы решаем переговорами с привлечением независимого эксперта.</p>
+            </div>
+        </div>
+
+        <!-- Сравнительная таблица -->
+        <div class="comparison" data-reveal>
+            <h3 class="comparison__title">Чем мы отличаемся</h3>
+            <div class="comparison__wrapper">
+                <table class="comparison__table">
+                    <thead>
+                        <tr>
+                            <th>Критерий</th>
+                            <th>Бригады</th>
+                            <th>Крупные компании</th>
+                            <th>Частные прорабы</th>
+                            <th>ARK Construction</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Договор и гарантии</td>
+                            <td>Чаще всего нет</td>
+                            <td>Есть</td>
+                            <td>Редко</td>
+                            <td>Официальный договор</td>
+                        </tr>
+                        <tr>
+                            <td>Личное участие руководителя</td>
+                            <td>Нет</td>
+                            <td>Менеджеры</td>
+                            <td>Частично</td>
+                            <td>Полный контроль</td>
+                        </tr>
+                        <tr>
+                            <td>Системный подход</td>
+                            <td>Нет</td>
+                            <td>Бюрократия</td>
+                            <td>Только стройка</td>
+                            <td>Стройка + дизайн + логистика</td>
+                        </tr>
+                        <tr>
+                            <td>Скорость решений</td>
+                            <td>Зависит от бригады</td>
+                            <td>Дни согласований</td>
+                            <td>Быстро</td>
+                            <td>Решения за минуты</td>
+                        </tr>
+                        <tr>
+                            <td>Контроль бюджета</td>
+                            <td>Нет</td>
+                            <td>Доплаты</td>
+                            <td>Простои</td>
+                            <td>Прозрачные сметы</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     REVIEWS
+     =================================== -->
+<!-- TODO: заменить placeholder-отзывы на реальные от клиентов Марины -->
+<section class="reviews section--alt" id="reviews" data-bg="#ece2d4" data-scroll-fade>
+    <div class="container">
+        <div class="section__header">
+            <p class="section__label" data-reveal>Отзывы</p>
+            <h2 class="section__title" data-reveal>Что говорят клиенты</h2>
+        </div>
+
+        <div class="reviews__grid">
+            <div class="review-card" data-editable data-reveal>
+                <div class="review-card__quote">&laquo;</div>
+                <p class="review-card__text">Марина лично контролировала каждый этап. Ремонт сдали точно в срок, без единой доплаты сверх сметы. Очень довольны результатом — квартира как с картинки.</p>
+                <div class="review-card__author">
+                    <div class="review-card__avatar">А</div>
+                    <div>
+                        <div class="review-card__name">Анна К.</div>
+                        <div class="review-card__type">Ремонт под ключ, 78 м&sup2;</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card" data-editable data-reveal>
+                <div class="review-card__quote">&laquo;</div>
+                <p class="review-card__text">После неудачного опыта с бригадой боялись начинать заново. ARK всё взяли на себя — от демонтажа до финальной уборки. Главное — полная прозрачность по деньгам.</p>
+                <div class="review-card__author">
+                    <div class="review-card__avatar">Д</div>
+                    <div>
+                        <div class="review-card__name">Дмитрий и Елена С.</div>
+                        <div class="review-card__type">Капитальный ремонт, 95 м&sup2;</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card" data-editable data-reveal>
+                <div class="review-card__quote">&laquo;</div>
+                <p class="review-card__text">Новостройка со свободной планировкой — казалось, это невозможно организовать. Марина предложила решения, о которых мы даже не думали. Рекомендуем!</p>
+                <div class="review-card__author">
+                    <div class="review-card__avatar">М</div>
+                    <div>
+                        <div class="review-card__name">Михаил Т.</div>
+                        <div class="review-card__type">Ремонт новостройки, 120 м&sup2;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     GUIDE MAGNET (lead magnet — checklist)
+     =================================== -->
+<section class="guide-magnet" id="guide" data-bg="#1a1e24" data-scroll-fade>
+    <div class="container">
+        <div class="guide-magnet__grid">
+            <div class="guide-magnet__text" data-reveal>
+                <p class="guide-magnet__label">Бесплатный гайд</p>
+                <h2 class="guide-magnet__title">Чек-лист правильного ремонта</h2>
+                <p class="guide-magnet__desc">30 критичных пунктов от Николая и Марины, на которые обычно закрывают глаза бригады. Технология, скрытые работы, проверка качества на каждом этапе. Пройдитесь по этому списку до старта своего ремонта или по ходу работ, и вы поймёте, где обычно теряются деньги, сроки и качество.</p>
+                <ul class="guide-magnet__bullets">
+                    <li>Что проверить до подписания договора</li>
+                    <li>Какие скрытые работы нельзя пропускать</li>
+                    <li>Как увидеть экономию на материалах глазами прораба</li>
+                    <li>Сроки сдачи этапов, которые реально выдерживаются</li>
+                </ul>
+                <form class="guide-magnet__form" id="guideForm" novalidate>
+                    <input type="email" class="guide-magnet__input" id="guideEmail" name="email" placeholder="Ваш email" required>
+                    <button type="submit" class="btn btn--gold btn--lg">Получить чек-лист</button>
+                </form>
+                <div class="guide-magnet__success">
+                    Спасибо, чек-лист уже летит вам на почту. Проверьте папку Промоакции, если не увидите сразу.
+                </div>
+                <p class="guide-magnet__note">PDF придёт одним письмом, без спама и подписок.</p>
+            </div>
+            <div class="guide-magnet__visual" data-reveal>
+                <div class="guide-magnet__doc">
+                    <div class="guide-magnet__doc-inner">
+                        <div class="guide-magnet__doc-label">ARK · Construction guide</div>
+                        <div class="guide-magnet__doc-heading">Чек-лист<br>правильного ремонта</div>
+                        <div class="guide-magnet__doc-lines">
+                            <span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="guide-magnet__doc-footer">30 пунктов · PDF</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     CONTACT
+     =================================== -->
+<section class="contact" id="contact" data-bg="#14181d" data-scroll-fade>
+    <!-- Dark premium hero (variant C, Nikolai 1814) -->
+    <div class="contact-hero">
+        <div class="container contact-hero__inner">
+            <p class="contact-hero__label" data-reveal>Контакты</p>
+            <h2 class="contact-hero__title" data-reveal>Свяжитесь<br>с нами</h2>
+            <span class="contact-hero__stroke" data-reveal></span>
+            <p class="contact-hero__desc" data-reveal>Расскажите о проекте, и мы сделаем предварительный расчёт сметы, сроков и этапов. Первая консультация и выезд на объект бесплатно.</p>
+            <a href="#contactForm" class="btn btn--gold btn--lg contact-hero__cta" data-reveal>Оставить заявку</a>
+        </div>
+    </div>
+
+    <!-- Split overlay card (variant C, Marina 1845) -->
+    <div class="container">
+        <div class="contact-split" data-reveal>
+            <!-- Contact list with gold dots (variant C pure, Marina 1845/1850) -->
+            <div class="contact-split__list">
+                <a href="https://t.me/+79267608826" target="_blank" rel="noopener" class="contact-split__item contact-split__item--link" data-editable>
+                    <span class="contact-split__dot"></span>
+                    <span class="contact-split__label">Telegram</span>
+                    <span class="contact-split__value">Написать нам</span>
+                    <span class="contact-split__arrow">→</span>
+                </a>
+                <a href="tel:+79267608826" class="contact-split__item contact-split__item--link" data-editable>
+                    <span class="contact-split__dot"></span>
+                    <span class="contact-split__label">Телефон</span>
+                    <span class="contact-split__value">+7 926 760 88 26</span>
+                    <span class="contact-split__arrow">→</span>
+                </a>
+                <div class="contact-split__item">
+                    <span class="contact-split__dot"></span>
+                    <span class="contact-split__label">График</span>
+                    <span class="contact-split__value">Ежедневно, 09:00 до 21:00</span>
+                </div>
+            </div>
+
+            <!-- Guarantee compact -->
+            <div class="contact-split__guarantee">
+                12 месяцев гарантии на все работы. Выезд и исправление в течение 7 дней.
+            </div>
+
+            <!-- Form inside the white card -->
+            <form class="contact-form contact-split__form" id="contactForm">
+                <h3 class="contact-form__title">Оставить заявку</h3>
+
+                <div class="form-group">
+                    <label class="form-group__label" for="name">Имя *</label>
+                    <input class="form-group__input" type="text" id="name" name="name" placeholder="Ваше имя" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-group__label" for="phone">Телефон *</label>
+                    <input class="form-group__input" type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-group__label" for="service">Интересующая услуга</label>
+                    <select class="form-group__select" id="service" name="service">
+                        <option value="">Выберите услугу</option>
+                        <option value="cosmetic">Косметический ремонт</option>
+                        <option value="capital">Капитальный ремонт</option>
+                        <option value="turnkey">Ремонт под ключ</option>
+                        <option value="newbuild">Ремонт новостроек</option>
+                        <option value="commercial">Коммерческие помещения</option>
+                        <option value="design">Дизайн интерьера</option>
+                        <option value="supervision">Авторский надзор</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-group__label" for="message">Описание проекта</label>
+                    <textarea class="form-group__textarea" id="message" name="message" placeholder="Опишите ваш проект: тип помещения, площадь, пожелания"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn--primary btn--block">Отправить заявку</button>
+                <p class="contact-form__note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     FOOTER
+     =================================== -->
+<footer class="footer" data-bg="#1e252b">
+    <div class="container">
+        <div class="footer__grid">
+            <div>
+                <div class="footer__logo">
+                    <img class="footer__logo-mark" src="img/logo-mark-white.png" alt="" width="32" height="32">
+                    <span class="footer__logo-text">ARK</span>
+                </div>
+                <p class="footer__text">Управление ремонтом под личным контролем собственника. Москва и Московская область.</p>
+            </div>
+
+            <div>
+                <h4 class="footer__heading">Навигация</h4>
+                <div class="footer__links">
+                    <a href="#about" class="footer__link">О нас</a>
+                    <a href="services.html" class="footer__link">Услуги</a>
+                    <a href="#process" class="footer__link">Процесс</a>
+                    <a href="#advantages" class="footer__link">Преимущества</a>
+                    <a href="#portfolio" class="footer__link">Портфолио</a>
+                    <a href="#contact" class="footer__link">Контакты</a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="footer__heading">Услуги</h4>
+                <div class="footer__links">
+                    <a href="services.html" class="footer__link">Косметический ремонт</a>
+                    <a href="services.html" class="footer__link">Капитальный ремонт</a>
+                    <a href="services.html" class="footer__link">Ремонт под ключ</a>
+                    <a href="services.html" class="footer__link">Дизайн интерьера</a>
+                    <a href="services.html" class="footer__link">Авторский надзор</a>
+                    <a href="services.html" class="footer__link">Комплектация</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            &copy; 2026 ARK Construction. Москва и Московская область.
+        </div>
+    </div>
+</footer>
+
+<!-- ===================================
+     FLOATING BUTTONS
+     =================================== -->
+<!-- TODO: заменить placeholder-ссылки на реальные номера WhatsApp и Telegram -->
+<!-- Scrubber — тонкая вертикальная навигация с подсказкой названия секции -->
+<div class="page-scrubber" aria-label="Навигация по странице">
+    <div class="page-scrubber__track">
+        <div class="page-scrubber__thumb">
+            <span class="page-scrubber__pill" data-scrubber-label>Главная</span>
+        </div>
+    </div>
+</div>
+
+<!-- Навигационная плавающая кнопка "в начало" (запрос Марины 1584, 1598) -->
+<div class="nav-fab" aria-label="Навигация по разделам">
+    <button class="nav-fab__btn nav-fab__btn--top" type="button" aria-label="В начало страницы">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+    </button>
+</div>
+
+<div class="floating-btns">
+    <a href="https://t.me/+79267608826" target="_blank" rel="noopener" class="floating-btn floating-btn--telegram" data-editable aria-label="Написать в Telegram">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    </a>
+</div>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
