@@ -3513,17 +3513,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .guide-magnet__input {
-    flex: 1 1 260px;
+    flex: 0 1 280px;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.16);
     border-radius: 999px;
-    padding: 16px 22px;
+    padding: 14px 20px;
     color: #fff;
     font-family: var(--font-body);
-    font-size: 16px;
+    font-size: 15px;
     outline: none;
     transition: border-color .3s ease, background .3s ease;
-    max-width: 100%;
+    max-width: 280px;
     min-width: 0;
     box-sizing: border-box;
 }
@@ -3672,7 +3672,11 @@ h1, h2, h3, h4, h5, h6 {
     .guide-magnet__desc { font-size: 15px; }
     .guide-magnet__form {
         flex-direction: column;
-        align-items: stretch;
+        align-items: flex-start;
+    }
+    .guide-magnet__input {
+        max-width: 260px;
+        width: 100%;
     }
     .guide-magnet__doc { width: 240px; padding: 30px 26px; }
     .guide-magnet__doc-heading { font-size: 24px; }
