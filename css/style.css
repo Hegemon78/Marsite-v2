@@ -3464,54 +3464,65 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 80px;
 }
 
-/* Horizontal action buttons row */
-.contact-split__buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-    margin-bottom: 32px;
-    border: 1px solid var(--color-border);
-    border-radius: 14px;
-    overflow: hidden;
-}
-
-.contact-split__btn {
-    flex: 1;
+/* Contact list with gold dots (variant C pure) */
+.contact-split__list {
     display: flex;
     flex-direction: column;
+    gap: 0;
+    margin-bottom: 28px;
+}
+
+.contact-split__item {
+    display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 22px 16px;
+    gap: 14px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--color-border);
     text-decoration: none;
-    color: var(--color-text);
-    transition: background .3s ease, color .3s ease;
-    cursor: pointer;
+    color: inherit;
+    transition: background .3s ease;
+    position: relative;
+}
+.contact-split__item:first-child { border-top: 1px solid var(--color-border); }
+
+.contact-split__item--link:hover {
+    background: rgba(174, 140, 86, 0.04);
 }
 
-.contact-split__btn:not(.contact-split__btn--static):hover {
-    background: rgba(174, 140, 86, 0.08);
-}
-
-.contact-split__icon {
-    color: var(--color-gold);
-    width: 28px;
-    height: 28px;
-}
-
-.contact-split__btn-label {
-    font-family: var(--font-body);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: .02em;
-    color: var(--color-text);
-}
-
-.contact-split__divider {
-    width: 1px;
-    height: 52px;
-    background: var(--color-border);
+.contact-split__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-gold);
     flex-shrink: 0;
+}
+
+.contact-split__label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    min-width: 80px;
+}
+
+.contact-split__value {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-text);
+    flex: 1;
+}
+
+.contact-split__arrow {
+    color: var(--color-gold);
+    font-size: 18px;
+    transition: transform .3s ease;
+    margin-left: auto;
+}
+.contact-split__item--link:hover .contact-split__arrow {
+    transform: translateX(4px);
 }
 
 /* Guarantee compact */
