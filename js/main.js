@@ -540,4 +540,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Мини-фильтр на главной в секции Portfolio (#4)
+    const teaserGrid = document.getElementById('portfolioTeaserGrid');
+    if (teaserGrid) {
+        const teaserFilters = teaserGrid.parentElement.querySelectorAll('.portfolio-filter');
+        const teaserCards = teaserGrid.querySelectorAll('[data-type]');
+        const applyTeaserFilter = (type) => {
+            teaserCards.forEach((card) => {
+                const match = type === 'all' || card.getAttribute('data-type') === type;
+                card.style.display = match ? '' : 'none';
+            });
+            teaserFilters.forEach((btn) => {
+                btn.classList.toggle('portfolio-filter--active', btn.getAttribute('data-filter') === type);
+            });
+        };
+        teaserFilters.forEach((btn) => {
+            btn.addEventListener('click', () => applyTeaserFilter(btn.getAttribute('data-filter')));
+        });
+    }
+
+    // Dropdown в хедере — тап на мобильных + клик вне закрывает (#9)
+    const dropdownItems = document.querySelectorAll('.nav__item--dropdown');
+    dropdownItems.forEach((item) => {
+        const trigger = item.querySelector('.nav__trigger');
+        if (!trigger) return;
+        trigger.addEventListener('click', (e) => {
+            // Только на мобильных (нет hover) перехватываем клик
+            if (window.matchMedia('(hover: none)').matches) {
+                const isOpen = item.classList.contains('is-open');
+                if (!isOpen) {
+                    e.preventDefault();
+                    dropdownItems.forEach((i) => i.classList.remove('is-open'));
+                    item.classList.add('is-open');
+                }
+            }
+        });
+    });
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav__item--dropdown')) {
+            dropdownItems.forEach((i) => i.classList.remove('is-open'));
+        }
+    });
+
 });

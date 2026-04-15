@@ -77,7 +77,15 @@
             <a href="services.html" class="nav__link">Услуги</a>
             <a href="#process" class="nav__link">Процесс</a>
             <a href="#advantages" class="nav__link">Преимущества</a>
-            <a href="#portfolio" class="nav__link">Портфолио</a>
+            <div class="nav__item nav__item--dropdown">
+                <a href="#portfolio" class="nav__link nav__trigger">Портфолио</a>
+                <div class="nav__dropdown">
+                    <a href="portfolio.html" class="nav__dropdown-link">Все работы</a>
+                    <a href="portfolio.html?type=flat" class="nav__dropdown-link">Квартиры</a>
+                    <a href="portfolio.html?type=house" class="nav__dropdown-link">Частные дома</a>
+                    <a href="portfolio.html?type=commercial" class="nav__dropdown-link">Коммерческие</a>
+                </div>
+            </div>
             <a href="#team" class="nav__link">Команда</a>
             <a href="#reviews" class="nav__link">Отзывы</a>
             <div class="nav__cta">
@@ -351,7 +359,7 @@
                     <img src="img/process-01-measure.jpg" alt="Замер и подготовка" loading="lazy">
                 </div>
                 <div class="process__step-content">
-                    <h3 class="process__step-title">Знакомство и подготовка</h3>
+                    <h3 class="process__step-title">Знакомство и подготовка <a href="portfolio-zhk-play.html" class="process-case-badge">ЖК Плей</a></h3>
                     <div class="process__step-list">
                         <p class="process__step-item">Заявка и консультация: уточняем тип помещения, метраж, формат работ</p>
                         <p class="process__step-item">Выезд на замер: обмеры помещения, оценка состояния, фотофиксация</p>
@@ -365,7 +373,7 @@
                     <img src="img/process-02-contract.jpg" alt="Расчёт сметы и договор" loading="lazy">
                 </div>
                 <div class="process__step-content">
-                    <h3 class="process__step-title">Расчёт и договор</h3>
+                    <h3 class="process__step-title">Расчёт и договор <a href="portfolio-level-nagatinskaya.html" class="process-case-badge">ЖК Level Нагатинская</a></h3>
                     <div class="process__step-list">
                         <p class="process__step-item">Составление детальной сметы: материалы, работы, спецификация</p>
                         <p class="process__step-item">Согласование стоимости и объёма работ</p>
@@ -379,7 +387,7 @@
                     <img src="img/process-03-demolition.jpg" alt="Демонтаж и подготовка объекта" loading="lazy">
                 </div>
                 <div class="process__step-content">
-                    <h3 class="process__step-title">Демонтаж и подготовка</h3>
+                    <h3 class="process__step-title">Демонтаж и подготовка <a href="portfolio-house-facade.html" class="process-case-badge">Частный дом</a></h3>
                     <div class="process__step-list">
                         <p class="process__step-item">Закупка и доставка материалов</p>
                         <p class="process__step-item">Подготовка объекта: завоз инструментов, защита конструкций</p>
@@ -393,7 +401,7 @@
                     <img src="img/process-04-rough.jpg" alt="Черновая отделка: электрика, сантехника, стяжка" loading="lazy">
                 </div>
                 <div class="process__step-content">
-                    <h3 class="process__step-title">Черновая отделка</h3>
+                    <h3 class="process__step-title">Черновая отделка <a href="portfolio-office-baumanskaya.html" class="process-case-badge">Офис на Бауманской</a></h3>
                     <div class="process__step-list">
                         <p class="process__step-item">Возведение перегородок, штробление стен</p>
                         <p class="process__step-item">Монтаж электрики, сантехники, тёплого пола</p>
@@ -408,7 +416,7 @@
                     <img src="img/process-05-finish.jpg" alt="Чистовая отделка: покраска стен премиум-кистью" loading="lazy">
                 </div>
                 <div class="process__step-content">
-                    <h3 class="process__step-title">Чистовая отделка</h3>
+                    <h3 class="process__step-title">Чистовая отделка <a href="portfolio-clinic-ophtalmo.html" class="process-case-badge">Офтальмологическая клиника</a></h3>
                     <div class="process__step-list">
                         <p class="process__step-item">Шпаклёвка, грунтовка, укладка плитки</p>
                         <p class="process__step-item">Монтаж потолков, покраска, оклейка обоями</p>
@@ -423,7 +431,7 @@
                     <img src="img/process-06-delivery.jpg" alt="Сдача готового объекта" loading="lazy">
                 </div>
                 <div class="process__step-content">
-                    <h3 class="process__step-title">Сдача объекта</h3>
+                    <h3 class="process__step-title">Сдача объекта <a href="portfolio-zhk-play.html" class="process-case-badge">ЖК Плей</a></h3>
                     <div class="process__step-list">
                         <p class="process__step-item">Комплектация и расстановка мебели</p>
                         <p class="process__step-item">Профессиональная уборка</p>
@@ -446,56 +454,96 @@
             <p class="section__description" data-reveal>Каждый проект — это управляемый процесс с предсказуемым результатом</p>
         </div>
 
-        <div class="portfolio__grid portfolio__grid--4">
-            <!-- TODO: заменить AI-сгенерированные фото на реальные от Марины (+ убрать провода/кабели через обработку) -->
+        <!-- Мини-фильтр по типам объектов -->
+        <div class="portfolio-filters" role="tablist" aria-label="Фильтр по типу объекта" data-reveal>
+            <button class="portfolio-filter portfolio-filter--active" data-filter="all" type="button">Все</button>
+            <button class="portfolio-filter" data-filter="flat" type="button">Квартиры</button>
+            <button class="portfolio-filter" data-filter="house" type="button">Частные дома</button>
+            <button class="portfolio-filter" data-filter="commercial" type="button">Коммерция</button>
+        </div>
+
+        <div class="portfolio__grid portfolio__grid--featured" id="portfolioTeaserGrid">
+            <!-- ЖК Level Нагатинская — флагманский проект (2×2) -->
+            <a href="portfolio-level-nagatinskaya.html" class="portfolio-card portfolio-card--deniot portfolio-card--featured" data-type="flat" data-reveal>
+                <span class="portfolio-card__badge">Флагманский проект</span>
+                <img class="portfolio-card__photo" src="img/portfolio-level-nagatinskaya.jpg" alt="ЖК Level Нагатинская — флагманский проект ARK Construction" loading="lazy">
+                <figcaption class="portfolio-card__caption">
+                    <h3 class="portfolio-card__title">ЖК Level Нагатинская</h3>
+                    <div class="portfolio-card__meta">
+                        <span>Москва</span>
+                        <span>110 м²</span>
+                        <span>5 мес</span>
+                    </div>
+                </figcaption>
+            </a>
 
             <!-- ЖК Плей -->
-            <figure class="portfolio-card portfolio-card--deniot" data-editable data-reveal>
+            <a href="portfolio-zhk-play.html" class="portfolio-card portfolio-card--deniot" data-type="flat" data-reveal>
                 <img class="portfolio-card__photo" src="img/portfolio-zhk-play.jpg" alt="ЖК Плей — гостиная с видом на Москва-Сити" loading="lazy">
                 <figcaption class="portfolio-card__caption">
                     <h3 class="portfolio-card__title">ЖК Плей</h3>
                     <div class="portfolio-card__meta">
                         <span>Москва</span>
-                        <span>Ремонт под ключ</span>
+                        <span>85 м²</span>
+                        <span>4 мес</span>
                     </div>
                 </figcaption>
-            </figure>
-
-            <!-- ЖК Level Нагатинская -->
-            <figure class="portfolio-card portfolio-card--deniot" data-editable data-reveal>
-                <img class="portfolio-card__photo" src="img/portfolio-level-nagatinskaya.jpg" alt="ЖК Level Нагатинская — новостройка с панорамными окнами" loading="lazy">
-                <figcaption class="portfolio-card__caption">
-                    <h3 class="portfolio-card__title">ЖК Level Нагатинская</h3>
-                    <div class="portfolio-card__meta">
-                        <span>Москва</span>
-                        <span>Ремонт новостройки</span>
-                    </div>
-                </figcaption>
-            </figure>
+            </a>
 
             <!-- Частный дом — мокрый фасад -->
-            <figure class="portfolio-card portfolio-card--deniot" data-editable data-reveal>
+            <a href="portfolio-house-facade.html" class="portfolio-card portfolio-card--deniot" data-type="house" data-reveal>
                 <img class="portfolio-card__photo" src="img/portfolio-house-facade.jpg" alt="Частный дом — мокрый фасад в Подмосковье" loading="lazy">
                 <figcaption class="portfolio-card__caption">
-                    <h3 class="portfolio-card__title">Частный дом — мокрый фасад</h3>
+                    <h3 class="portfolio-card__title">Частный дом</h3>
                     <div class="portfolio-card__meta">
                         <span>Подмосковье</span>
-                        <span>Фасадные работы</span>
+                        <span>240 м²</span>
+                        <span>7 мес</span>
                     </div>
                 </figcaption>
-            </figure>
+            </a>
 
             <!-- Офис на Бауманской -->
-            <figure class="portfolio-card portfolio-card--deniot" data-editable data-reveal>
+            <a href="portfolio-office-baumanskaya.html" class="portfolio-card portfolio-card--deniot" data-type="commercial" data-reveal>
                 <img class="portfolio-card__photo" src="img/portfolio-office-baumanskaya.jpg" alt="Офис на Бауманской — open-plan со стеклянными перегородками" loading="lazy">
                 <figcaption class="portfolio-card__caption">
                     <h3 class="portfolio-card__title">Офис на Бауманской</h3>
                     <div class="portfolio-card__meta">
                         <span>Москва</span>
-                        <span>Стеклянные перегородки</span>
+                        <span>150 м²</span>
+                        <span>3 мес</span>
                     </div>
                 </figcaption>
-            </figure>
+            </a>
+
+            <!-- Офтальмологическая клиника -->
+            <a href="portfolio-clinic-ophtalmo.html" class="portfolio-card portfolio-card--deniot" data-type="commercial" data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio/clinic-ophtalmo/cover.jpg" alt="Офтальмологическая клиника — зонирование и ресепшн" loading="lazy">
+                <figcaption class="portfolio-card__caption">
+                    <h3 class="portfolio-card__title">Офтальмологическая клиника</h3>
+                    <div class="portfolio-card__meta">
+                        <span>Москва</span>
+                        <span>46 м²</span>
+                        <span>1 мес</span>
+                    </div>
+                </figcaption>
+            </a>
+        </div>
+
+        <!-- Счётчики-якори -->
+        <div class="portfolio-counters" data-reveal>
+            <div class="portfolio-counters__item">
+                <div class="portfolio-counters__num">5</div>
+                <div class="portfolio-counters__label">сданных объектов</div>
+            </div>
+            <div class="portfolio-counters__item">
+                <div class="portfolio-counters__num">46–240</div>
+                <div class="portfolio-counters__label">метров² на объект</div>
+            </div>
+            <div class="portfolio-counters__item">
+                <div class="portfolio-counters__num">12</div>
+                <div class="portfolio-counters__label">месяцев гарантии</div>
+            </div>
         </div>
 
         <div class="portfolio-teaser__cta" data-reveal>

@@ -3679,6 +3679,8 @@ h1, h2, h3, h4, h5, h6 {
     .guide-magnet__input {
         max-width: 260px;
         width: 100%;
+        flex: 0 0 auto;
+        height: auto;
     }
     .guide-magnet__doc { width: 240px; padding: 30px 26px; }
     .guide-magnet__doc-heading { font-size: 24px; }
@@ -3810,3 +3812,254 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* =======================================================
+   Portfolio enhancements (April 2026 — A2 + B1 + C3 + D2 + E2)
+   ======================================================= */
+
+/* A2 — Счётчики перед CTA */
+.portfolio-counters {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    margin: 56px auto 32px;
+    padding: 24px 0;
+    flex-wrap: wrap;
+}
+.portfolio-counters__item { text-align: center; }
+.portfolio-counters__num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 500;
+    color: var(--color-gold);
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+}
+.portfolio-counters__label {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.2px;
+}
+
+/* B1 — Featured 2×2 grid (главная Portfolio) */
+.portfolio__grid--featured {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: stretch;
+}
+.portfolio__grid--featured .portfolio-card {
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    position: relative;
+}
+.portfolio__grid--featured .portfolio-card--featured {
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: auto;
+}
+.portfolio-card__badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 3;
+    padding: 6px 14px;
+    background: var(--color-gold);
+    color: #fff;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* C3 — Бейдж-тег у заголовка шага процесса */
+.process-case-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 12px;
+    padding: 4px 12px;
+    background: rgba(67, 83, 100, 0.08);
+    border: 1px solid rgba(67, 83, 100, 0.18);
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-accent);
+    text-decoration: none;
+    letter-spacing: 0.1px;
+    vertical-align: 5px;
+    transition: background .2s, border-color .2s;
+}
+.process-case-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-gold);
+    flex-shrink: 0;
+}
+.process-case-badge:hover {
+    background: rgba(67, 83, 100, 0.16);
+    border-color: rgba(67, 83, 100, 0.35);
+}
+
+/* D2 — Секция «Похожие объекты» на detail-страницах */
+.detail-related {
+    padding: 80px 0;
+    background: #ece2d4;
+}
+.detail-related__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 500;
+    margin: 0 0 36px;
+    color: var(--color-text);
+    letter-spacing: -0.3px;
+    text-align: center;
+}
+.detail-related__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.detail-related__grid .portfolio-card {
+    aspect-ratio: 4/5;
+}
+
+/* E2 — Dropdown «Портфолио» в хедере */
+.nav__item--dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+.nav__trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+.nav__trigger::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    margin-left: 4px;
+    transition: transform .25s;
+}
+.nav__item--dropdown:hover .nav__trigger::after,
+.nav__item--dropdown.is-open .nav__trigger::after {
+    transform: translateY(1px) rotate(225deg);
+}
+.nav__dropdown {
+    position: absolute;
+    top: 100%;
+    left: -16px;
+    margin-top: 12px;
+    min-width: 220px;
+    background: #fff;
+    border: 1px solid rgba(30, 37, 43, 0.08);
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    padding: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity .25s, transform .25s, visibility .25s;
+    z-index: 120;
+}
+.nav__item--dropdown:hover .nav__dropdown,
+.nav__item--dropdown:focus-within .nav__dropdown,
+.nav__item--dropdown.is-open .nav__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.nav__dropdown-link {
+    display: block;
+    padding: 10px 14px;
+    color: var(--color-text);
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: background .2s, color .2s;
+}
+.nav__dropdown-link:hover {
+    background: rgba(174, 140, 86, 0.1);
+    color: var(--color-gold);
+}
+
+/* Mobile adaptations */
+@media (max-width: 768px) {
+    /* A2 mobile */
+    .portfolio-counters {
+        gap: 24px;
+        margin: 40px auto 24px;
+    }
+    .portfolio-counters__num { font-size: 38px; }
+    .portfolio-counters__label { font-size: 12px; }
+
+    /* B1 mobile — выключаем 2×2, все карточки обычные */
+    .portfolio__grid--featured {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .portfolio__grid--featured .portfolio-card--featured {
+        grid-column: span 2;
+        grid-row: auto;
+    }
+    .portfolio__grid--featured .portfolio-card {
+        aspect-ratio: 4/5;
+    }
+    .portfolio-card__badge {
+        top: 10px;
+        left: 10px;
+        padding: 4px 10px;
+        font-size: 10px;
+    }
+
+    /* C3 mobile — бейдж на новую строку */
+    .process-case-badge {
+        margin-left: 0;
+        margin-top: 8px;
+        vertical-align: baseline;
+    }
+    .process__step-title .process-case-badge {
+        display: inline-flex;
+    }
+
+    /* D2 mobile */
+    .detail-related { padding: 56px 0; }
+    .detail-related__title { font-size: 28px; margin-bottom: 24px; }
+    .detail-related__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* E2 mobile — dropdown переходит в плоский список в burger-меню */
+    .nav__item--dropdown {
+        display: block;
+    }
+    .nav__dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        margin-top: 4px;
+        margin-left: 16px;
+        padding: 4px 0;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        min-width: 0;
+    }
+    .nav__dropdown-link { padding: 8px 12px; font-size: 13px; }
+    .nav__trigger::after { display: none; }
+}

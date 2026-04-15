@@ -39,7 +39,15 @@
             <a href="services.html" class="nav__link">Услуги</a>
             <a href="index.html#process" class="nav__link">Процесс</a>
             <a href="index.html#advantages" class="nav__link">Преимущества</a>
-            <a href="portfolio.html" class="nav__link nav__link--active">Портфолио</a>
+            <div class="nav__item nav__item--dropdown">
+                <a href="portfolio.html" class="nav__link nav__link--active nav__trigger">Портфолио</a>
+                <div class="nav__dropdown">
+                    <a href="portfolio.html" class="nav__dropdown-link">Все работы</a>
+                    <a href="portfolio.html?type=flat" class="nav__dropdown-link">Квартиры</a>
+                    <a href="portfolio.html?type=house" class="nav__dropdown-link">Частные дома</a>
+                    <a href="portfolio.html?type=commercial" class="nav__dropdown-link">Коммерческие</a>
+                </div>
+            </div>
             <a href="index.html#team" class="nav__link">Команда</a>
             <a href="index.html#reviews" class="nav__link">Отзывы</a>
             <div class="nav__cta">
@@ -138,57 +146,9 @@
                 </figcaption>
             </a>
 
-            <figure class="portfolio-card portfolio-card--deniot" data-type="flat" data-reveal>
-                <img class="portfolio-card__photo" src="img/portfolio-zhk-play.jpg" alt="Пример объекта, квартира" loading="lazy">
-                <figcaption class="portfolio-card__caption">
-                    <h3 class="portfolio-card__title">Квартира в центре</h3>
-                    <div class="portfolio-card__meta">
-                        <span>Москва</span>
-                        <span>60 м²</span>
-                        <span>Капитальный</span>
-                    </div>
-                </figcaption>
-            </figure>
-
-            <figure class="portfolio-card portfolio-card--deniot" data-type="flat" data-reveal>
-                <img class="portfolio-card__photo" src="img/portfolio-level-nagatinskaya.jpg" alt="Пример объекта, квартира" loading="lazy">
-                <figcaption class="portfolio-card__caption">
-                    <h3 class="portfolio-card__title">Квартира в новостройке</h3>
-                    <div class="portfolio-card__meta">
-                        <span>Москва</span>
-                        <span>110 м²</span>
-                        <span>Под ключ</span>
-                    </div>
-                </figcaption>
-            </figure>
-
-            <figure class="portfolio-card portfolio-card--deniot" data-type="house" data-reveal>
-                <img class="portfolio-card__photo" src="img/portfolio-house-facade.jpg" alt="Пример объекта, частный дом" loading="lazy">
-                <figcaption class="portfolio-card__caption">
-                    <h3 class="portfolio-card__title">Коттедж в КП Истра</h3>
-                    <div class="portfolio-card__meta">
-                        <span>Подмосковье</span>
-                        <span>310 м²</span>
-                        <span>Под ключ</span>
-                    </div>
-                </figcaption>
-            </figure>
-
-            <figure class="portfolio-card portfolio-card--deniot" data-type="commercial" data-reveal>
-                <img class="portfolio-card__photo" src="img/portfolio-office-baumanskaya.jpg" alt="Пример объекта, коммерция" loading="lazy">
-                <figcaption class="portfolio-card__caption">
-                    <h3 class="portfolio-card__title">Шоурум на Цветном</h3>
-                    <div class="portfolio-card__meta">
-                        <span>Москва</span>
-                        <span>140 м²</span>
-                        <span>Коммерческий ремонт</span>
-                    </div>
-                </figcaption>
-            </figure>
-
         </div>
 
-        <p class="portfolio-catalog__hint">Примеры объектов, каталог пополняется по мере завершения работ.</p>
+        <p class="portfolio-catalog__hint">Каталог пополняется по мере завершения работ.</p>
 
     </div>
 </section>

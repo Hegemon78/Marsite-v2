@@ -39,7 +39,15 @@
             <a href="services.html" class="nav__link">Услуги</a>
             <a href="index.html#process" class="nav__link">Процесс</a>
             <a href="index.html#advantages" class="nav__link">Преимущества</a>
-            <a href="portfolio.html" class="nav__link nav__link--active">Портфолио</a>
+            <div class="nav__item nav__item--dropdown">
+                <a href="portfolio.html" class="nav__link nav__link--active nav__trigger">Портфолио</a>
+                <div class="nav__dropdown">
+                    <a href="portfolio.html" class="nav__dropdown-link">Все работы</a>
+                    <a href="portfolio.html?type=flat" class="nav__dropdown-link">Квартиры</a>
+                    <a href="portfolio.html?type=house" class="nav__dropdown-link">Частные дома</a>
+                    <a href="portfolio.html?type=commercial" class="nav__dropdown-link">Коммерческие</a>
+                </div>
+            </div>
             <a href="index.html#team" class="nav__link">Команда</a>
             <a href="index.html#reviews" class="nav__link">Отзывы</a>
             <div class="nav__cta">
@@ -114,6 +122,35 @@
             <p>Хотите так же? Расскажите о вашем проекте.</p>
             <a href="index.html#contact" class="btn btn--primary btn--lg">Обсудить проект</a>
             <a href="portfolio.html" class="btn btn--outline btn--lg">Все проекты</a>
+        </div>
+    </div>
+</section>
+
+<section class="detail-related" data-bg="#ece2d4" data-scroll-fade>
+    <div class="container">
+        <h2 class="detail-related__title" data-reveal>Похожие объекты</h2>
+        <div class="detail-related__grid">
+            <a href="portfolio-zhk-play.html" class="portfolio-card portfolio-card--deniot" data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-zhk-play.jpg" alt="ЖК Плей" loading="lazy">
+                <figcaption class="portfolio-card__caption">
+                    <h3 class="portfolio-card__title">ЖК Плей</h3>
+                    <div class="portfolio-card__meta"><span>Москва</span><span>85 м²</span><span>4 мес</span></div>
+                </figcaption>
+            </a>
+            <a href="portfolio-office-baumanskaya.html" class="portfolio-card portfolio-card--deniot" data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-office-baumanskaya.jpg" alt="Офис на Бауманской" loading="lazy">
+                <figcaption class="portfolio-card__caption">
+                    <h3 class="portfolio-card__title">Офис на Бауманской</h3>
+                    <div class="portfolio-card__meta"><span>Москва</span><span>150 м²</span><span>3 мес</span></div>
+                </figcaption>
+            </a>
+            <a href="portfolio-house-facade.html" class="portfolio-card portfolio-card--deniot" data-reveal>
+                <img class="portfolio-card__photo" src="img/portfolio-house-facade.jpg" alt="Частный дом" loading="lazy">
+                <figcaption class="portfolio-card__caption">
+                    <h3 class="portfolio-card__title">Частный дом</h3>
+                    <div class="portfolio-card__meta"><span>Подмосковье</span><span>240 м²</span><span>7 мес</span></div>
+                </figcaption>
+            </a>
         </div>
     </div>
 </section>
