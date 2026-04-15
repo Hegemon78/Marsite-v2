@@ -1,0 +1,77 @@
+{
+  "objects": [
+    {
+      "slug": "zhk-play",
+      "title": "ЖК Плей",
+      "subtitle": "Ремонт квартиры под ключ с панорамным видом на Москва-Сити",
+      "type": "flat",
+      "typeLabel": "Ремонт под ключ",
+      "area": 85,
+      "months": 4,
+      "location": "Москва",
+      "district": "Пресненский",
+      "cover": "img/portfolio-zhk-play.jpg",
+      "page": "portfolio-zhk-play.html"
+    },
+    {
+      "slug": "level-nagatinskaya",
+      "title": "ЖК Level Нагатинская",
+      "subtitle": "Ремонт новостройки с панорамными окнами и высокими потолками",
+      "type": "flat",
+      "typeLabel": "Ремонт новостройки",
+      "area": 110,
+      "months": 5,
+      "location": "Москва",
+      "district": "Нагатинский Затон",
+      "cover": "img/portfolio-level-nagatinskaya.jpg",
+      "page": "portfolio-level-nagatinskaya.html"
+    },
+    {
+      "slug": "house-facade",
+      "title": "Частный дом — мокрый фасад",
+      "subtitle": "Мокрый фасад и внутренняя отделка загородного дома",
+      "type": "house",
+      "typeLabel": "Фасадные работы",
+      "area": 240,
+      "months": 7,
+      "location": "Подмосковье",
+      "district": "Истринский район",
+      "cover": "img/portfolio-house-facade.jpg",
+      "page": "portfolio-house-facade.html"
+    },
+    {
+      "slug": "office-baumanskaya",
+      "title": "Офис на Бауманской",
+      "subtitle": "Офис open-plan со стеклянными перегородками и зоной отдыха",
+      "type": "commercial",
+      "typeLabel": "Коммерческий ремонт",
+      "area": 150,
+      "months": 3,
+      "location": "Москва",
+      "district": "Басманный",
+      "cover": "img/portfolio-office-baumanskaya.jpg",
+      "page": "portfolio-office-baumanskaya.html"
+    },
+    {
+      "slug": "clinic-ophtalmo",
+      "title": "Офтальмологическая клиника",
+      "subtitle": "Коммерческий ремонт клиники с зонированием и ресепшн",
+      "type": "commercial",
+      "typeLabel": "Коммерческий ремонт",
+      "area": 46,
+      "months": 1,
+      "location": "Москва",
+      "district": "—",
+      "cover": "img/portfolio/clinic-ophtalmo/cover.jpg",
+      "page": "portfolio-clinic-ophtalmo.html"
+    }
+  ],
+  "processMap": {
+    "intro": {"step": 1, "slug": "zhk-play", "label": "Знакомство и подготовка"},
+    "contract": {"step": 2, "slug": "level-nagatinskaya", "label": "Расчёт и договор"},
+    "demolition": {"step": 3, "slug": "house-facade", "label": "Демонтаж и подготовка"},
+    "rough": {"step": 4, "slug": "office-baumanskaya", "label": "Черновая отделка"},
+    "finish": {"step": 5, "slug": "clinic-ophtalmo", "label": "Чистовая отделка"},
+    "delivery": {"step": 6, "slug": "zhk-play", "label": "Сдача объекта"}
+  }
+}

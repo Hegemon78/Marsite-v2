@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview — варианты улучшений ARK Construction</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="preview.css">
+</head>
+<body>
+
+<!-- ===================================
+     Header of the preview
+     =================================== -->
+<header class="preview-header">
+    <div class="container">
+        <div class="preview-header__eyebrow">ARK Construction — песочница решений</div>
+        <h1 class="preview-header__title">Переход к объектам: варианты для выбора</h1>
+        <p class="preview-header__sub">
+            Пять блоков улучшений, в каждом — 2–3 варианта visualisation.
+            Выбираем по одному из A, B, C, D, E — и внедряем на прод. Чисто визуальное превью, без продакшн-логики.
+        </p>
+        <nav class="preview-toc">
+            <a href="#section-a"><b>A</b> Счётчики</a>
+            <a href="#section-b"><b>B</b> Featured case</a>
+            <a href="#section-c"><b>C</b> Process ↔ Portfolio</a>
+            <a href="#section-d"><b>D</b> Навигация между объектами</a>
+            <a href="#section-e"><b>E</b> Меню «Портфолио»</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ===================================
+     Section A — Счётчики-якори перед CTA
+     =================================== -->
+<section class="preview-section" id="section-a">
+    <div class="container">
+        <div class="preview-section__header">
+            <div class="preview-section__letter">A</div>
+            <h2 class="preview-section__title">Счётчики перед кнопкой «Смотреть все работы»</h2>
+            <p class="preview-section__desc">Короткий блок цифр, который создаёт доверие перед тем, как пользователь кликает на портфолио. Показываем то, что уже реально сдано.</p>
+        </div>
+
+        <!-- A1 -->
+        <div class="preview-variant">
+            <div class="preview-variant__label"><b>A1</b> Inline-строка</div>
+            <h3 class="preview-variant__name">Одна строка разделённая точками</h3>
+            <p class="preview-variant__note">Минималистично, не занимает места, легко расширяется. Хорошо работает как подпись под секцией.</p>
+            <div class="preview-variant__body">
+                <p class="portfolio-counters--inline">
+                    <b>5</b> сданных объектов <span style="color:rgba(30,37,43,0.25)">·</span>
+                    <b>46–240</b> м² <span style="color:rgba(30,37,43,0.25)">·</span>
+                    <b>1–7</b> мес <span style="color:rgba(30,37,43,0.25)">·</span>
+                    <b>12</b> мес гарантии
+                </p>
+                <div style="text-align:center;margin-top:24px;">
+                    <a href="#" class="btn btn--primary btn--lg">Смотреть все работы</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- A2 -->
+        <div class="preview-variant">
+            <div class="preview-variant__label"><b>A2</b> Крупные цифры</div>
+            <h3 class="preview-variant__name">Три больших числа с подписями</h3>
+            <p class="preview-variant__note">Сильнее «якорит» внимание. В стиле hero__stat с сайта — золотые числа Cormorant Garamond.</p>
+            <div class="preview-variant__body">
+                <div class="portfolio-counters">
+                    <div class="portfolio-counters__item">
+                        <div class="portfolio-counters__num">5</div>
+                        <div class="portfolio-counters__label">сданных объектов</div>
+                    </div>
+                    <div class="portfolio-counters__item">
+                        <div class="portfolio-counters__num">46–240</div>
+                        <div class="portfolio-counters__label">метров² на объект</div>
+                    </div>
+                    <div class="portfolio-counters__item">
+                        <div class="portfolio-counters__num">12</div>
+                        <div class="portfolio-counters__label">месяцев гарантии</div>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:32px;">
+                    <a href="#" class="btn btn--primary btn--lg">Смотреть все работы</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- A3 -->
+        <div class="preview-variant">
+            <div class="preview-variant__label"><b>A3</b> С иконками</div>
+            <h3 class="preview-variant__name">С иконкой + число + подпись</h3>
+            <p class="preview-variant__note">Иконки делают блок нагляднее и визуально добавляют доверия. Чуть больше «работы».</p>
+            <div class="preview-variant__body">
+                <div class="portfolio-counters portfolio-counters--icons">
+                    <div class="portfolio-counters__item">
+                        <div class="portfolio-counters__icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                        </div>
+                        <div class="portfolio-counters__num">5</div>
+                        <div class="portfolio-counters__label">сданных объектов</div>
+                    </div>
+                    <div class="portfolio-counters__item">
+                        <div class="portfolio-counters__icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                        </div>
+                        <div class="portfolio-counters__num">46–240</div>
+                        <div class="portfolio-counters__label">метров²</div>
+                    </div>
+                    <div class="portfolio-counters__item">
+                        <div class="portfolio-counters__icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="portfolio-counters__num">2</div>
+                        <div class="portfolio-counters__label">региона работы</div>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:32px;">
+                    <a href="#" class="btn btn--primary btn--lg">Смотреть все работы</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     Section B — Featured case
+     =================================== -->
+<section class="preview-section" id="section-b">
+    <div class="container">
+        <div class="preview-section__header">
+            <div class="preview-section__letter">B</div>
+            <h2 class="preview-section__title">Featured case — один объект-герой</h2>
+            <p class="preview-section__desc">На главной в блоке «Наши проекты» один объект получает визуальное «преимущество» — больший размер или баннер. Цель: сделать портфолио живым, а не ровной сеткой.</p>
+        </div>
+
+        <!-- B1 -->
+        <div class="preview-variant">
+            <div class="preview-variant__label"><b>B1</b> 2×2 герой</div>
+            <h3 class="preview-variant__name">Один объект занимает 2×2, остальные идут вокруг</h3>
+            <p class="preview-variant__note">«Кинематографичный» эффект. Подчёркивает главный кейс. Хорошо работает с крупным красивым фото.</p>
+            <div class="preview-variant__body">
+                <div class="preview-portfolio-grid preview-portfolio-grid--b1">
+                    <a href="#" class="preview-card preview-card--featured" style="background-image:url('../img/portfolio-level-nagatinskaya.jpg')">
+                        <span class="preview-card__badge">Флагманский проект</span>
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">ЖК Level Нагатинская</h3>
+                            <div class="preview-card__meta"><span>Москва</span><span>110 м²</span><span>5 мес</span></div>
+                        </div>
+                    </a>
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio-zhk-play.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">ЖК Плей</h3>
+                            <div class="preview-card__meta"><span>85 м²</span><span>4 мес</span></div>
+                        </div>
+                    </a>
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio-house-facade.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">Частный дом</h3>
+                            <div class="preview-card__meta"><span>240 м²</span><span>7 мес</span></div>
+                        </div>
+                    </a>
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio-office-baumanskaya.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">Офис на Бауманской</h3>
+                            <div class="preview-card__meta"><span>150 м²</span><span>3 мес</span></div>
+                        </div>
+                    </a>
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio/clinic-ophtalmo/cover.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">Клиника</h3>
+                            <div class="preview-card__meta"><span>46 м²</span><span>1 мес</span></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- B2 -->
+        <div class="preview-variant">
+            <div class="preview-variant__label"><b>B2</b> Wide-banner</div>
+            <h3 class="preview-variant__name">Широкий баннер сверху + сетка из 4 обычных</h3>
+            <p class="preview-variant__note">Редакторский стиль, как на glossy-сайтах. Даёт «постер», потом детали. Больше пространства для описания кейса.</p>
+            <div class="preview-variant__body">
+                <div class="preview-portfolio-grid preview-portfolio-grid--b2">
+                    <a href="#" class="preview-featured-banner" style="background-image:url('../img/portfolio-level-nagatinskaya.jpg')">
+                        <div class="preview-featured-banner__overlay">
+                            <div class="preview-featured-banner__eyebrow">Флагманский проект · 2025</div>
+                            <h3 class="preview-featured-banner__title">ЖК Level Нагатинская</h3>
+                            <div class="preview-featured-banner__meta">
+                                <span>Москва · Нагатинский Затон</span>
+                                <span>110 м²</span>
+                                <span>5 месяцев</span>
+                            </div>
+                            <span class="btn btn--primary">Смотреть проект →</span>
+                        </div>
+                    </a>
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio-zhk-play.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">ЖК Плей</h3>
+                            <div class="preview-card__meta"><span>85 м²</span><span>4 мес</span></div>
+                        </div>
+                    </a>
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio-house-facade.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">Частный дом</h3>
+                            <div class="preview-card__meta"><span>240 м²</span><span>7 мес</span></div>
+                        </div>
+                    </a>
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio-office-baumanskaya.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">Офис</h3>
+                            <div class="preview-card__meta"><span>150 м²</span><span>3 мес</span></div>
+                        </div>
+                    </a>
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio/clinic-ophtalmo/cover.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">Клиника</h3>
+                            <div class="preview-card__meta"><span>46 м²</span><span>1 мес</span></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- B3 -->
+        <div class="preview-variant">
+            <div class="preview-variant__label"><b>B3</b> Ровная сетка</div>
+            <h3 class="preview-variant__name">Как сейчас — 4 одинаковые + «Смотреть все»</h3>
+            <p class="preview-variant__note">Контрольная группа. Спокойно, без акцентов. Сейчас так на сайте.</p>
+            <div class="preview-variant__body">
+                <div class="preview-portfolio-grid preview-portfolio-grid--b3">
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio-zhk-play.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">ЖК Плей</h3>
+                            <div class="preview-card__meta"><span>Москва</span><span>85 м²</span></div>
+                        </div>
+                    </a>
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio-level-nagatinskaya.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">ЖК Level Нагатинская</h3>
+                            <div class="preview-card__meta"><span>Москва</span><span>110 м²</span></div>
+                        </div>
+                    </a>
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio-house-facade.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">Частный дом</h3>
+                            <div class="preview-card__meta"><span>Подмосковье</span><span>240 м²</span></div>
+                        </div>
+                    </a>
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio-office-baumanskaya.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">Офис на Бауманской</h3>
+                            <div class="preview-card__meta"><span>Москва</span><span>150 м²</span></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     Section C — Process ↔ Portfolio связка
+     =================================== -->
+<section class="preview-section" id="section-c">
+    <div class="container">
+        <div class="preview-section__header">
+            <div class="preview-section__letter">C</div>
+            <h2 class="preview-section__title">Связка этапов процесса с реальными объектами</h2>
+            <p class="preview-section__desc">К каждому из 6 этапов добавляем «Как это было на [объект]» — мост от абстрактного процесса к конкретному кейсу. Показано на двух этапах, остальные четыре работают по тому же принципу.</p>
+        </div>
+
+        <!-- C1 -->
+        <div class="preview-variant">
+            <div class="preview-variant__label"><b>C1</b> Ненавязчивая ссылка</div>
+            <h3 class="preview-variant__name">Tiny-ссылка внутри описания шага</h3>
+            <p class="preview-variant__note">Минимум визуального шума, ссылка золотая с подчёркиванием. Хорошо, если хочется оставить секцию «чистой».</p>
+            <div class="preview-variant__body">
+                <div class="preview-process">
+                    <div class="preview-process__photo" style="background-image:url('../img/process-01-measure.jpg')"></div>
+                    <div class="preview-process__content">
+                        <h3>1 · Знакомство и подготовка</h3>
+                        <p>Выезд на замер, обмеры помещения, оценка состояния, фотофиксация. Обсуждение концепции.</p>
+                        <a href="#" class="process-case-link">Как это было на ЖК Плей →</a>
+                    </div>
+                </div>
+                <div class="preview-process">
+                    <div class="preview-process__photo" style="background-image:url('../img/process-04-rough.jpg')"></div>
+                    <div class="preview-process__content">
+                        <h3>4 · Черновая отделка</h3>
+                        <p>Монтаж электрики, сантехники, тёплого пола. Стяжка пола, штукатурка стен по маякам.</p>
+                        <a href="#" class="process-case-link">Как это было на Офисе на Бауманской →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- C2 -->
+        <div class="preview-variant">
+            <div class="preview-variant__label"><b>C2</b> Mini-карточка справа</div>
+            <h3 class="preview-variant__name">Карточка объекта рядом с шагом (рекомендую)</h3>
+            <p class="preview-variant__note">Даёт визуал + контекст без лишнего клика. На мобильных уходит под шаг. Привязка к объекту: этап 1 → ЖК Плей, этап 4 → Офис на Бауманской.</p>
+            <div class="preview-variant__body">
+                <div class="preview-process preview-process--with-case">
+                    <div class="preview-process__photo" style="background-image:url('../img/process-01-measure.jpg')"></div>
+                    <div class="preview-process__content">
+                        <h3>1 · Знакомство и подготовка</h3>
+                        <p>Выезд на замер, обмеры помещения, оценка состояния, фотофиксация. Обсуждение концепции.</p>
+                    </div>
+                    <a href="#" class="process-case-mini">
+                        <div class="process-case-mini__thumb" style="background-image:url('../img/portfolio-zhk-play.jpg')"></div>
+                        <div class="process-case-mini__body">
+                            <div class="process-case-mini__label">Этап в работе</div>
+                            <div class="process-case-mini__title">ЖК Плей</div>
+                            <span class="process-case-mini__link">Смотреть проект →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="preview-process preview-process--with-case">
+                    <div class="preview-process__photo" style="background-image:url('../img/process-04-rough.jpg')"></div>
+                    <div class="preview-process__content">
+                        <h3>4 · Черновая отделка</h3>
+                        <p>Монтаж электрики, сантехники, тёплого пола. Стяжка пола, штукатурка стен по маякам.</p>
+                    </div>
+                    <a href="#" class="process-case-mini">
+                        <div class="process-case-mini__thumb" style="background-image:url('../img/portfolio-office-baumanskaya.jpg')"></div>
+                        <div class="process-case-mini__body">
+                            <div class="process-case-mini__label">Этап в работе</div>
+                            <div class="process-case-mini__title">Офис на Бауманской</div>
+                            <span class="process-case-mini__link">Смотреть проект →</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- C3 -->
+        <div class="preview-variant">
+            <div class="preview-variant__label"><b>C3</b> Бейдж-тег у заголовка</div>
+            <h3 class="preview-variant__name">Маленькая пилюля рядом с названием шага</h3>
+            <p class="preview-variant__note">Самый лёгкий вариант. Не ломает визуальную ритмику тайм-лайна.</p>
+            <div class="preview-variant__body">
+                <div class="preview-process">
+                    <div class="preview-process__photo" style="background-image:url('../img/process-01-measure.jpg')"></div>
+                    <div class="preview-process__content">
+                        <h3>1 · Знакомство и подготовка <a href="#" class="process-case-badge">ЖК Плей</a></h3>
+                        <p>Выезд на замер, обмеры помещения, оценка состояния, фотофиксация. Обсуждение концепции.</p>
+                    </div>
+                </div>
+                <div class="preview-process">
+                    <div class="preview-process__photo" style="background-image:url('../img/process-04-rough.jpg')"></div>
+                    <div class="preview-process__content">
+                        <h3>4 · Черновая отделка <a href="#" class="process-case-badge">Офис на Бауманской</a></h3>
+                        <p>Монтаж электрики, сантехники, тёплого пола. Стяжка пола, штукатурка стен по маякам.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Привязка этапов -->
+        <div class="preview-variant" style="border-color:var(--preview-note-border);background:var(--preview-note-bg);">
+            <div class="preview-variant__label"><b>C·map</b> Предлагаемая привязка</div>
+            <h3 class="preview-variant__name">Какой объект к какому этапу</h3>
+            <p class="preview-variant__note">Согласовать с Мариной. Каждый этап → один объект, циклическое замыкание на ЖК Плей в «Сдаче».</p>
+            <div class="preview-variant__body" style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.8;">
+                <div><b style="color:var(--color-gold)">1</b> · Знакомство и подготовка → <b>ЖК Плей</b></div>
+                <div><b style="color:var(--color-gold)">2</b> · Расчёт и договор → <b>ЖК Level Нагатинская</b></div>
+                <div><b style="color:var(--color-gold)">3</b> · Демонтаж и подготовка → <b>Частный дом — мокрый фасад</b></div>
+                <div><b style="color:var(--color-gold)">4</b> · Черновая отделка → <b>Офис на Бауманской</b></div>
+                <div><b style="color:var(--color-gold)">5</b> · Чистовая отделка → <b>Офтальмологическая клиника</b></div>
+                <div><b style="color:var(--color-gold)">6</b> · Сдача объекта → <b>ЖК Плей</b> (замыкание круга)</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     Section D — Перекрёстная навигация на detail-страницах
+     =================================== -->
+<section class="preview-section" id="section-d">
+    <div class="container">
+        <div class="preview-section__header">
+            <div class="preview-section__letter">D</div>
+            <h2 class="preview-section__title">Навигация между объектами на detail-страницах</h2>
+            <p class="preview-section__desc">Когда пользователь дочитал кейс — дать возможность посмотреть соседний или похожий, а не закрыть вкладку. Показано как работает на странице одного объекта.</p>
+        </div>
+
+        <!-- D1 -->
+        <div class="preview-variant">
+            <div class="preview-variant__label"><b>D1</b> Prev / Next</div>
+            <h3 class="preview-variant__name">Только стрелки «Предыдущий / Следующий»</h3>
+            <p class="preview-variant__note">Самое простое. Циклический переход по списку объектов. Хорошо, если объектов мало.</p>
+            <div class="preview-variant__body">
+                <div class="detail-nav">
+                    <a href="#" class="detail-nav__item detail-nav__item--prev">
+                        <span class="detail-nav__arrow">←</span>
+                        <div>
+                            <div class="detail-nav__label">Предыдущий</div>
+                            <div class="detail-nav__name">Частный дом — мокрый фасад</div>
+                        </div>
+                    </a>
+                    <a href="#" class="detail-nav__item detail-nav__item--next">
+                        <span class="detail-nav__arrow">→</span>
+                        <div>
+                            <div class="detail-nav__label">Следующий</div>
+                            <div class="detail-nav__name">Офис на Бауманской</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- D2 -->
+        <div class="preview-variant">
+            <div class="preview-variant__label"><b>D2</b> Похожие объекты</div>
+            <h3 class="preview-variant__name">Только 3 похожих объекта того же типа</h3>
+            <p class="preview-variant__note">Показывает «вот ещё такой же формат». Хорошо работает для квартир/коммерции, хуже когда объектов типа 1-2.</p>
+            <div class="preview-variant__body">
+                <h3 class="detail-related__title">Похожие объекты</h3>
+                <div class="detail-related__grid">
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio-zhk-play.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">ЖК Плей</h3>
+                            <div class="preview-card__meta"><span>85 м²</span><span>4 мес</span></div>
+                        </div>
+                    </a>
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio-office-baumanskaya.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">Офис на Бауманской</h3>
+                            <div class="preview-card__meta"><span>150 м²</span><span>3 мес</span></div>
+                        </div>
+                    </a>
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio/clinic-ophtalmo/cover.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">Клиника</h3>
+                            <div class="preview-card__meta"><span>46 м²</span><span>1 мес</span></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- D3 -->
+        <div class="preview-variant">
+            <div class="preview-variant__label"><b>D3</b> Похожие + Prev/Next (рекомендую)</div>
+            <h3 class="preview-variant__name">Похожие сверху, циклическое листание снизу</h3>
+            <p class="preview-variant__note">Полная навигация. Пользователь может и «полистать» по ощущениям, и выбрать тематически похожее.</p>
+            <div class="preview-variant__body">
+                <h3 class="detail-related__title">Похожие объекты</h3>
+                <div class="detail-related__grid">
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio-zhk-play.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">ЖК Плей</h3>
+                            <div class="preview-card__meta"><span>85 м²</span><span>4 мес</span></div>
+                        </div>
+                    </a>
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio-office-baumanskaya.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">Офис на Бауманской</h3>
+                            <div class="preview-card__meta"><span>150 м²</span><span>3 мес</span></div>
+                        </div>
+                    </a>
+                    <a href="#" class="preview-card" style="background-image:url('../img/portfolio/clinic-ophtalmo/cover.jpg')">
+                        <div class="preview-card__body">
+                            <h3 class="preview-card__title">Клиника</h3>
+                            <div class="preview-card__meta"><span>46 м²</span><span>1 мес</span></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="detail-nav">
+                    <a href="#" class="detail-nav__item detail-nav__item--prev">
+                        <span class="detail-nav__arrow">←</span>
+                        <div>
+                            <div class="detail-nav__label">Предыдущий</div>
+                            <div class="detail-nav__name">Частный дом — мокрый фасад</div>
+                        </div>
+                    </a>
+                    <a href="#" class="detail-nav__item detail-nav__item--next">
+                        <span class="detail-nav__arrow">→</span>
+                        <div>
+                            <div class="detail-nav__label">Следующий</div>
+                            <div class="detail-nav__name">Офис на Бауманской</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     Section E — Header dropdown
+     =================================== -->
+<section class="preview-section" id="section-e">
+    <div class="container">
+        <div class="preview-section__header">
+            <div class="preview-section__letter">E</div>
+            <h2 class="preview-section__title">Меню «Портфолио» в шапке</h2>
+            <p class="preview-section__desc">Как пользователь попадает в нужный раздел портфолио из любой точки сайта. Три варианта по возрастанию сложности.</p>
+        </div>
+
+        <!-- E1 -->
+        <div class="preview-variant">
+            <div class="preview-variant__label"><b>E1</b> Без изменений</div>
+            <h3 class="preview-variant__name">Как сейчас — просто ссылка «Портфолио»</h3>
+            <p class="preview-variant__note">Клик ведёт на страницу портфолио, там уже есть фильтр по типам. Меньше визуальной сложности.</p>
+            <div class="preview-variant__body">
+                <div class="preview-nav">
+                    <div class="preview-nav__logo">ARK</div>
+                    <a href="#" class="preview-nav__link">О нас</a>
+                    <a href="#" class="preview-nav__link">Услуги</a>
+                    <a href="#" class="preview-nav__link">Процесс</a>
+                    <a href="#" class="preview-nav__link preview-nav__link--active">Портфолио</a>
+                    <a href="#" class="preview-nav__link">Отзывы</a>
+                    <a href="#" class="btn btn--primary btn--sm">Связаться</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- E2 -->
+        <div class="preview-variant">
+            <div class="preview-variant__label"><b>E2</b> Dropdown-меню</div>
+            <h3 class="preview-variant__name">При наведении — подменю с типами объектов</h3>
+            <p class="preview-variant__note">Быстрый доступ к категории с любой страницы. Наведи на «Портфолио ▾» в превью ниже чтобы увидеть.</p>
+            <div class="preview-variant__body">
+                <div class="preview-nav">
+                    <div class="preview-nav__logo">ARK</div>
+                    <a href="#" class="preview-nav__link">О нас</a>
+                    <a href="#" class="preview-nav__link">Услуги</a>
+                    <a href="#" class="preview-nav__link">Процесс</a>
+                    <div class="preview-nav__item">
+                        <a href="#" class="preview-nav__link preview-nav__link--active preview-nav__trigger">Портфолио</a>
+                        <div class="preview-nav__dropdown">
+                            <a href="#">Все работы</a>
+                            <a href="#">Квартиры</a>
+                            <a href="#">Частные дома</a>
+                            <a href="#">Коммерческие помещения</a>
+                        </div>
+                    </div>
+                    <a href="#" class="preview-nav__link">Отзывы</a>
+                    <a href="#" class="btn btn--primary btn--sm">Связаться</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- E3 -->
+        <div class="preview-variant">
+            <div class="preview-variant__label"><b>E3</b> Quick-links на detail-страницах</div>
+            <h3 class="preview-variant__name">Полоска быстрого доступа ТОЛЬКО на страницах объектов</h3>
+            <p class="preview-variant__note">Не меняет основной хедер. На странице объекта появляется тонкая полоса «← Все · Квартиры · Дома · Коммерция · Следующий →». Контекстно и не отвлекает на главной.</p>
+            <div class="preview-variant__body">
+                <div class="preview-nav">
+                    <div class="preview-nav__logo">ARK</div>
+                    <a href="#" class="preview-nav__link">О нас</a>
+                    <a href="#" class="preview-nav__link">Услуги</a>
+                    <a href="#" class="preview-nav__link">Процесс</a>
+                    <a href="#" class="preview-nav__link preview-nav__link--active">Портфолио</a>
+                    <a href="#" class="preview-nav__link">Отзывы</a>
+                    <a href="#" class="btn btn--primary btn--sm">Связаться</a>
+                </div>
+                <div class="preview-quick-links">
+                    <div class="preview-quick-links__left">
+                        <a href="#">← Все объекты</a>
+                        <span class="preview-quick-links__sep">·</span>
+                        <a href="#">Квартиры</a>
+                        <a href="#" class="is-active">Дома</a>
+                        <a href="#">Коммерция</a>
+                    </div>
+                    <div class="preview-quick-links__right">
+                        <a href="#">Следующий объект →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================
+     Cheatsheet
+     =================================== -->
+<section class="preview-cheatsheet">
+    <div class="container">
+        <h2 class="preview-cheatsheet__title">Твой выбор для Марины</h2>
+        <p class="preview-cheatsheet__sub">Выбери один из A / B / C / D / E и пришли обратно. Или «не надо», если конкретный блок решили отложить.</p>
+        <div class="preview-cheatsheet__table">
+            <div><b>A</b></div><div>Счётчики</div><div><span>A1 · A2 · A3</span></div>
+            <div><b>B</b></div><div>Featured case</div><div><span>B1 · B2 · B3</span></div>
+            <div><b>C</b></div><div>Process ↔ Portfolio</div><div><span>C1 · C2 · C3</span></div>
+            <div><b>D</b></div><div>Навигация объектов</div><div><span>D1 · D2 · D3</span></div>
+            <div><b>E</b></div><div>Меню «Портфолио»</div><div><span>E1 · E2 · E3</span></div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
