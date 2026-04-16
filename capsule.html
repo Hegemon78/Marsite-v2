@@ -279,6 +279,78 @@
 
 <!-- PRICING: убрано по решению Марины 16.04 — три стиля с ценой «по запросу» вместо отдельной секции комплектаций. Вернуть когда будут расчёты. -->
 
+<!-- CALCULATOR -->
+<section class="capsule-calc" id="calculator" data-bg="#ece2d4" data-scroll-fade>
+    <div class="container">
+        <h2 class="section-title" data-reveal>Рассчитайте стоимость</h2>
+        <p class="section-lead" data-reveal>Примерный расчёт за 30 секунд. Точную стоимость подготовим после замера.</p>
+
+        <div class="capsule-calc__card" data-reveal>
+            <!-- Step 1: Area -->
+            <div class="capsule-calc__row">
+                <label class="capsule-calc__label">Площадь квартиры</label>
+                <div class="capsule-calc__slider-wrap">
+                    <input type="range" id="calc-area" class="capsule-calc__slider" min="25" max="100" value="45" step="1">
+                    <div class="capsule-calc__slider-value"><span id="calc-area-val">45</span> м²</div>
+                </div>
+            </div>
+
+            <!-- Step 2: Style -->
+            <div class="capsule-calc__row">
+                <label class="capsule-calc__label">Стиль</label>
+                <div class="capsule-calc__styles">
+                    <button class="capsule-calc__style-btn capsule-calc__style-btn--active" data-style="scandinavian" data-price="15000">
+                        <img src="img/capsule-scandinavian.jpg" alt="" class="capsule-calc__style-thumb">
+                        <span>Скандинавский</span>
+                    </button>
+                    <button class="capsule-calc__style-btn" data-style="minimalism" data-price="20000">
+                        <img src="img/capsule-minimalism.jpg" alt="" class="capsule-calc__style-thumb">
+                        <span>Минимализм</span>
+                    </button>
+                    <button class="capsule-calc__style-btn" data-style="classic" data-price="25000">
+                        <img src="img/capsule-classic.jpg" alt="" class="capsule-calc__style-thumb">
+                        <span>Тёплая классика</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Options -->
+            <div class="capsule-calc__row">
+                <label class="capsule-calc__label">Дополнительно</label>
+                <div class="capsule-calc__options">
+                    <label class="capsule-calc__option">
+                        <input type="checkbox" id="calc-furniture" data-add="150000">
+                        <span>Мебель по проекту (+150 000 ₽)</span>
+                    </label>
+                    <label class="capsule-calc__option">
+                        <input type="checkbox" id="calc-appliances" data-add="100000">
+                        <span>Бытовая техника (+100 000 ₽)</span>
+                    </label>
+                    <label class="capsule-calc__option">
+                        <input type="checkbox" id="calc-design" data-add="50000">
+                        <span>Индивидуальный дизайн-проект (+50 000 ₽)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Result -->
+            <div class="capsule-calc__result">
+                <div class="capsule-calc__result-row">
+                    <span class="capsule-calc__result-label">Примерная стоимость</span>
+                    <span class="capsule-calc__result-value" id="calc-total">675 000 ₽</span>
+                </div>
+                <div class="capsule-calc__result-row capsule-calc__result-row--sub">
+                    <span>Срок работ</span>
+                    <span id="calc-duration">45-50 дней</span>
+                </div>
+                <p class="capsule-calc__result-note">* Цены ориентировочные. Точный расчёт после замера объекта.</p>
+            </div>
+
+            <a href="index.html#contact" class="btn btn--primary btn--lg capsule-calc__cta">Получить точный расчёт</a>
+        </div>
+    </div>
+</section>
+
 <!-- CTA -->
 <section class="capsule-cta" data-bg="#1e252b" data-scroll-fade>
     <div class="container capsule-cta__inner">
@@ -332,5 +404,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/capsule-calc.js"></script>
 </body>
 </html>
