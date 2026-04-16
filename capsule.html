@@ -81,7 +81,7 @@
         <h1 class="page-hero__title" data-reveal>Капсульный ремонт</h1>
         <p class="page-hero__subtitle" data-reveal>Готовое решение под ключ. Выбираете один из трёх вариантов дизайна, материалы и смета уже просчитаны, срок фиксированный.</p>
         <div class="page-hero__actions" data-reveal>
-            <a href="#pricing" class="btn btn--primary">Посмотреть комплектации</a>
+            <a href="#variants" class="btn btn--primary">Посмотреть варианты</a>
             <a href="index.html#contact" class="btn btn--outline">Получить расчёт</a>
         </div>
     </div>
@@ -99,10 +99,7 @@
                 <p class="capsule-intro__note" data-editable>Подходит для квартир до 60 м² в новостройках и вторичном жилье.</p>
             </div>
             <div class="capsule-intro__visual" data-reveal>
-                <!-- TODO: фото готовой капсульной квартиры от Насти -->
-                <div class="capsule-intro__img-placeholder" aria-label="Пример интерьера, фото появится">
-                    <span>Фото готового варианта</span>
-                </div>
+                <img src="img/capsule-intro.jpg" alt="Готовая квартира после капсульного ремонта — светлый интерьер" loading="lazy" style="width:100%;border-radius:16px;object-fit:cover;">
             </div>
         </div>
     </div>
@@ -157,32 +154,34 @@
         <div class="capsule-variants__grid">
             <article class="capsule-variant-card" data-editable data-reveal>
                 <div class="capsule-variant-card__img">
-                    <!-- TODO: визуализация варианта 1 -->
-                    <span class="capsule-variant-card__placeholder">Визуализация<br>Вариант 1</span>
+                    <img src="img/capsule-scandinavian.jpg" alt="Скандинавский стиль — светлое дерево, белые стены, растения" loading="lazy">
                 </div>
                 <div class="capsule-variant-card__body">
-                    <h3 class="capsule-variant-card__title">Вариант 1</h3>
-                    <p class="capsule-variant-card__desc" data-editable>Короткое описание стиля, например «Светлый скандинавский». Настя пришлёт финальный текст.</p>
+                    <h3 class="capsule-variant-card__title">Скандинавский</h3>
+                    <p class="capsule-variant-card__desc">Светлое дерево, белые стены, лён, растения, тёплый дневной свет. Лёгкий и воздушный.</p>
+                    <p class="capsule-variant-card__price" data-editable>Цена по запросу</p>
                 </div>
             </article>
 
             <article class="capsule-variant-card" data-editable data-reveal>
                 <div class="capsule-variant-card__img">
-                    <span class="capsule-variant-card__placeholder">Визуализация<br>Вариант 2</span>
+                    <img src="img/capsule-minimalism.jpg" alt="Минимализм — бетон, тёмное дерево, чёрный металл" loading="lazy">
                 </div>
                 <div class="capsule-variant-card__body">
-                    <h3 class="capsule-variant-card__title">Вариант 2</h3>
-                    <p class="capsule-variant-card__desc" data-editable>Короткое описание стиля. Настя пришлёт финальный текст.</p>
+                    <h3 class="capsule-variant-card__title">Минимализм</h3>
+                    <p class="capsule-variant-card__desc">Бетонный акцент, тёмное дерево, чёрный металл, LED-подсветка. Строго и современно.</p>
+                    <p class="capsule-variant-card__price" data-editable>Цена по запросу</p>
                 </div>
             </article>
 
             <article class="capsule-variant-card" data-editable data-reveal>
                 <div class="capsule-variant-card__img">
-                    <span class="capsule-variant-card__placeholder">Визуализация<br>Вариант 3</span>
+                    <img src="img/capsule-classic.jpg" alt="Тёплая классика — паркет ёлочкой, молдинги, бархат" loading="lazy">
                 </div>
                 <div class="capsule-variant-card__body">
-                    <h3 class="capsule-variant-card__title">Вариант 3</h3>
-                    <p class="capsule-variant-card__desc" data-editable>Короткое описание стиля. Настя пришлёт финальный текст.</p>
+                    <h3 class="capsule-variant-card__title">Тёплая классика</h3>
+                    <p class="capsule-variant-card__desc">Паркет ёлочкой, молдинги, бархатная обивка, латунь, мягкий тёплый свет. Уют и элегантность.</p>
+                    <p class="capsule-variant-card__price" data-editable>Цена по запросу</p>
                 </div>
             </article>
         </div>
@@ -278,40 +277,7 @@
     </div>
 </section>
 
-<!-- PRICING -->
-<!-- TODO: финальные цены от Насти и Марины -->
-<section class="capsule-pricing" id="pricing" data-bg="#ece2d4" data-scroll-fade>
-    <div class="container">
-        <h2 class="section-title" data-reveal>Комплектации</h2>
-        <p class="section-lead" data-reveal>Три пакета с разным уровнем материалов. Итоговая цена зависит от площади и выбранного варианта дизайна.</p>
-
-        <div class="capsule-pricing__grid">
-            <article class="capsule-pricing-card" data-editable data-reveal>
-                <h3 class="capsule-pricing-card__title">Базовый</h3>
-                <p class="capsule-pricing-card__price" data-editable>от — руб/м²</p>
-                <p class="capsule-pricing-card__desc">Отечественные материалы, простая конфигурация. Для аренды или быстрого въезда.</p>
-                <a href="index.html#contact" class="btn btn--outline btn--sm">Получить расчёт</a>
-            </article>
-
-            <article class="capsule-pricing-card capsule-pricing-card--featured" data-editable data-reveal>
-                <span class="capsule-pricing-card__badge">Популярный</span>
-                <h3 class="capsule-pricing-card__title">Стандарт</h3>
-                <p class="capsule-pricing-card__price" data-editable>от — руб/м²</p>
-                <p class="capsule-pricing-card__desc">Баланс цены и качества. Европейские материалы среднего сегмента.</p>
-                <a href="index.html#contact" class="btn btn--primary btn--sm">Получить расчёт</a>
-            </article>
-
-            <article class="capsule-pricing-card" data-editable data-reveal>
-                <h3 class="capsule-pricing-card__title">Премиум</h3>
-                <p class="capsule-pricing-card__price" data-editable>от — руб/м²</p>
-                <p class="capsule-pricing-card__desc">Премиальные материалы, индивидуальные элементы по запросу.</p>
-                <a href="index.html#contact" class="btn btn--outline btn--sm">Получить расчёт</a>
-            </article>
-        </div>
-
-        <p class="capsule-pricing__note" data-reveal>Срок работ 45-60 дней. Гарантия 12 месяцев.</p>
-    </div>
-</section>
+<!-- PRICING: убрано по решению Марины 16.04 — три стиля с ценой «по запросу» вместо отдельной секции комплектаций. Вернуть когда будут расчёты. -->
 
 <!-- CTA -->
 <section class="capsule-cta" data-bg="#1e252b" data-scroll-fade>
